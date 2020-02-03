@@ -45,7 +45,7 @@ import Trend from './components/Trend.vue';
 import { Database } from './db.js';
 import without_industry_records from '../data/without_industry.json'
 
-const years = [2013, 2014, 2015, 2016, 2017];
+const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
 const database = new Database(without_industry_records);
 
 export default {
