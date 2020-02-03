@@ -32,6 +32,7 @@
 
       <Trend class="trend-chart" v-bind:data="trend_data" v-bind:options="trend_options"/>
       <div>Enhet: ton/year</div>
+      <div>Exklusive industrisektorn</div>
     </div>
   </div>
 </template>
