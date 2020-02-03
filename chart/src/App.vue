@@ -110,7 +110,12 @@ export default {
     },
     trend_options () {
       return({
-        legend: { display: false }
+        legend: { display: false },
+        scales: {
+          yAxes: [{
+            ticks: { suggestedMin: 0 },
+          }],
+        },
       })
     }
   },
