@@ -92,20 +92,8 @@ export default {
           return({
             label: grouping,
             fill: false,
-            borderWidth: (context) => {
-              if (highlighted_record && context.datasetIndex === 0) {
-                return 2;
-              } else {
-                return 1;
-              }
-            },
-            borderColor: (context) => {
-              if (highlighted_record && context.datasetIndex === 0) {
-                return '#f87979'
-              } else {
-                return '#bbb'
-              }
-            },
+            borderWidth: grouping === kommun ? 3 : 1,
+            borderColor: grouping === kommun ? '#f87979' : '#bbb',
             data: _.map(years, (year) => { return(record[year]) })
           })
         })

@@ -12,14 +12,13 @@ export class Database {
 
     let filter_values = _.pickBy({
       Ämne: filter.Ämne,
-      Kommun: filter.Kommun,
       Län: filter.Län,
     }, _.identity);
     result = result.filter(filter_values);
 
     return result.groupBy('Kommun').reduce((result, values, key) => {
       result[key] = {}
-      _.each(years, (year) => {
+      years.forEach((year) => {
         result[key][year] = _(values).map(year).sum()
       })
 
