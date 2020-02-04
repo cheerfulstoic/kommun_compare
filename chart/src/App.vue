@@ -18,8 +18,13 @@
       </select>
 
       <div>
-        <Trend class="trend-chart" v-bind:data="trend_data('CO2')" v-bind:options="trend_options('CO2')"/>
-        <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents')" v-bind:options="trend_options('CO2-equivalents')"/>
+        <Trend class="trend-chart" v-bind:data="trend_data('CO2', true)" v-bind:options="trend_options('CO2', true)"/>
+        <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents', true)" v-bind:options="trend_options('CO2-equivalents', true)"/>
+      </div>
+
+      <div>
+        <Trend class="trend-chart" v-bind:data="trend_data('CO2', false)" v-bind:options="trend_options('CO2', false)"/>
+        <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents', false)" v-bind:options="trend_options('CO2-equivalents', false)"/>
       </div>
 
       Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a>
@@ -34,9 +39,10 @@ import Trend from './components/Trend.vue';
 
 import { Database } from './db.js';
 import without_industry_records from '../data/without_industry.json'
+import populations from '../data/populations.json'
 
 const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
-const database = new Database(without_industry_records);
+const database = new Database(without_industry_records, populations);
 
 export default {
   name: 'app',
@@ -64,7 +70,7 @@ export default {
     },
   },
   methods: {
-    trend_data (Ämne) {
+    trend_data (Ämne, by_population) {
       let kommun = this.Kommun == 'Alla' ? null : this.Kommun
       let län = this.Län == 'Alla' ? null : this.Län
       let records = database.query({
@@ -72,6 +78,7 @@ export default {
           Ämne: Ämne,
           Län: län,
         },
+        by_population: by_population,
       });
 
       let highlighted_record = records[kommun];
@@ -99,9 +106,9 @@ export default {
         })
       })
     },
-    trend_options (Ämne) {
+    trend_options (Ämne, by_population) {
       return({
-        title: { display: true, text: `${Ämne} - exklusive industrisektorn` },
+        title: { display: true, text: `${Ämne} - exklusive industrisektorn${by_population ? ' - per capita' : ''}` },
         legend: { display: false },
         scales: {
           yAxes: [{
