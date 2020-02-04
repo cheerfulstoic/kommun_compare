@@ -7,7 +7,7 @@ export class Database {
     this.records = records;
   }
 
-  query({filter, group_by}) {
+  query({filter}) {
     let result = _(this.records);
 
     let filter_values = _.pickBy({
@@ -17,9 +17,7 @@ export class Database {
     }, _.identity);
     result = result.filter(filter_values);
 
-    let group_iteratee = group_by ? group_by : () => { return('foo') }
-
-    return result.groupBy(group_iteratee).reduce((result, values, key) => {
+    return result.groupBy('Kommun').reduce((result, values, key) => {
       result[key] = {}
       _.each(years, (year) => {
         result[key][year] = _(values).map(year).sum()

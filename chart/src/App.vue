@@ -3,11 +3,6 @@
     <div class="trend-chart">
       <h3>Filtrera</h3>
 
-      <select v-if="group_by !== 'Ämne'" v-model="Ämne">
-        <option>CO2</option>
-        <option>CO2-equivalents</option>
-      </select>
-
       <select v-model="Län">
         <option value="Alla">Alla Länen</option>
         <option v-for="län in länen" v-bind:key="län">
@@ -15,24 +10,17 @@
         </option>
       </select>
 
-      <select v-if="group_by !== 'Kommun'" v-model="Kommun">
+      <select v-model="Kommun">
         <option value="Alla">Alla Kommuner</option>
         <option v-for="kommun in kommuner" v-bind:key="kommun">
           {{kommun}}
         </option>
       </select>
 
-      <h3>Grupp</h3>
-
-      <select v-model="group_by">
-        <option>Ämne</option>
-        <option>Kommun</option>
-      </select>
-
-
-      <Trend class="trend-chart" v-bind:data="trend_data" v-bind:options="trend_options"/>
-      <div>Enhet: ton/year</div>
-      <div>Exklusive industrisektorn</div>
+      <div>
+        <Trend class="trend-chart" v-bind:data="trend_data('CO2')" v-bind:options="trend_options('CO2')"/>
+        <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents')" v-bind:options="trend_options('CO2-equivalents')"/>
+      </div>
     </div>
   </div>
 </template>
@@ -58,22 +46,11 @@ export default {
       Ämne: null,
       Kommun: 'Alla',
       Län: 'Alla',
-
-      group_by: 'Ämne',
     })
   },
   watch: {
     Län () {
       this.Kommun = 'Alla';
-    },
-    group_by (new_value) {
-      this.Ämne = 'CO2';
-      if (new_value === 'Ämne') {
-        this.Ämne = null;
-      }
-      if (new_value === 'Kommun') {
-        this.Kommun = 'Alla';
-      }
     },
   },
   computed: {
@@ -83,51 +60,73 @@ export default {
     länen () {
       return(database.values_for('Län'));
     },
-    trend_data () {
+  },
+  methods: {
+    trend_data (Ämne) {
       let kommun = this.Kommun == 'Alla' ? null : this.Kommun
       let län = this.Län == 'Alla' ? null : this.Län
       let records = database.query({
         filter: {
-          Ämne: this.Ämne,
-          Kommun: kommun,
+          Ämne: Ämne,
           Län: län,
         },
-        group_by: this.group_by,
       });
-      window.console.log({record_count: _.size(records)});
+
+      let highlighted_record = records[kommun];
+      if (highlighted_record) {
+        delete records[kommun];
+      }
+
+      // Put kommun in first position so that it is on top
+      records = _.toPairs(records);
+      if (highlighted_record) {
+        records.unshift([kommun, highlighted_record])
+      }
 
       return({
         labels: years,
-        datasets: _.flatMap(records, (record, grouping) => {
+        datasets: _.flatMap(records, (pair) => {
+          let grouping = pair[0], record = pair[1];
           return({
-            // label: this.record_label(record),
             label: grouping,
             fill: false,
-            backgroundColor: '#f87979',
+            borderWidth: (context) => {
+              if (highlighted_record && context.datasetIndex === 0) {
+                return 2;
+              } else {
+                return 1;
+              }
+            },
+            borderColor: (context) => {
+              if (highlighted_record && context.datasetIndex === 0) {
+                return '#f87979'
+              } else {
+                return '#bbb'
+              }
+            },
             data: _.map(years, (year) => { return(record[year]) })
           })
         })
       })
     },
-    trend_options () {
+    trend_options (Ämne) {
       return({
+        title: { display: true, text: `${Ämne} - exklusive industrisektorn` },
         legend: { display: false },
         scales: {
           yAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'ton/year',
+            },
             ticks: { suggestedMin: 0 },
           }],
         },
+        elements: {
+          point: { radius: 0 }
+        },
       })
-    }
-  },
-  methods: {
-    record_label (record) {
-      if (this.Kommun == 'Alla') {
-        return `${record.Kommun}-${record.Huvudsektor}`;
-      } else {
-        return `${record.Huvudsektor}`;
-      }
-    }
+    },
   }
 }
 </script>
@@ -143,7 +142,8 @@ export default {
 }
 
 .trend-chart {
-  max-width: 600px;
-  max-height: 600px;
+  width: 400;
+  height: 500px;
+  display: inline-block;
 }
 </style>
