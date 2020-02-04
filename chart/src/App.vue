@@ -21,6 +21,8 @@
         <Trend class="trend-chart" v-bind:data="trend_data('CO2')" v-bind:options="trend_options('CO2')"/>
         <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents')" v-bind:options="trend_options('CO2-equivalents')"/>
       </div>
+
+      Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a>
     </div>
   </div>
 </template>
