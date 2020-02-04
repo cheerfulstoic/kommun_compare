@@ -39,13 +39,19 @@ data =
         row.unshift(subject)
 
         d = header_row.zip(row).to_h
-        (1990..2011).each do |year|
+        d['Kommun'].gsub!(/([a-z])([A-Z])/, '\1 \2')
+        d['Kommun'].gsub!('-', ' ')
+        d['Kommun'] = 'Malung-Sälen' if d['Kommun'] == 'Malung'
+        d['Kommun'] = 'Upplands-Bro' if d['Kommun'] == 'Upplands Bro'
+        d['Kommun'] = 'Dals-Ed' if d['Kommun'] == 'Dals Ed'
+        (1990..2009).each do |year|
           d.delete(year.to_s)
         end
         d
       end.reject do |d|
         d['Huvudsektor'] == 'alla' ||
         d['Kommun'] == 'alla' ||
+        d['Kommun'] == 'Rest' ||
         d['Huvudsektor'] == 'Industri (energi och processer)'
       end.select do |d|
         d['Undersektor'] == 'alla'
