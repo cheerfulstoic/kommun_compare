@@ -125,6 +125,9 @@ export default {
         elements: {
           point: { radius: 0 }
         },
+        animation: {
+          duration: 0, // general animation time
+        },
       })
     },
   }
@@ -142,8 +145,6 @@ export default {
 }
 
 .trend-chart {
-  width: 400;
-  height: 500px;
   display: inline-block;
 }
 </style>
