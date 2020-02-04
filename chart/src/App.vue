@@ -114,7 +114,7 @@ export default {
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'ton/year',
+              labelString: `ton/${by_population ? 'person/' : ''}year`,
             },
             ticks: { suggestedMin: 0 },
           }],
