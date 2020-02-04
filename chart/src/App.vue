@@ -27,7 +27,7 @@
         <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents', false)" v-bind:options="trend_options('CO2-equivalents', false)"/>
       </div>
 
-      Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a>
+      Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a> och <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
     </div>
   </div>
 </template>
