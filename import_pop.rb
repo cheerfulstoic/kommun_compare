@@ -24,9 +24,14 @@ data =
     # puts years.inspect
     # puts years.zip(populations).to_h.inspect
 
-    _, kommun_code, kommun_name = kommun.match(/^(\d+) (.*)$/).to_a
+    # _, kommun_code, kommun_name = kommun.match(/^(\d+) (.*)$/).to_a
+    kommun_name = kommun.match(/^(\d+) (.*)$/).to_a[2]
     {
-      kommun: {code: kommun_code.to_i, name: kommun_name, original: kommun},
+      kommun: {
+        # code: kommun_code.to_i,
+        name: kommun_name,
+        # original: kommun
+      },
       populations: years.zip(populations).to_h
     }
   end

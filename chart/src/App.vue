@@ -38,11 +38,14 @@ import _ from 'lodash';
 import Trend from './components/Trend.vue';
 
 import { Database } from './db.js';
-import without_industry_records from '../data/without_industry.json'
+// import without_industry_records from '../data/without_industry.json'
+import co2_data from '../data/CO2.json'
+import co2_equivalents_data from '../data/CO2-equivalents.json'
 import populations from '../data/populations.json'
 
 const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
-const database = new Database(without_industry_records, populations);
+const co2_database = new Database(co2_data, populations);
+const co2_equivalents_database = new Database(co2_equivalents_data, populations);
 
 export default {
   name: 'app',
@@ -63,19 +66,22 @@ export default {
   },
   computed: {
     kommuner () {
-      return(database.kommuner_for(this.Län));
+      return(co2_database.kommuner_for(this.Län));
     },
     länen () {
-      return(database.values_for('Län'));
+      return(co2_database.länen());
     },
   },
   methods: {
     trend_data (Ämne, by_population) {
+      let database;
+      if (Ämne === 'CO2') { database = co2_database }
+      if (Ämne === 'CO2-equivalents') { database = co2_equivalents_database }
+
       let kommun = this.Kommun == 'Alla' ? null : this.Kommun
       let län = this.Län == 'Alla' ? null : this.Län
       let records = database.query({
         filter: {
-          Ämne: Ämne,
           Län: län,
         },
         by_population: by_population,
@@ -94,13 +100,10 @@ export default {
 
       return({
         labels: years,
-        datasets: _.flatMap(records, (pair) => {
+        datasets: _.map(records, (pair) => {
           let grouping = pair[0], record = pair[1];
           return({
             label: grouping,
-            fill: false,
-            borderWidth: grouping === kommun ? 3 : 1,
-            borderColor: grouping === kommun ? '#f87979' : '#bbb',
             data: _.map(years, (year) => { return(record[year]) })
           })
         })
@@ -120,11 +123,19 @@ export default {
           }],
         },
         elements: {
-          point: { radius: 0 }
+          point: { radius: 0 },
+          line: {
+            fill: false,
+            tension: 0,
+            borderColor: (info) => {
+              return(this.Kommun !== 'Alla' && info.datasetIndex == 0 ? '#f87979' : '#bbb');
+            },
+            borderWidth: (info) => {
+              return(this.Kommun !== 'Alla' && info.datasetIndex == 0 ? 3 : 1);
+            },
+          },
         },
-        animation: {
-          duration: 0, // general animation time
-        },
+        animation: false,
       })
     },
   }

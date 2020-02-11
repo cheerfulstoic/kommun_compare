@@ -47,6 +47,7 @@ data =
         (1990..2009).each do |year|
           d.delete(year.to_s)
         end
+
         d
       end.reject do |d|
         d['Huvudsektor'] == 'alla' ||
@@ -55,23 +56,37 @@ data =
         d['Huvudsektor'] == 'Industri (energi och processer)'
       end.select do |d|
         d['Undersektor'] == 'alla'
+      end.each do |d|
+        # Unused
+        d.delete('Undersektor')
       end
     else
     []
     end
   end
 
-File.open('./output/without_industry.json', 'w') { |f| f << data.to_json }
+subjects = data.map {|d| d['Ämne'] }.uniq
 
-keys = data.flat_map(&:keys).uniq
+puts "subjects: #{subjects.inspect}"
 
-# puts data[0].inspect
-# puts keys.inspect
+subjects.each do |subject|
+  subject_data = data.select do |d|
+    d['Ämne'] == subject
+  end
 
-CSV.open('./output/without_industry.csv', 'wb') do |csv|
-  csv << keys
+  subject_data.each do |d|
+    d.delete('Ämne')
+  end
 
-  data.each do |record|
-    csv << keys.map(&record)
+  File.open("./output/#{subject}.json", 'w') { |f| f << subject_data.to_json }
+
+  keys = subject_data.flat_map(&:keys).uniq
+
+  CSV.open("./output/#{subject}.csv", 'wb') do |csv|
+    csv << keys
+
+    subject_data.each do |record|
+      csv << keys.map(&record)
+    end
   end
 end
