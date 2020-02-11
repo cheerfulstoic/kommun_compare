@@ -17,6 +17,15 @@
         </option>
       </select>
 
+      <div class="huvudsektor-options">
+        <div class="huvudsektor-option" v-for="huvudsektor in huvudsektorer" v-bind:key="huvudsektor">
+          <label>
+            <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
+            {{huvudsektor}}
+          </label>
+        </div>
+      </div>
+
       <div>
         <Trend class="trend-chart" v-bind:data="trend_data('CO2', true)" v-bind:options="trend_options('CO2', true)"/>
         <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents', true)" v-bind:options="trend_options('CO2-equivalents', true)"/>
@@ -57,6 +66,7 @@ export default {
       Ämne: null,
       Kommun: 'Alla',
       Län: 'Alla',
+      selected_huvudsektorer: co2_database.sektorer(),
     })
   },
   watch: {
@@ -71,6 +81,9 @@ export default {
     länen () {
       return(co2_database.länen());
     },
+    huvudsektorer () {
+      return(co2_database.sektorer());
+    },
   },
   methods: {
     trend_data (Ämne, by_population) {
@@ -83,6 +96,7 @@ export default {
       let records = database.query({
         filter: {
           Län: län,
+          huvudsektorer: this.selected_huvudsektorer,
         },
         by_population: by_population,
       });
@@ -155,4 +169,21 @@ export default {
 .trend-chart {
   display: inline-block;
 }
+
+.huvudsektor-options {
+  width: 800px;
+
+}
+
+.huvudsektor-option {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0.3em 1em;
+
+  border: 1px solid #333;
+  border-radius: 0.7em;
+  padding: 0.3em;
+  background-color: #EEE;
+}
+
 </style>

@@ -6,6 +6,8 @@ export class Database {
   constructor(emissions_records, population_records) {
     this.emissions_records = _(emissions_records);
 
+    this.huvudsektorer = this.emissions_records.map('Huvudsektor').uniq().sort().value()
+
     this.kommuer_by_län = this.emissions_records.reduce((result, record) => {
       if (result[record.Län] == null) { result[record.Län] = new Set() }
 
@@ -32,7 +34,9 @@ export class Database {
     return result.reduce((result, values, key) => {
       result[key] = {}
       years.forEach((year) => {
-        result[key][year] = _(values).map(year).sum()
+        result[key][year] = _(values).filter((record) => {
+          return(filter.huvudsektorer.includes(record.Huvudsektor));
+        }).map(year).sum()
 
         if (by_population) {
           let population = this.populations_by_kommun_name[key].populations[year];
@@ -46,6 +50,10 @@ export class Database {
 
   länen() {
     return(_.keys(this.kommuer_by_län));
+  }
+
+  sektorer() {
+    return(this.huvudsektorer);
   }
 
   kommuner_for(län) {

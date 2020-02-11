@@ -17,6 +17,15 @@ Egen uppvärmning av bostäder och lokaler,Södermanlands län,Katrineholm,5154.
 Egen uppvärmning av bostäder och lokaler,Södermanlands län,Eskilstuna,9218.106,6766.066,6340.73,5650.787,4981.67,4753.947,4318.682,4265.293
 Egen uppvärmning av bostäder och lokaler,Södermanlands län,Strängnäs,5426.847,4116.103,3843.934,3350.809,3010.618,2862.574,2662.983,2594.286
 Egen uppvärmning av bostäder och lokaler,Södermanlands län,Trosa,2284.971,1723.454,1595.232,1360.234,1236.318,1172.333,1081.866,1048.697
+Industri (energi och processer),Södermanlands län,Vingåker,6133.95,5727.227,5389.498,5740.631,5042.682,4700.183,4748.39,5122.645
+Industri (energi och processer),Södermanlands län,Gnesta,504.6674,451.0825,456.0332,542.7326,535.0848,476.8789,594.8629,596.5372
+Industri (energi och processer),Södermanlands län,Nyköping,3950.202,3755.381,3604.192,4219.171,4322.909,4042.902,5104.042,5182.954
+Industri (energi och processer),Södermanlands län,Oxelösund,2211177.0,1949232.0,1587465.0,1511167.0,1582996.0,2217716.0,1554099.0,1584574.0
+Industri (energi och processer),Södermanlands län,Flen,1119.66,954.0941,930.8733,1139.877,1182.352,992.4202,1261.058,1099.131
+Industri (energi och processer),Södermanlands län,Katrineholm,6872.263,7399.103,7321.711,7324.072,7115.764,3732.592,4126.625,3709.989
+Industri (energi och processer),Södermanlands län,Eskilstuna,29244.62,30774.52,23279.76,23735.22,26253.02,24920.8,26877.79,28543.7
+Industri (energi och processer),Södermanlands län,Strängnäs,4661.374,4166.084,4358.372,4138.327,3352.735,3074.007,1898.732,2471.729
+Industri (energi och processer),Södermanlands län,Trosa,553.3288,496.8352,509.368,597.4704,585.6554,527.0321,665.7145,698.4579
 Transporter,Södermanlands län,Vingåker,21522.22,21043.61,20005.97,19517.65,19087.21,19161.01,18429.83,18594.29
 Transporter,Södermanlands län,Gnesta,20444.99,20227.54,19293.8,18838.86,18385.96,18453.45,17972.88,14351.83
 Transporter,Södermanlands län,Nyköping,224884.7,220240.5,207702.4,202559.2,197649.5,198610.7,190415.6,186594.3
@@ -169,6 +178,55 @@ Egen uppvärmning av bostäder och lokaler,Västra Götalands län,Skövde,6637.
 Egen uppvärmning av bostäder och lokaler,Västra Götalands län,Hjo,2100.236,1624.281,1529.496,1355.261,1213.62,1153.955,1099.43,1071.735
 Egen uppvärmning av bostäder och lokaler,Västra Götalands län,Tidaholm,3344.522,2569.482,2409.027,2109.801,1893.05,1802.026,1689.392,1643.232
 Egen uppvärmning av bostäder och lokaler,Västra Götalands län,Falköping,7739.273,6064.339,5695.39,4982.502,4500.479,4274.374,4093.692,3965.488
+Industri (energi och processer),Västra Götalands län,Härryda,2407.979,2020.598,3032.096,2389.639,2597.265,2125.278,2662.165,2028.565
+Industri (energi och processer),Västra Götalands län,Partille,2213.111,1914.801,1957.837,2127.725,2287.905,2570.625,2374.817,1887.396
+Industri (energi och processer),Västra Götalands län,Öckerö,448.6552,430.0961,426.5713,427.7225,438.251,385.0424,477.9748,443.5422
+Industri (energi och processer),Västra Götalands län,Stenungsund,990001.9,931461.0,903605.8,963615.1,908235.6,854175.2,984865.8,953374.0
+Industri (energi och processer),Västra Götalands län,Tjörn,938.2148,822.8595,828.1665,903.7798,976.5318,806.2641,1011.351,801.9252
+Industri (energi och processer),Västra Götalands län,Orust,1065.544,945.2669,941.2228,1003.929,1074.104,895.615,1114.755,906.3581
+Industri (energi och processer),Västra Götalands län,Sotenäs,4206.103,3825.049,3639.639,3708.473,3658.742,3323.149,3514.935,3052.956
+Industri (energi och processer),Västra Götalands län,Munkedal,26420.09,17761.33,3708.776,2172.554,5741.823,14325.6,29628.42,44902.99
+Industri (energi och processer),Västra Götalands län,Tanum,802.9481,676.7359,701.5387,745.3081,779.4864,674.6952,825.5348,661.1431
+Industri (energi och processer),Västra Götalands län,Dals-Ed,628.8617,523.6435,517.6436,587.6538,663.6664,558.7815,668.7669,458.0341
+Industri (energi och processer),Västra Götalands län,Färgelanda,532.6104,466.9805,962.0503,477.4967,532.2054,484.3663,550.798,407.2802
+Industri (energi och processer),Västra Götalands län,Ale,20893.21,18520.98,18208.19,17377.27,17976.31,19868.04,22772.75,23495.14
+Industri (energi och processer),Västra Götalands län,Lerum,2223.955,1939.963,3120.836,3239.322,3377.282,3073.742,2450.976,2923.533
+Industri (energi och processer),Västra Götalands län,Vårgårda,5112.201,4290.412,3740.412,3709.773,4017.102,3917.092,4542.807,4009.176
+Industri (energi och processer),Västra Götalands län,Bollebygd,637.1784,544.7697,558.0595,619.2032,683.0479,571.9644,705.1403,736.8359
+Industri (energi och processer),Västra Götalands län,Grästorp,304.5287,283.6608,262.4573,267.2687,283.8852,257.1045,303.1641,260.0392
+Industri (energi och processer),Västra Götalands län,Essunga,2020.58,2078.465,1943.31,1663.212,1864.448,1778.231,1770.133,2157.814
+Industri (energi och processer),Västra Götalands län,Karlsborg,574.3605,505.3306,470.3097,511.9978,558.8994,471.4362,577.6613,445.4234
+Industri (energi och processer),Västra Götalands län,Gullspång,1033.403,1020.923,691.2346,713.7202,775.1372,751.8185,787.4081,726.3324
+Industri (energi och processer),Västra Götalands län,Tranemo,66161.31,67813.11,67451.48,66379.91,66325.91,66406.07,61267.5,67764.03
+Industri (energi och processer),Västra Götalands län,Bengtsfors,40264.65,37148.88,37365.29,35654.91,34835.18,31120.55,33982.68,36720.98
+Industri (energi och processer),Västra Götalands län,Mellerud,545.4343,501.6224,454.8075,472.7179,502.4698,434.9338,535.8824,453.6051
+Industri (energi och processer),Västra Götalands län,Lilla Edet,49089.17,49139.69,36704.87,22513.48,23025.47,24294.0,25571.09,25415.04
+Industri (energi och processer),Västra Götalands län,Mark,14854.27,12977.79,12265.02,10431.86,9090.422,4888.11,5034.263,4206.985
+Industri (energi och processer),Västra Götalands län,Svenljunga,5315.842,3453.764,868.193,934.0249,1063.918,1001.934,1095.811,772.0006
+Industri (energi och processer),Västra Götalands län,Herrljunga,1129.633,930.5183,933.1031,1075.222,1210.837,985.4117,1211.171,826.2522
+Industri (energi och processer),Västra Götalands län,Vara,4858.111,3139.87,3225.698,3895.262,2513.627,2040.363,2543.907,2913.167
+Industri (energi och processer),Västra Götalands län,Götene,61104.46,53077.31,59182.6,56537.59,52358.1,53690.58,63491.96,70519.34
+Industri (energi och processer),Västra Götalands län,Tibro,1724.275,1419.347,1432.924,1647.353,1841.767,1471.914,1840.461,1291.274
+Industri (energi och processer),Västra Götalands län,Töreboda,6045.69,5396.852,5303.753,5351.23,5197.236,4393.22,4615.897,3973.461
+Industri (energi och processer),Västra Götalands län,Göteborg,1185482.0,1056715.0,1146753.0,1075683.0,1100625.0,1093562.0,1140859.0,1086514.0
+Industri (energi och processer),Västra Götalands län,Mölndal,6879.969,6019.562,6219.611,6769.496,7099.096,6201.756,5774.931,5286.169
+Industri (energi och processer),Västra Götalands län,Kungälv,6663.047,5150.631,4498.504,4830.789,4846.601,4879.642,5285.784,4487.331
+Industri (energi och processer),Västra Götalands län,Lysekil,1696110.0,1754196.0,1837780.0,1478213.0,1769330.0,1731828.0,1448272.0,1606460.0
+Industri (energi och processer),Västra Götalands län,Uddevalla,3962.338,3797.264,3783.138,3614.712,3195.742,2646.398,3321.441,2618.223
+Industri (energi och processer),Västra Götalands län,Strömstad,712.7337,622.4671,629.5522,694.7155,752.7445,622.0919,781.9774,611.6668
+Industri (energi och processer),Västra Götalands län,Vänersborg,111089.5,121632.0,104785.9,91845.45,113647.8,133087.9,122885.8,168016.7
+Industri (energi och processer),Västra Götalands län,Trollhättan,24320.66,16200.08,4069.144,3013.393,5595.745,2671.187,4264.278,2496.915
+Industri (energi och processer),Västra Götalands län,Alingsås,2579.669,2219.952,2265.819,2486.86,2703.867,2230.225,2791.042,2168.431
+Industri (energi och processer),Västra Götalands län,Borås,15383.92,18966.44,13653.43,11701.68,9578.341,8232.303,10174.06,7766.86
+Industri (energi och processer),Västra Götalands län,Ulricehamn,5536.264,4758.517,4698.557,5113.577,5446.876,6087.828,7038.646,6664.845
+Industri (energi och processer),Västra Götalands län,Åmål,1572.301,1279.002,1121.993,1283.712,1430.193,1146.695,1441.487,1020.898
+Industri (energi och processer),Västra Götalands län,Mariestad,17982.36,15575.45,13904.35,15061.4,15813.42,14469.24,12880.08,13133.7
+Industri (energi och processer),Västra Götalands län,Lidköping,11873.6,10081.47,9775.885,10171.81,10174.09,9302.041,6872.403,4217.541
+Industri (energi och processer),Västra Götalands län,Skara,8709.507,7527.876,6811.509,7356.961,4784.856,2182.283,1949.257,1587.014
+Industri (energi och processer),Västra Götalands län,Skövde,394887.8,404912.7,378778.7,360263.3,364228.0,385294.0,405091.8,438447.9
+Industri (energi och processer),Västra Götalands län,Hjo,2195.778,1926.236,1936.335,2108.858,2136.574,2573.465,2636.837,2092.86
+Industri (energi och processer),Västra Götalands län,Tidaholm,932.2339,816.9347,786.8081,859.627,935.2692,779.0654,963.1687,747.3774
+Industri (energi och processer),Västra Götalands län,Falköping,4818.657,4551.579,4464.882,4758.884,5182.128,4542.555,5625.148,4669.33
 Transporter,Västra Götalands län,Härryda,123157.8,121095.9,114403.6,111716.5,109153.8,109668.0,105310.8,102790.6
 Transporter,Västra Götalands län,Partille,46356.86,45337.63,42761.39,41627.84,40654.71,40860.38,39118.93,32739.18
 Transporter,Västra Götalands län,Öckerö,11896.9,11491.13,8680.667,8694.422,9130.994,8459.818,7640.577,7140.62
@@ -479,6 +537,14 @@ Egen uppvärmning av bostäder och lokaler,Jämtlands län,Åre,2708.022,1988.04
 Egen uppvärmning av bostäder och lokaler,Jämtlands län,Berg,2324.706,1750.77,1699.723,1641.224,1396.936,1340.461,1305.742,1306.505
 Egen uppvärmning av bostäder och lokaler,Jämtlands län,Härjedalen,3225.649,2311.37,2211.517,2086.276,1766.104,1701.83,1564.572,1572.639
 Egen uppvärmning av bostäder och lokaler,Jämtlands län,Östersund,5039.326,3617.232,3483.079,3356.832,2835.293,2723.355,2544.871,2574.497
+Industri (energi och processer),Jämtlands län,Ragunda,1856.534,536.6408,1494.536,619.819,713.949,710.9199,673.1851,1969.215
+Industri (energi och processer),Jämtlands län,Bräcke,822.5077,644.8965,668.395,724.5375,834.3007,848.2745,1224.033,2105.352
+Industri (energi och processer),Jämtlands län,Krokom,927.6782,767.7771,877.3431,807.9404,936.8759,2256.887,2018.057,1781.928
+Industri (energi och processer),Jämtlands län,Strömsund,1967.571,2109.664,1857.614,2386.934,2731.334,3367.64,2762.365,2064.209
+Industri (energi och processer),Jämtlands län,Åre,1040.697,875.9728,994.8605,929.6191,1090.427,1571.964,1273.3,905.8471
+Industri (energi och processer),Jämtlands län,Berg,2978.083,2718.77,3088.114,925.816,641.0106,1158.993,2417.644,2607.166
+Industri (energi och processer),Jämtlands län,Härjedalen,1393.498,1230.256,1451.352,1161.22,1511.168,2727.199,1797.205,1176.08
+Industri (energi och processer),Jämtlands län,Östersund,8471.357,4796.144,4278.879,5067.596,3860.769,3983.527,4537.227,3433.203
 Transporter,Jämtlands län,Ragunda,25872.66,25233.48,23818.29,23195.3,22605.56,22718.41,21629.63,18545.78
 Transporter,Jämtlands län,Bräcke,26493.25,25907.89,24631.71,24076.97,23579.99,23680.99,22670.01,19365.21
 Transporter,Jämtlands län,Krokom,45544.18,44507.29,42172.99,41160.07,40222.19,40471.33,38722.82,34984.65
@@ -539,6 +605,12 @@ Egen uppvärmning av bostäder och lokaler,Hallands län,Laholm,17215.51,13557.8
 Egen uppvärmning av bostäder och lokaler,Hallands län,Falkenberg,18985.43,16113.84,12680.83,11403.28,11953.38,10545.98,10258.77,9028.469
 Egen uppvärmning av bostäder och lokaler,Hallands län,Varberg,17042.41,14168.43,11372.65,10316.12,10555.82,9395.055,9052.758,8091.844
 Egen uppvärmning av bostäder och lokaler,Hallands län,Kungsbacka,22733.68,19173.15,14990.95,13410.32,14120.96,12438.88,11988.45,10511.35
+Industri (energi och processer),Hallands län,Hylte,32177.72,26030.01,24077.6,14928.39,12954.6,12350.85,13508.54,9415.892
+Industri (energi och processer),Hallands län,Halmstad,200643.3,188255.5,166795.8,53319.84,38857.89,37992.04,41236.46,41025.63
+Industri (energi och processer),Hallands län,Laholm,10662.52,9870.305,8753.726,10097.82,10816.88,10760.76,10013.78,9031.547
+Industri (energi och processer),Hallands län,Falkenberg,18855.51,16507.54,21855.43,14934.23,14423.78,13756.86,17347.38,17389.19
+Industri (energi och processer),Hallands län,Varberg,32355.02,15845.7,13133.58,9594.404,39334.74,19782.79,21555.39,25080.33
+Industri (energi och processer),Hallands län,Kungsbacka,4528.205,3206.325,3478.389,3589.181,4156.576,3908.108,4150.915,3654.548
 Transporter,Hallands län,Hylte,34144.64,33359.52,31403.25,30512.5,29633.42,29706.45,28319.45,28080.61
 Transporter,Hallands län,Halmstad,233610.7,228056.5,213749.0,207980.4,202778.2,203139.8,193264.0,179998.3
 Transporter,Hallands län,Laholm,75416.13,73617.81,69656.25,67874.59,66155.87,66523.84,63618.53,62995.22
@@ -595,6 +667,16 @@ Egen uppvärmning av bostäder och lokaler,Gävleborgs län,Sandviken,3545.467,2
 Egen uppvärmning av bostäder och lokaler,Gävleborgs län,Söderhamn,3973.377,2834.552,2729.196,2476.217,2100.597,2035.94,1834.668,1845.94
 Egen uppvärmning av bostäder och lokaler,Gävleborgs län,Bollnäs,4863.038,3562.967,3457.079,3219.014,2735.97,2640.197,2477.15,2489.234
 Egen uppvärmning av bostäder och lokaler,Gävleborgs län,Hudiksvall,5184.685,3835.233,3723.226,3405.482,2903.422,2809.668,2629.645,2627.936
+Industri (energi och processer),Gävleborgs län,Ockelbo,601.0102,481.3286,541.2455,572.1034,676.0075,649.4368,686.3766,472.9985
+Industri (energi och processer),Gävleborgs län,Hofors,96010.34,94057.28,104230.3,76170.22,84358.23,79959.24,74765.22,88218.83
+Industri (energi och processer),Gävleborgs län,Ovanåker,1698.772,1391.096,1444.157,1614.354,1760.594,1623.302,2225.646,1651.624
+Industri (energi och processer),Gävleborgs län,Nordanstig,832.6872,695.2001,750.0845,801.6445,868.2505,1108.34,1748.146,1654.99
+Industri (energi och processer),Gävleborgs län,Ljusdal,1703.181,1464.328,1736.663,1558.091,1895.575,2446.33,2017.101,1509.148
+Industri (energi och processer),Gävleborgs län,Gävle,208800.1,96133.59,48493.55,29874.47,29517.75,23455.94,25914.8,23986.28
+Industri (energi och processer),Gävleborgs län,Sandviken,138363.1,114524.6,102944.8,102935.0,100746.4,91452.02,95518.59,95685.32
+Industri (energi och processer),Gävleborgs län,Söderhamn,39616.09,48999.2,51429.61,44974.91,40726.03,44099.48,51475.58,38540.65
+Industri (energi och processer),Gävleborgs län,Bollnäs,4073.617,2334.415,2629.104,1986.452,2281.738,1896.765,2288.654,1697.435
+Industri (energi och processer),Gävleborgs län,Hudiksvall,62850.1,74366.25,97771.84,73753.47,12622.95,20203.01,29450.12,26601.88
 Transporter,Gävleborgs län,Ockelbo,16391.13,16031.43,15245.99,14957.22,14773.52,14879.76,14366.93,13286.81
 Transporter,Gävleborgs län,Hofors,20783.4,20284.85,19166.13,18678.82,18219.9,18313.88,17435.93,16539.53
 Transporter,Gävleborgs län,Ovanåker,27294.23,26525.62,24985.05,24353.1,23907.69,24158.79,23219.39,21344.67
@@ -671,6 +753,14 @@ Egen uppvärmning av bostäder och lokaler,Kronobergs län,Älmhult,4087.409,301
 Egen uppvärmning av bostäder och lokaler,Kronobergs län,Markaryd,3580.523,2545.275,2397.973,2182.955,1877.017,1806.361,1570.823,1572.968
 Egen uppvärmning av bostäder och lokaler,Kronobergs län,Växjö,10039.9,7489.624,7069.368,6403.825,5642.002,5372.564,5034.915,4977.232
 Egen uppvärmning av bostäder och lokaler,Kronobergs län,Ljungby,5576.692,4258.132,4045.306,3691.586,3251.494,3098.769,2955.448,2912.423
+Industri (energi och processer),Kronobergs län,Uppvidinge,3086.549,2824.804,2992.33,3315.846,4197.567,3547.184,4107.043,3435.108
+Industri (energi och processer),Kronobergs län,Lessebo,2722.03,2876.246,1950.427,2677.611,3055.071,1941.382,2167.84,1824.882
+Industri (energi och processer),Kronobergs län,Tingsryd,5022.094,5954.982,5045.74,4506.143,2523.337,1878.934,4101.959,2476.823
+Industri (energi och processer),Kronobergs län,Alvesta,2621.337,2220.777,2286.523,2533.534,3036.9,2411.796,3043.492,2102.975
+Industri (energi och processer),Kronobergs län,Älmhult,10600.08,10730.22,12645.89,12661.04,14358.65,14297.29,15423.28,15764.25
+Industri (energi och processer),Kronobergs län,Markaryd,5711.21,4918.384,5052.281,5008.242,4828.308,4496.355,4914.988,3278.656
+Industri (energi och processer),Kronobergs län,Växjö,13281.2,11150.73,10117.38,5258.457,6453.717,5279.351,6181.757,4413.679
+Industri (energi och processer),Kronobergs län,Ljungby,5912.412,5931.882,6655.373,5893.568,6126.016,5058.306,6018.161,5249.209
 Transporter,Kronobergs län,Uppvidinge,33315.0,32909.79,31065.72,30245.22,29409.08,29457.43,28179.39,26601.08
 Transporter,Kronobergs län,Lessebo,17167.03,16757.7,15792.28,15375.35,14984.25,15046.39,14317.21,14011.0
 Transporter,Kronobergs län,Tingsryd,41899.81,41092.59,38699.67,37666.67,36641.01,36731.93,34940.27,33644.54
@@ -749,6 +839,21 @@ Egen uppvärmning av bostäder och lokaler,Dalarnas län,Säter,2459.325,1756.20
 Egen uppvärmning av bostäder och lokaler,Dalarnas län,Hedemora,3019.406,2151.509,2074.646,1928.804,1628.845,1575.379,1426.211,1441.603
 Egen uppvärmning av bostäder och lokaler,Dalarnas län,Avesta,3589.381,2546.403,2451.29,2257.092,1907.076,1846.781,1657.664,1674.439
 Egen uppvärmning av bostäder och lokaler,Dalarnas län,Ludvika,4668.62,3183.332,3035.219,2780.09,2324.529,2261.46,1903.655,1940.905
+Industri (energi och processer),Dalarnas län,Vansbro,1112.931,916.2168,987.4981,1100.211,1193.458,945.5549,1182.128,1123.646
+Industri (energi och processer),Dalarnas län,Malung-Sälen,776.3716,701.6661,738.733,717.2541,786.7277,747.7452,964.373,824.7836
+Industri (energi och processer),Dalarnas län,Gagnef,2208.693,2097.495,1858.606,1720.245,1299.932,815.7327,1010.056,706.8368
+Industri (energi och processer),Dalarnas län,Leksand,2956.177,2830.388,1846.501,1691.45,2482.643,1131.166,1238.44,926.673
+Industri (energi och processer),Dalarnas län,Rättvik,169647.9,158361.1,153156.9,143065.3,130572.6,148468.1,167055.2,162974.3
+Industri (energi och processer),Dalarnas län,Orsa,322.4232,308.5699,328.6337,295.5305,313.5379,279.5459,341.2116,278.6616
+Industri (energi och processer),Dalarnas län,Älvdalen,426.8858,385.6163,408.8793,567.9044,444.1,431.4674,523.1916,353.0807
+Industri (energi och processer),Dalarnas län,Smedjebacken,51712.41,56328.86,49181.3,45436.68,39828.36,40691.15,43745.56,46549.93
+Industri (energi och processer),Dalarnas län,Mora,2180.282,1847.292,1969.892,2091.858,2324.87,1883.334,2363.236,1667.007
+Industri (energi och processer),Dalarnas län,Falun,2942.633,2614.152,2871.318,2764.145,2991.154,2466.673,3178.013,2421.082
+Industri (energi och processer),Dalarnas län,Borlänge,335587.6,304197.3,277008.7,313459.4,307584.2,279080.1,267630.0,265761.9
+Industri (energi och processer),Dalarnas län,Säter,867.8625,757.8872,798.0319,819.6347,901.7806,730.5015,928.5483,671.2898
+Industri (energi och processer),Dalarnas län,Hedemora,7818.187,7205.734,6057.723,5543.709,5196.715,3736.686,6089.59,9843.407
+Industri (energi och processer),Dalarnas län,Avesta,119864.0,133266.7,117422.7,113272.7,110576.2,131888.9,138294.5,148029.4
+Industri (energi och processer),Dalarnas län,Ludvika,13502.82,14321.86,12591.5,15526.5,17220.66,23352.15,21140.67,22643.08
 Transporter,Dalarnas län,Vansbro,28765.05,28084.02,26561.74,25892.68,25272.01,25436.48,24315.04,20794.39
 Transporter,Dalarnas län,Malung-Sälen,44997.92,43926.59,41498.34,40468.82,39522.85,39751.82,38023.09,34592.71
 Transporter,Dalarnas län,Gagnef,27402.24,26673.3,25058.41,24332.5,23693.32,23858.37,22790.74,22186.59
@@ -891,6 +996,32 @@ Egen uppvärmning av bostäder och lokaler,Stockholms län,Vaxholm,2969.75,2231.
 Egen uppvärmning av bostäder och lokaler,Stockholms län,Norrtälje,21310.83,16450.63,15183.33,12725.17,11737.66,11098.21,10418.81,9999.649
 Egen uppvärmning av bostäder och lokaler,Stockholms län,Sigtuna,5238.866,4185.748,3841.079,3109.383,2932.149,2768.037,2622.678,2472.604
 Egen uppvärmning av bostäder och lokaler,Stockholms län,Nynäshamn,5210.714,4071.888,3748.815,3090.47,2869.418,2717.382,2531.751,2410.094
+Industri (energi och processer),Stockholms län,Upplands Väsby,5900.351,4888.314,5476.036,5676.81,6416.236,4426.367,4447.987,3119.598
+Industri (energi och processer),Stockholms län,Vallentuna,1471.867,1434.977,1528.263,1687.356,1726.256,1521.772,1672.262,1356.832
+Industri (energi och processer),Stockholms län,Österåker,1349.632,1417.034,1488.552,1609.661,1595.793,1472.122,1557.165,1346.149
+Industri (energi och processer),Stockholms län,Värmdö,4794.481,4018.987,3192.202,3220.394,2970.159,1564.608,1446.595,1269.661
+Industri (energi och processer),Stockholms län,Järfälla,4558.54,4408.108,3628.932,4099.274,4290.715,3712.773,4168.649,3227.966
+Industri (energi och processer),Stockholms län,Ekerö,807.8542,857.9136,921.044,1006.007,990.0043,909.5242,945.3424,804.256
+Industri (energi och processer),Stockholms län,Huddinge,14962.15,14160.67,14670.38,11290.74,5600.152,4887.078,5415.965,4295.969
+Industri (energi och processer),Stockholms län,Botkyrka,9470.179,6668.871,5982.131,4531.405,4547.915,4152.619,4295.711,4513.243
+Industri (energi och processer),Stockholms län,Salem,343.9653,414.7355,418.3809,438.7334,406.0453,400.4961,385.5356,367.9166
+Industri (energi och processer),Stockholms län,Haninge,3080.565,3147.643,3209.081,3541.152,3573.226,3221.369,3462.325,2894.544
+Industri (energi och processer),Stockholms län,Tyresö,1898.863,1874.052,1938.845,2153.054,2213.38,1954.183,2137.314,1710.703
+Industri (energi och processer),Stockholms län,Upplands-Bro,8394.755,7673.067,7943.617,8205.602,7863.31,7243.803,7511.876,7568.367
+Industri (energi och processer),Stockholms län,Nykvarn,306.2266,320.5809,342.9637,373.8862,374.5391,347.1249,365.1855,312.0723
+Industri (energi och processer),Stockholms län,Täby,2879.28,2891.77,2862.078,3156.805,3215.055,2861.247,3118.502,2553.046
+Industri (energi och processer),Stockholms län,Danderyd,1058.045,1164.517,1101.504,1191.708,1158.409,1069.734,1096.98,949.5939
+Industri (energi och processer),Stockholms län,Sollentuna,6428.4,6488.363,6475.32,6525.935,6636.022,6333.286,5962.165,4955.496
+Industri (energi och processer),Stockholms län,Stockholm,47784.66,47797.76,47317.34,52594.2,50524.11,48021.73,46776.29,40626.12
+Industri (energi och processer),Stockholms län,Södertälje,31316.31,30525.89,23288.65,24901.29,28159.11,26632.81,24712.89,23778.33
+Industri (energi och processer),Stockholms län,Nacka,3581.865,3561.416,3919.174,4311.013,4370.382,3930.098,4238.01,3521.76
+Industri (energi och processer),Stockholms län,Sundbyberg,1266.885,1265.642,1323.887,1473.453,1501.241,1362.169,1481.233,1239.297
+Industri (energi och processer),Stockholms län,Solna,3229.084,3210.521,3406.401,3798.282,3866.819,4457.411,4995.138,3488.596
+Industri (energi och processer),Stockholms län,Lidingö,1367.958,1468.282,1473.683,1616.008,1586.347,1466.632,1519.739,1294.5
+Industri (energi och processer),Stockholms län,Vaxholm,181.2603,220.4273,282.5752,297.7936,274.6729,272.195,259.6189,248.1066
+Industri (energi och processer),Stockholms län,Norrtälje,23600.0,11656.81,8276.132,7495.591,5173.829,4073.422,4995.636,5327.828
+Industri (energi och processer),Stockholms län,Sigtuna,1361.499,1415.909,1505.57,1674.532,1672.705,1523.115,1613.914,1350.765
+Industri (energi och processer),Stockholms län,Nynäshamn,161994.3,122125.5,119291.8,136382.6,140225.4,124038.2,144463.3,198831.1
 Transporter,Stockholms län,Upplands Väsby,69779.91,68748.13,64846.77,63271.54,61774.19,61855.57,59444.8,59595.57
 Transporter,Stockholms län,Vallentuna,58302.89,57340.72,54222.85,52947.55,51751.98,51942.11,49931.65,61961.08
 Transporter,Stockholms län,Österåker,68099.54,66784.84,63022.33,61775.1,60921.1,61229.92,58704.99,57138.1
@@ -1067,6 +1198,16 @@ Egen uppvärmning av bostäder och lokaler,Västmanlands län,Sala,5563.716,4285
 Egen uppvärmning av bostäder och lokaler,Västmanlands län,Fagersta,1479.101,1056.642,1013.555,871.38,743.8529,726.7136,635.9562,632.8125
 Egen uppvärmning av bostäder och lokaler,Västmanlands län,Köping,3569.996,2769.639,2586.164,2234.68,2027.621,1924.126,1822.362,1762.576
 Egen uppvärmning av bostäder och lokaler,Västmanlands län,Arboga,2475.723,1940.775,1804.234,1532.611,1405.573,1331.702,1264.688,1214.541
+Industri (energi och processer),Västmanlands län,Skinnskatteberg,297.6785,278.3245,278.1958,279.6109,314.72,293.7026,338.2141,272.1174
+Industri (energi och processer),Västmanlands län,Surahammar,13957.83,10643.68,5528.167,8681.812,8213.805,6993.651,5527.399,4655.554
+Industri (energi och processer),Västmanlands län,Kungsör,745.1575,662.9948,686.5504,720.7244,798.2009,683.8854,843.9456,678.9237
+Industri (energi och processer),Västmanlands län,Hallstahammar,2980.828,2937.105,2939.627,3159.218,3251.471,3113.55,3570.34,3301.95
+Industri (energi och processer),Västmanlands län,Norberg,1794.263,1085.957,963.6338,761.5834,838.7918,716.5443,849.1457,672.1356
+Industri (energi och processer),Västmanlands län,Västerås,8606.529,7881.993,8565.127,8398.614,8364.534,7714.643,8388.831,7322.789
+Industri (energi och processer),Västmanlands län,Sala,1323.865,1227.203,1290.356,1287.948,1423.635,1293.448,1553.701,1314.644
+Industri (energi och processer),Västmanlands län,Fagersta,10471.37,9684.954,9472.571,9820.935,9122.735,9002.153,9620.945,10050.03
+Industri (energi och processer),Västmanlands län,Köping,234332.9,244966.6,218692.3,226632.5,236562.4,233998.4,252965.6,243161.1
+Industri (energi och processer),Västmanlands län,Arboga,1138.524,1015.522,1047.123,1100.309,1225.348,1052.508,1295.386,1026.017
 Transporter,Västmanlands län,Skinnskatteberg,16438.03,16001.64,15064.93,14643.03,14247.72,14302.5,13607.03,13189.41
 Transporter,Västmanlands län,Surahammar,20215.85,19725.97,18634.68,18152.52,17708.29,17829.78,17044.27,16330.18
 Transporter,Västmanlands län,Kungsör,35270.03,34575.55,32696.48,31931.01,31130.78,31234.16,29732.33,30304.31
@@ -1155,6 +1296,20 @@ Egen uppvärmning av bostäder och lokaler,Norrbottens län,Piteå,4503.177,3208
 Egen uppvärmning av bostäder och lokaler,Norrbottens län,Boden,2159.491,1585.926,1515.788,1407.037,1200.981,1157.811,1085.213,1077.884
 Egen uppvärmning av bostäder och lokaler,Norrbottens län,Haparanda,2598.014,1853.059,1751.388,1581.19,1342.255,1303.966,1147.71,1137.819
 Egen uppvärmning av bostäder och lokaler,Norrbottens län,Kiruna,1640.108,1138.676,1069.696,966.49,821.3269,794.2434,698.2069,697.3841
+Industri (energi och processer),Norrbottens län,Arvidsjaur,532.553,522.4743,555.8396,541.5973,658.1486,758.0845,725.4247,729.3607
+Industri (energi och processer),Norrbottens län,Arjeplog,112.0456,142.931,162.0258,115.2997,154.9177,281.9092,159.9781,146.8611
+Industri (energi och processer),Norrbottens län,Jokkmokk,893.7733,451.3548,512.252,1092.066,538.8081,884.2181,570.6172,438.9422
+Industri (energi och processer),Norrbottens län,Överkalix,260.3255,261.3515,269.1841,263.1551,319.6347,362.3749,308.1115,243.8518
+Industri (energi och processer),Norrbottens län,Kalix,15075.68,10773.63,15500.73,12131.66,10743.99,10084.14,7315.22,11287.47
+Industri (energi och processer),Norrbottens län,Övertorneå,377.5095,371.3772,380.4619,387.3087,449.3745,452.1468,429.3546,357.0221
+Industri (energi och processer),Norrbottens län,Pajala,692.5086,676.1855,898.1493,817.7314,1009.095,1379.431,1192.875,919.4353
+Industri (energi och processer),Norrbottens län,Gällivare,138006.8,142713.1,141390.4,117587.6,124687.5,103753.0,112346.9,210619.6
+Industri (energi och processer),Norrbottens län,Älvsbyn,364.8006,392.4294,401.9699,408.5914,469.5709,450.5147,425.7932,417.0213
+Industri (energi och processer),Norrbottens län,Luleå,1541255.0,1405251.0,1117748.0,1326263.0,1277944.0,945632.5,1616938.0,1394078.0
+Industri (energi och processer),Norrbottens län,Piteå,46231.09,46427.4,59490.21,46239.26,44849.51,35638.79,34918.06,39167.58
+Industri (energi och processer),Norrbottens län,Boden,1145.898,1211.734,1269.443,1327.242,1549.538,1465.5,1382.365,1304.996
+Industri (energi och processer),Norrbottens län,Haparanda,498.5873,508.0746,533.4981,553.7843,635.2164,598.5622,583.7065,535.5192
+Industri (energi och processer),Norrbottens län,Kiruna,556279.2,582452.5,563238.5,546069.4,568690.0,536667.0,566390.4,561347.2
 Transporter,Norrbottens län,Arvidsjaur,30106.18,29019.82,27816.09,27388.36,26977.44,26672.32,25519.2,28090.83
 Transporter,Norrbottens län,Arjeplog,13737.09,13403.59,12675.75,12359.21,12056.22,12130.72,11569.63,10177.23
 Transporter,Norrbottens län,Jokkmokk,35851.15,34546.71,33306.65,32588.59,32201.05,32056.02,30861.58,27655.16
@@ -1263,6 +1418,18 @@ Egen uppvärmning av bostäder och lokaler,Kalmar län,Oskarshamn,5452.513,3946.
 Egen uppvärmning av bostäder och lokaler,Kalmar län,Västervik,10350.69,7591.651,7114.182,6334.942,5578.969,5328.732,4818.3,4758.197
 Egen uppvärmning av bostäder och lokaler,Kalmar län,Vimmerby,3458.542,2659.874,2522.951,2292.644,2033.205,1931.908,1867.156,1835.495
 Egen uppvärmning av bostäder och lokaler,Kalmar län,Borgholm,7639.405,6454.706,5125.624,4638.979,4817.477,4262.109,4162.869,3691.301
+Industri (energi och processer),Kalmar län,Högsby,873.2164,683.5857,755.1436,929.8537,996.3142,828.4163,958.2896,744.2878
+Industri (energi och processer),Kalmar län,Torsås,706.0104,537.6917,560.0092,698.4349,757.8943,587.8544,710.6377,533.9327
+Industri (energi och processer),Kalmar län,Mörbylånga,250355.9,263640.1,255922.5,230656.9,258421.1,246735.0,238035.7,250436.1
+Industri (energi och processer),Kalmar län,Hultsfred,18121.92,14877.68,13599.62,5524.285,3292.937,4193.006,3919.066,4153.782
+Industri (energi och processer),Kalmar län,Mönsterås,80936.71,77681.86,79169.63,65474.04,47434.17,30257.02,36309.39,19486.66
+Industri (energi och processer),Kalmar län,Emmaboda,2356.604,2074.515,1670.837,1294.615,1281.994,993.2027,1772.732,1287.135
+Industri (energi och processer),Kalmar län,Kalmar,9116.408,8196.619,7437.229,12242.49,12014.91,9434.964,11176.31,9888.577
+Industri (energi och processer),Kalmar län,Nybro,9182.4,6810.911,6221.916,6874.316,5480.787,4718.748,5811.534,6260.494
+Industri (energi och processer),Kalmar län,Oskarshamn,15805.68,14007.75,13493.24,15281.2,14329.84,12895.91,13688.25,13905.25
+Industri (energi och processer),Kalmar län,Västervik,8117.535,6370.638,5576.03,5138.589,4930.632,3831.141,3738.167,2906.749
+Industri (energi och processer),Kalmar län,Vimmerby,12732.94,11517.98,11695.02,10263.73,11787.83,8466.553,9364.431,9844.764
+Industri (energi och processer),Kalmar län,Borgholm,546.8665,436.5198,460.1517,574.7408,601.2228,461.1928,538.3252,473.0397
 Transporter,Kalmar län,Högsby,19833.6,19471.39,18359.67,17832.45,17327.69,17413.95,16600.03,16054.98
 Transporter,Kalmar län,Torsås,16550.13,16173.97,15250.01,14883.16,14534.42,14639.83,13983.68,14238.19
 Transporter,Kalmar län,Mörbylånga,37729.13,36942.45,33593.1,33046.27,32623.2,32571.12,30914.01,28601.14
@@ -1367,6 +1534,22 @@ Egen uppvärmning av bostäder och lokaler,Värmlands län,Filipstad,2572.406,18
 Egen uppvärmning av bostäder och lokaler,Värmlands län,Hagfors,4960.653,3467.003,3325.302,3062.506,2569.684,2497.796,2164.093,2193.413
 Egen uppvärmning av bostäder och lokaler,Värmlands län,Arvika,5571.765,4029.708,3898.909,3635.466,3076.096,2973.794,2732.297,2753.496
 Egen uppvärmning av bostäder och lokaler,Värmlands län,Säffle,4383.474,3292.522,3128.424,2869.054,2507.472,2395.471,2246.026,2223.95
+Industri (energi och processer),Värmlands län,Kil,752.1031,588.7827,596.9936,688.5864,783.839,661.3426,834.3395,579.5751
+Industri (energi och processer),Värmlands län,Eda,4617.574,2722.414,3261.711,2978.727,863.7659,971.3762,1008.199,1140.803
+Industri (energi och processer),Värmlands län,Torsby,1655.508,1769.452,2191.821,2053.48,1878.55,1732.664,1093.462,765.2026
+Industri (energi och processer),Värmlands län,Storfors,310.3459,243.657,241.0704,276.8841,314.5999,263.538,331.1868,231.8474
+Industri (energi och processer),Värmlands län,Hammarö,102215.6,71770.26,65839.87,56244.57,47281.09,55368.73,55535.75,57601.88
+Industri (energi och processer),Värmlands län,Munkfors,516.0169,391.7421,398.397,485.2274,561.0947,442.5771,562.8801,349.5757
+Industri (energi och processer),Värmlands län,Forshaga,1780.791,1458.156,1621.327,981.0587,1450.23,1574.399,1772.607,1736.555
+Industri (energi och processer),Värmlands län,Grums,36373.55,28198.29,22632.68,24761.06,25060.62,20577.63,17343.02,17958.27
+Industri (energi och processer),Värmlands län,Årjäng,2571.078,1662.128,1966.189,2216.082,1940.901,1385.92,1402.631,1017.104
+Industri (energi och processer),Värmlands län,Sunne,17814.13,12475.65,13705.42,13762.9,14702.03,16868.39,17413.88,15782.79
+Industri (energi och processer),Värmlands län,Karlstad,11102.14,8387.722,8474.048,7900.29,6056.247,5216.573,6437.395,4786.211
+Industri (energi och processer),Värmlands län,Kristinehamn,41865.63,32914.78,28335.55,24677.81,25446.21,25626.72,21952.57,24521.94
+Industri (energi och processer),Värmlands län,Filipstad,11458.9,10920.15,10629.12,10957.94,10595.98,9711.444,8501.851,9491.561
+Industri (energi och processer),Värmlands län,Hagfors,44347.46,49393.28,58616.89,39140.35,36914.2,37875.89,34757.44,41585.87
+Industri (energi och processer),Värmlands län,Arvika,6749.334,8543.549,6369.816,6826.593,2846.503,3032.242,2708.614,5071.871
+Industri (energi och processer),Värmlands län,Säffle,2485.993,10810.42,7526.736,5577.636,5571.761,5508.69,7469.4,10579.16
 Transporter,Värmlands län,Kil,26964.51,26314.76,24881.76,24205.69,23567.17,23689.74,22582.93,23209.62
 Transporter,Värmlands län,Eda,23393.97,22837.65,21561.0,21004.55,20492.19,20603.44,19654.26,18257.89
 Transporter,Värmlands län,Torsby,38710.43,37793.58,35737.79,34834.41,33994.19,34202.26,32663.24,30063.4
@@ -1493,6 +1676,21 @@ Egen uppvärmning av bostäder och lokaler,Västerbottens län,Åsele,661.0355,5
 Egen uppvärmning av bostäder och lokaler,Västerbottens län,Umeå,6744.259,4910.457,4749.146,4295.049,3672.526,3548.088,3315.323,3319.81
 Egen uppvärmning av bostäder och lokaler,Västerbottens län,Lycksele,1929.753,1403.577,1341.018,1243.814,1054.774,1021.098,929.515,925.6401
 Egen uppvärmning av bostäder och lokaler,Västerbottens län,Skellefteå,7217.155,5425.016,5229.584,4947.23,4234.446,4065.149,3953.821,3930.236
+Industri (energi och processer),Västerbottens län,Nordmaling,2762.605,1749.98,1216.285,669.3811,810.6992,668.2633,1180.349,2248.977
+Industri (energi och processer),Västerbottens län,Bjurholm,141.4445,137.782,139.6037,139.3001,174.6371,186.1387,174.4855,146.8024
+Industri (energi och processer),Västerbottens län,Vindeln,644.0324,550.8625,569.2374,627.4626,764.4636,718.3071,865.2499,953.3787
+Industri (energi och processer),Västerbottens län,Robertsfors,767.4172,653.7312,666.3663,766.277,912.9907,764.5896,879.666,641.0546
+Industri (energi och processer),Västerbottens län,Norsjö,680.8661,584.7043,546.6902,590.1706,715.8177,671.3623,702.3446,482.057
+Industri (energi och processer),Västerbottens län,Malå,541.9839,462.4651,489.6529,522.2083,642.5664,663.7487,640.0189,429.2373
+Industri (energi och processer),Västerbottens län,Storuman,443.2099,415.8955,438.6269,422.5274,560.6719,690.4395,565.0544,422.8441
+Industri (energi och processer),Västerbottens län,Sorsele,287.8591,302.7612,356.0141,247.9396,350.8476,604.2541,389.1574,271.1309
+Industri (energi och processer),Västerbottens län,Dorotea,375.4893,331.0515,351.9164,356.5872,450.4633,507.3535,454.1774,310.0912
+Industri (energi och processer),Västerbottens län,Vännäs,305.2311,619.6428,644.1584,660.1652,755.7285,727.0329,775.4544,712.1378
+Industri (energi och processer),Västerbottens län,Vilhelmina,497.9223,513.0056,593.2409,445.2625,653.557,1154.853,716.4228,510.9172
+Industri (energi och processer),Västerbottens län,Åsele,280.4399,278.0676,308.0042,249.8402,343.0274,546.5207,373.1267,268.6892
+Industri (energi och processer),Västerbottens län,Umeå,56864.68,41513.31,45301.7,43748.37,47218.57,43518.29,45406.22,47541.7
+Industri (energi och processer),Västerbottens län,Lycksele,4757.514,4912.099,5437.398,5489.536,5122.487,5296.49,7155.788,7896.022
+Industri (energi och processer),Västerbottens län,Skellefteå,255353.0,242426.6,294011.8,293612.9,284304.8,293510.6,292331.3,292272.2
 Transporter,Västerbottens län,Nordmaling,29917.53,29548.47,27632.75,27110.3,26672.64,26817.63,25731.59,27038.63
 Transporter,Västerbottens län,Bjurholm,8061.017,7775.13,7440.227,7315.91,7238.969,7219.503,7098.689,8063.093
 Transporter,Västerbottens län,Vindeln,22350.91,21659.47,20723.76,20295.78,19938.52,19962.32,19272.7,18838.35
@@ -1597,6 +1795,13 @@ Egen uppvärmning av bostäder och lokaler,Västernorrlands län,Sundsvall,11099
 Egen uppvärmning av bostäder och lokaler,Västernorrlands län,Kramfors,4949.983,3604.765,3488.472,3198.389,2716.655,2630.588,2420.18,2427.722
 Egen uppvärmning av bostäder och lokaler,Västernorrlands län,Sollefteå,4302.149,3078.263,2954.54,2811.622,2369.655,2286.101,2085.107,2103.599
 Egen uppvärmning av bostäder och lokaler,Västernorrlands län,Örnsköldsvik,10111.14,7429.293,7203.396,6605.159,5621.04,5440.136,5056.886,5063.016
+Industri (energi och processer),Västernorrlands län,Ånge,31381.1,28982.17,24484.63,24495.96,35698.64,30206.17,23718.02,26678.03
+Industri (energi och processer),Västernorrlands län,Timrå,84393.18,66742.9,21493.52,23297.12,15366.99,19423.6,33895.18,42467.91
+Industri (energi och processer),Västernorrlands län,Härnösand,1262.117,804.4495,727.541,804.9819,881.1638,887.7009,947.9631,752.3322
+Industri (energi och processer),Västernorrlands län,Sundsvall,251936.0,261774.0,303061.6,306918.7,272474.1,255605.4,275191.1,284442.2
+Industri (energi och processer),Västernorrlands län,Kramfors,30465.33,24631.79,21711.85,17467.68,14312.15,13205.7,19261.84,20997.05
+Industri (energi och processer),Västernorrlands län,Sollefteå,933.2269,791.1738,827.6386,1693.986,1002.991,1114.483,1747.727,766.1083
+Industri (energi och processer),Västernorrlands län,Örnsköldsvik,76590.35,81952.46,127252.0,79185.92,69747.59,74789.08,81669.26,89372.77
 Transporter,Västernorrlands län,Ånge,31508.57,30782.13,29242.87,28552.58,28014.52,28102.11,26887.47,25200.69
 Transporter,Västernorrlands län,Timrå,47872.45,46889.03,43926.04,42801.79,41725.15,41761.86,39993.97,38580.34
 Transporter,Västernorrlands län,Härnösand,59946.54,58524.18,54544.29,53056.87,51806.21,51960.09,49447.21,46307.36
@@ -1655,6 +1860,14 @@ Egen uppvärmning av bostäder och lokaler,Uppsala län,Tierp,5749.637,4306.824,
 Egen uppvärmning av bostäder och lokaler,Uppsala län,Uppsala,16200.73,11888.14,11120.47,9866.965,8722.793,8317.17,7555.843,7454.084
 Egen uppvärmning av bostäder och lokaler,Uppsala län,Enköping,7700.268,6048.552,5678.956,4968.921,4500.442,4266.886,4120.216,3990.439
 Egen uppvärmning av bostäder och lokaler,Uppsala län,Östhammar,6438.02,4819.067,4518.924,4007.141,3561.264,3391.287,3141.41,3084.373
+Industri (energi och processer),Uppsala län,Håbo,23626.8,24646.39,27127.94,24294.03,23323.55,22553.11,22311.03,22474.94
+Industri (energi och processer),Uppsala län,Älvkarleby,29439.78,24893.94,12677.1,9958.334,11388.63,8850.136,832.8062,704.4466
+Industri (energi och processer),Uppsala län,Knivsta,738.8388,551.6931,591.7365,690.7075,850.8402,651.7537,823.8093,855.4485
+Industri (energi och processer),Uppsala län,Heby,7007.304,4222.499,5458.691,5312.209,5577.685,5557.046,6503.64,6679.51
+Industri (energi och processer),Uppsala län,Tierp,13941.8,14838.76,15066.24,12471.53,11348.45,9509.28,8948.55,7098.64
+Industri (energi och processer),Uppsala län,Uppsala,12524.69,9819.72,9900.755,11179.21,13355.15,10594.77,13004.93,13558.48
+Industri (energi och processer),Uppsala län,Enköping,7126.282,6378.373,6006.352,6088.546,6544.976,5505.436,7286.859,7102.796
+Industri (energi och processer),Uppsala län,Östhammar,7663.685,7018.551,5943.861,5180.53,4069.375,2899.077,3980.578,3178.596
 Transporter,Uppsala län,Håbo,49908.87,48924.7,46361.99,45304.82,44337.89,44633.16,42755.04,41426.06
 Transporter,Uppsala län,Älvkarleby,22288.09,21727.48,20362.2,19872.22,19321.26,19328.1,18519.36,20277.21
 Transporter,Uppsala län,Knivsta,66255.6,65804.53,62488.25,61255.3,59891.29,59937.95,58143.88,59253.27
@@ -2283,6 +2496,296 @@ Egen uppvärmning av bostäder och lokaler,Norrbottens län,Piteå,4503.177,3208
 Egen uppvärmning av bostäder och lokaler,Norrbottens län,Boden,2159.491,1585.926,1515.788,1407.037,1200.981,1157.811,1085.213,1077.884
 Egen uppvärmning av bostäder och lokaler,Norrbottens län,Haparanda,2598.014,1853.059,1751.388,1581.19,1342.255,1303.966,1147.71,1137.819
 Egen uppvärmning av bostäder och lokaler,Norrbottens län,Kiruna,1640.108,1138.676,1069.696,966.49,821.3269,794.2434,698.2069,697.3841
+Industri (energi och processer),Stockholms län,Upplands Väsby,5900.351,4888.314,5476.036,5676.81,6416.236,4426.367,4447.987,3119.598
+Industri (energi och processer),Stockholms län,Vallentuna,1471.867,1434.977,1528.263,1687.356,1726.256,1521.772,1672.262,1356.832
+Industri (energi och processer),Stockholms län,Österåker,1349.632,1417.034,1488.552,1609.661,1595.793,1472.122,1557.165,1346.149
+Industri (energi och processer),Stockholms län,Värmdö,4794.481,4018.987,3192.202,3220.394,2970.159,1564.608,1446.595,1269.661
+Industri (energi och processer),Stockholms län,Järfälla,4558.54,4408.108,3628.932,4099.274,4290.715,3712.773,4168.649,3227.966
+Industri (energi och processer),Stockholms län,Ekerö,807.8542,857.9136,921.044,1006.007,990.0043,909.5242,945.3424,804.256
+Industri (energi och processer),Stockholms län,Huddinge,14962.15,14160.67,14670.38,11290.74,5600.152,4887.078,5415.965,4295.969
+Industri (energi och processer),Stockholms län,Botkyrka,9470.179,6668.871,5982.131,4531.405,4547.915,4152.619,4295.711,4513.243
+Industri (energi och processer),Stockholms län,Salem,343.9653,414.7355,418.3809,438.7334,406.0453,400.4961,385.5356,367.9166
+Industri (energi och processer),Stockholms län,Haninge,3080.565,3147.643,3209.081,3541.152,3573.226,3221.369,3462.325,2894.544
+Industri (energi och processer),Stockholms län,Tyresö,1898.863,1874.052,1938.845,2153.054,2213.38,1954.183,2137.314,1710.703
+Industri (energi och processer),Stockholms län,Upplands-Bro,8394.755,7673.067,7943.617,8205.602,7863.31,7243.803,7511.876,7568.367
+Industri (energi och processer),Stockholms län,Nykvarn,306.2266,320.5809,342.9637,373.8862,374.5391,347.1249,365.1855,312.0723
+Industri (energi och processer),Stockholms län,Täby,2879.28,2891.77,2862.078,3156.805,3215.055,2861.247,3118.502,2553.046
+Industri (energi och processer),Stockholms län,Danderyd,1058.045,1164.517,1101.504,1191.708,1158.409,1069.734,1096.98,949.5939
+Industri (energi och processer),Stockholms län,Sollentuna,6428.4,6488.363,6475.32,6525.935,6636.022,6333.286,5962.165,4955.496
+Industri (energi och processer),Stockholms län,Stockholm,47784.66,47797.76,47317.34,52594.2,50524.11,48021.73,46776.29,40626.12
+Industri (energi och processer),Stockholms län,Södertälje,31316.31,30525.89,23288.65,24901.29,28159.11,26632.81,24712.89,23778.33
+Industri (energi och processer),Stockholms län,Nacka,3581.865,3561.416,3919.174,4311.013,4370.382,3930.098,4238.01,3521.76
+Industri (energi och processer),Stockholms län,Sundbyberg,1266.885,1265.642,1323.887,1473.453,1501.241,1362.169,1481.233,1239.297
+Industri (energi och processer),Stockholms län,Solna,3229.084,3210.521,3406.401,3798.282,3866.819,4457.411,4995.138,3488.596
+Industri (energi och processer),Stockholms län,Lidingö,1367.958,1468.282,1473.683,1616.008,1586.347,1466.632,1519.739,1294.5
+Industri (energi och processer),Stockholms län,Vaxholm,181.2603,220.4273,282.5752,297.7936,274.6729,272.195,259.6189,248.1066
+Industri (energi och processer),Stockholms län,Norrtälje,23600.0,11656.81,8276.132,7495.591,5173.829,4073.422,4995.636,5327.828
+Industri (energi och processer),Stockholms län,Sigtuna,1361.499,1415.909,1505.57,1674.532,1672.705,1523.115,1613.914,1350.765
+Industri (energi och processer),Stockholms län,Nynäshamn,161994.3,122125.5,119291.8,136382.6,140225.4,124038.2,144463.3,198831.1
+Industri (energi och processer),Uppsala län,Håbo,23626.8,24646.39,27127.94,24294.03,23323.55,22553.11,22311.03,22474.94
+Industri (energi och processer),Uppsala län,Älvkarleby,29439.78,24893.94,12677.1,9958.334,11388.63,8850.136,832.8062,704.4466
+Industri (energi och processer),Uppsala län,Knivsta,738.8388,551.6931,591.7365,690.7075,850.8402,651.7537,823.8093,855.4485
+Industri (energi och processer),Uppsala län,Heby,7007.304,4222.499,5458.691,5312.209,5577.685,5557.046,6503.64,6679.51
+Industri (energi och processer),Uppsala län,Tierp,13941.8,14838.76,15066.24,12471.53,11348.45,9509.28,8948.55,7098.64
+Industri (energi och processer),Uppsala län,Uppsala,12524.69,9819.72,9900.755,11179.21,13355.15,10594.77,13004.93,13558.48
+Industri (energi och processer),Uppsala län,Enköping,7126.282,6378.373,6006.352,6088.546,6544.976,5505.436,7286.859,7102.796
+Industri (energi och processer),Uppsala län,Östhammar,7663.685,7018.551,5943.861,5180.53,4069.375,2899.077,3980.578,3178.596
+Industri (energi och processer),Södermanlands län,Vingåker,6133.95,5727.227,5389.498,5740.631,5042.682,4700.183,4748.39,5122.645
+Industri (energi och processer),Södermanlands län,Gnesta,504.6674,451.0825,456.0332,542.7326,535.0848,476.8789,594.8629,596.5372
+Industri (energi och processer),Södermanlands län,Nyköping,3950.202,3755.381,3604.192,4219.171,4322.909,4042.902,5104.042,5182.954
+Industri (energi och processer),Södermanlands län,Oxelösund,2211177.0,1949232.0,1587465.0,1511167.0,1582996.0,2217716.0,1554099.0,1584574.0
+Industri (energi och processer),Södermanlands län,Flen,1119.66,954.0941,930.8733,1139.877,1182.352,992.4202,1261.058,1099.131
+Industri (energi och processer),Södermanlands län,Katrineholm,6872.263,7399.103,7321.711,7324.072,7115.764,3732.592,4126.625,3709.989
+Industri (energi och processer),Södermanlands län,Eskilstuna,29244.62,30774.52,23279.76,23735.22,26253.02,24920.8,26877.79,28543.7
+Industri (energi och processer),Södermanlands län,Strängnäs,4661.374,4166.084,4358.372,4138.327,3352.735,3074.007,1898.732,2471.729
+Industri (energi och processer),Södermanlands län,Trosa,553.3288,496.8352,509.368,597.4704,585.6554,527.0321,665.7145,698.4579
+Industri (energi och processer),Östergötlands län,Ödeshög,2807.145,2565.385,2159.243,2314.712,2516.18,2296.81,2289.14,2041.686
+Industri (energi och processer),Östergötlands län,Ydre,473.062,419.9118,412.2269,476.4552,614.4796,599.1329,738.5057,541.3941
+Industri (energi och processer),Östergötlands län,Kinda,10193.02,10461.84,10554.35,10645.31,10375.19,9808.652,9997.703,10469.32
+Industri (energi och processer),Östergötlands län,Boxholm,30994.11,31232.09,28000.35,47998.85,27293.01,26826.35,29607.82,29355.41
+Industri (energi och processer),Östergötlands län,Åtvidaberg,1026.972,949.9571,920.5013,1061.926,1208.173,1006.394,1162.77,869.6543
+Industri (energi och processer),Östergötlands län,Finspång,26155.24,23260.04,25399.84,27951.87,24488.21,30688.54,33081.58,30631.75
+Industri (energi och processer),Östergötlands län,Valdemarsvik,3432.885,2511.593,2719.286,3179.588,2538.498,2700.247,2989.234,2672.875
+Industri (energi och processer),Östergötlands län,Linköping,43443.14,39331.79,34932.6,35522.41,33259.52,28599.49,20920.18,30874.95
+Industri (energi och processer),Östergötlands län,Norrköping,109012.9,96749.53,82131.04,69594.31,40176.32,43758.09,43459.22,42000.89
+Industri (energi och processer),Östergötlands län,Söderköping,942.3851,884.4697,889.3571,1025.052,1174.207,991.8742,1121.074,854.7988
+Industri (energi och processer),Östergötlands län,Motala,4361.095,3153.098,4388.178,4509.284,4907.568,3443.066,3896.082,2930.929
+Industri (energi och processer),Östergötlands län,Vadstena,841.9608,738.8906,741.6452,871.7018,996.5587,811.3154,956.9721,679.2952
+Industri (energi och processer),Östergötlands län,Mjölby,3719.686,3700.084,3548.848,3908.439,4510.105,4135.999,4817.72,4466.812
+Industri (energi och processer),Jönköpings län,Aneby,692.5624,569.1971,514.5677,597.9649,667.8698,588.036,714.1323,529.0069
+Industri (energi och processer),Jönköpings län,Gnosjö,5525.105,5655.176,5611.046,5835.167,8186.806,7758.239,9504.915,8507.278
+Industri (energi och processer),Jönköpings län,Mullsjö,877.0507,715.1134,671.3804,782.2401,875.4347,752.181,920.4792,698.0391
+Industri (energi och processer),Jönköpings län,Habo,6200.381,7850.343,7535.719,6679.925,7061.621,6279.811,6621.082,6695.267
+Industri (energi och processer),Jönköpings län,Gislaved,7501.942,5939.341,5886.295,7028.561,7771.87,6609.162,8177.884,6218.583
+Industri (energi och processer),Jönköpings län,Vaggeryd,18295.05,18142.73,19782.33,20010.61,19437.58,19883.99,17818.48,11142.64
+Industri (energi och processer),Jönköpings län,Jönköping,17143.14,16581.18,16517.93,10809.28,12824.6,9891.717,10934.29,9615.972
+Industri (energi och processer),Jönköpings län,Nässjö,3503.932,3110.672,3871.459,4360.58,4696.615,4508.137,5271.119,4032.88
+Industri (energi och processer),Jönköpings län,Värnamo,12322.01,16088.21,15140.95,16076.53,14226.73,12959.22,12081.91,10750.43
+Industri (energi och processer),Jönköpings län,Sävsjö,3325.005,2192.251,2182.865,3830.219,4365.299,4030.091,4192.955,3234.072
+Industri (energi och processer),Jönköpings län,Vetlanda,30908.74,30560.11,28460.84,29072.88,34620.83,36221.48,30752.65,29931.39
+Industri (energi och processer),Jönköpings län,Eksjö,1716.175,1400.728,1523.135,1670.635,1787.151,1641.426,2436.127,2035.995
+Industri (energi och processer),Jönköpings län,Tranås,3587.399,2656.051,2853.826,3053.733,3227.94,2746.958,3414.634,2748.422
+Industri (energi och processer),Kronobergs län,Uppvidinge,3086.549,2824.804,2992.33,3315.846,4197.567,3547.184,4107.043,3435.108
+Industri (energi och processer),Kronobergs län,Lessebo,2722.03,2876.246,1950.427,2677.611,3055.071,1941.382,2167.84,1824.882
+Industri (energi och processer),Kronobergs län,Tingsryd,5022.094,5954.982,5045.74,4506.143,2523.337,1878.934,4101.959,2476.823
+Industri (energi och processer),Kronobergs län,Alvesta,2621.337,2220.777,2286.523,2533.534,3036.9,2411.796,3043.492,2102.975
+Industri (energi och processer),Kronobergs län,Älmhult,10600.08,10730.22,12645.89,12661.04,14358.65,14297.29,15423.28,15764.25
+Industri (energi och processer),Kronobergs län,Markaryd,5711.21,4918.384,5052.281,5008.242,4828.308,4496.355,4914.988,3278.656
+Industri (energi och processer),Kronobergs län,Växjö,13281.2,11150.73,10117.38,5258.457,6453.717,5279.351,6181.757,4413.679
+Industri (energi och processer),Kronobergs län,Ljungby,5912.412,5931.882,6655.373,5893.568,6126.016,5058.306,6018.161,5249.209
+Industri (energi och processer),Kalmar län,Högsby,873.2164,683.5857,755.1436,929.8537,996.3142,828.4163,958.2896,744.2878
+Industri (energi och processer),Kalmar län,Torsås,706.0104,537.6917,560.0092,698.4349,757.8943,587.8544,710.6377,533.9327
+Industri (energi och processer),Kalmar län,Mörbylånga,250355.9,263640.1,255922.5,230656.9,258421.1,246735.0,238035.7,250436.1
+Industri (energi och processer),Kalmar län,Hultsfred,18121.92,14877.68,13599.62,5524.285,3292.937,4193.006,3919.066,4153.782
+Industri (energi och processer),Kalmar län,Mönsterås,80936.71,77681.86,79169.63,65474.04,47434.17,30257.02,36309.39,19486.66
+Industri (energi och processer),Kalmar län,Emmaboda,2356.604,2074.515,1670.837,1294.615,1281.994,993.2027,1772.732,1287.135
+Industri (energi och processer),Kalmar län,Kalmar,9116.408,8196.619,7437.229,12242.49,12014.91,9434.964,11176.31,9888.577
+Industri (energi och processer),Kalmar län,Nybro,9182.4,6810.911,6221.916,6874.316,5480.787,4718.748,5811.534,6260.494
+Industri (energi och processer),Kalmar län,Oskarshamn,15805.68,14007.75,13493.24,15281.2,14329.84,12895.91,13688.25,13905.25
+Industri (energi och processer),Kalmar län,Västervik,8117.535,6370.638,5576.03,5138.589,4930.632,3831.141,3738.167,2906.749
+Industri (energi och processer),Kalmar län,Vimmerby,12732.94,11517.98,11695.02,10263.73,11787.83,8466.553,9364.431,9844.764
+Industri (energi och processer),Kalmar län,Borgholm,546.8665,436.5198,460.1517,574.7408,601.2228,461.1928,538.3252,473.0397
+Industri (energi och processer),Gotlands län,Gotland,1658691.0,1744491.0,1859291.0,1712447.0,1677965.0,1878648.0,1793577.0,1713100.0
+Industri (energi och processer),Blekinge län,Olofström,2782.322,10459.35,10767.49,9794.693,6468.403,6295.6,8541.625,7368.575
+Industri (energi och processer),Blekinge län,Karlskrona,6074.293,4884.975,5239.4,5349.605,5507.365,5220.421,5472.662,4264.785
+Industri (energi och processer),Blekinge län,Ronneby,11967.11,9404.165,8631.349,8785.678,7645.451,6963.911,6822.645,6811.05
+Industri (energi och processer),Blekinge län,Karlshamn,66764.62,66980.83,66954.36,57923.64,31899.67,35055.95,25586.53,19688.0
+Industri (energi och processer),Blekinge län,Sölvesborg,7448.46,5857.498,6101.892,5969.705,5835.642,6415.09,5275.717,6255.274
+Industri (energi och processer),Skåne län,Svalöv,6988.264,6289.19,5847.215,6233.117,6670.751,6267.71,7178.085,6309.365
+Industri (energi och processer),Skåne län,Staffanstorp,1630.073,1229.012,1337.443,1457.571,1530.867,1345.523,1576.807,1273.205
+Industri (energi och processer),Skåne län,Burlöv,23345.78,30275.25,29740.98,24784.55,24420.29,21754.32,25693.51,23353.76
+Industri (energi och processer),Skåne län,Vellinge,1598.021,1222.774,1344.419,1597.057,1488.434,1376.817,1578.264,1355.666
+Industri (energi och processer),Skåne län,Östra Göinge,1611.043,1232.458,1256.727,2429.286,2393.163,1330.657,1603.55,1150.728
+Industri (energi och processer),Skåne län,Örkelljunga,3475.079,3288.312,3223.832,3217.738,3569.099,3249.383,3499.12,2072.813
+Industri (energi och processer),Skåne län,Bjuv,36581.4,36120.73,34670.98,34662.85,46281.97,44568.11,46926.37,36050.13
+Industri (energi och processer),Skåne län,Kävlinge,2020.533,1152.787,4183.291,1714.627,1440.99,1304.654,1502.462,1246.474
+Industri (energi och processer),Skåne län,Lomma,977.9689,729.0557,830.1346,901.6809,934.7822,870.9968,992.3728,841.9072
+Industri (energi och processer),Skåne län,Svedala,4895.729,4274.202,4330.576,4685.617,4743.675,4587.936,4502.191,4526.043
+Industri (energi och processer),Skåne län,Skurup,907.0005,690.2899,736.2803,813.6875,864.2312,761.1401,888.7203,708.2628
+Industri (energi och processer),Skåne län,Sjöbo,1093.224,839.1547,903.3439,983.365,1033.748,924.6578,1075.859,874.9828
+Industri (energi och processer),Skåne län,Hörby,933.8416,707.015,754.0737,834.1964,898.7593,809.7115,922.9357,710.962
+Industri (energi och processer),Skåne län,Höör,789.7042,598.0037,659.4167,720.1253,753.7645,687.6677,788.3245,652.9841
+Industri (energi och processer),Skåne län,Tomelilla,898.9698,12563.28,12597.6,11028.51,10047.54,5983.893,5217.828,3781.126
+Industri (energi och processer),Skåne län,Bromölla,58626.83,54656.2,43972.06,49200.6,37098.82,49824.51,45689.12,45081.72
+Industri (energi och processer),Skåne län,Osby,1957.769,1497.288,1546.83,1768.975,1931.859,1739.27,1936.705,1348.931
+Industri (energi och processer),Skåne län,Perstorp,68769.07,58698.93,43475.6,45093.77,39508.74,37457.21,35759.59,33076.25
+Industri (energi och processer),Skåne län,Klippan,33704.13,29952.64,31319.8,28183.23,29003.57,29128.11,28441.39,28652.36
+Industri (energi och processer),Skåne län,Åstorp,30778.99,23626.86,3539.963,5007.388,7452.881,5933.925,5606.884,4007.033
+Industri (energi och processer),Skåne län,Båstad,933.4028,713.5745,748.3081,819.6993,873.6518,777.4147,899.5323,717.3908
+Industri (energi och processer),Skåne län,Malmö,134351.3,125395.2,124714.3,129069.6,123990.4,126712.6,129803.9,139190.7
+Industri (energi och processer),Skåne län,Lund,14406.97,12107.41,12590.15,19942.32,17249.73,11713.12,14578.98,14558.99
+Industri (energi och processer),Skåne län,Landskrona,82408.49,76634.04,83599.78,86112.46,82353.11,79776.69,83235.8,60632.87
+Industri (energi och processer),Skåne län,Helsingborg,123517.2,113523.6,128380.0,128715.0,98193.06,94864.72,94243.96,92774.22
+Industri (energi och processer),Skåne län,Höganäs,228789.0,219799.7,200673.7,215003.0,209791.0,202548.6,194001.2,202863.2
+Industri (energi och processer),Skåne län,Eslöv,129423.8,127934.4,138498.5,133468.0,117051.3,104140.5,127081.7,98436.96
+Industri (energi och processer),Skåne län,Ystad,6084.899,5068.095,5582.022,6120.165,6656.282,4870.093,3868.497,3300.885
+Industri (energi och processer),Skåne län,Trelleborg,14309.03,6857.446,5863.001,5303.028,3638.071,1988.309,3735.693,3381.853
+Industri (energi och processer),Skåne län,Kristianstad,55346.87,47347.31,49686.17,46052.59,44439.69,45758.23,41356.93,39599.74
+Industri (energi och processer),Skåne län,Simrishamn,2855.298,2623.188,3021.499,3553.619,3954.869,2681.456,2058.085,1621.442
+Industri (energi och processer),Skåne län,Ängelholm,3180.135,2386.225,2536.77,2792.22,2968.993,2603.311,3039.23,2353.679
+Industri (energi och processer),Skåne län,Hässleholm,37311.76,36318.86,34373.77,33545.63,32119.42,30383.88,31905.83,39256.08
+Industri (energi och processer),Hallands län,Hylte,32177.72,26030.01,24077.6,14928.39,12954.6,12350.85,13508.54,9415.892
+Industri (energi och processer),Hallands län,Halmstad,200643.3,188255.5,166795.8,53319.84,38857.89,37992.04,41236.46,41025.63
+Industri (energi och processer),Hallands län,Laholm,10662.52,9870.305,8753.726,10097.82,10816.88,10760.76,10013.78,9031.547
+Industri (energi och processer),Hallands län,Falkenberg,18855.51,16507.54,21855.43,14934.23,14423.78,13756.86,17347.38,17389.19
+Industri (energi och processer),Hallands län,Varberg,32355.02,15845.7,13133.58,9594.404,39334.74,19782.79,21555.39,25080.33
+Industri (energi och processer),Hallands län,Kungsbacka,4528.205,3206.325,3478.389,3589.181,4156.576,3908.108,4150.915,3654.548
+Industri (energi och processer),Västra Götalands län,Härryda,2407.979,2020.598,3032.096,2389.639,2597.265,2125.278,2662.165,2028.565
+Industri (energi och processer),Västra Götalands län,Partille,2213.111,1914.801,1957.837,2127.725,2287.905,2570.625,2374.817,1887.396
+Industri (energi och processer),Västra Götalands län,Öckerö,448.6552,430.0961,426.5713,427.7225,438.251,385.0424,477.9748,443.5422
+Industri (energi och processer),Västra Götalands län,Stenungsund,990001.9,931461.0,903605.8,963615.1,908235.6,854175.2,984865.8,953374.0
+Industri (energi och processer),Västra Götalands län,Tjörn,938.2148,822.8595,828.1665,903.7798,976.5318,806.2641,1011.351,801.9252
+Industri (energi och processer),Västra Götalands län,Orust,1065.544,945.2669,941.2228,1003.929,1074.104,895.615,1114.755,906.3581
+Industri (energi och processer),Västra Götalands län,Sotenäs,4206.103,3825.049,3639.639,3708.473,3658.742,3323.149,3514.935,3052.956
+Industri (energi och processer),Västra Götalands län,Munkedal,26420.09,17761.33,3708.776,2172.554,5741.823,14325.6,29628.42,44902.99
+Industri (energi och processer),Västra Götalands län,Tanum,802.9481,676.7359,701.5387,745.3081,779.4864,674.6952,825.5348,661.1431
+Industri (energi och processer),Västra Götalands län,Dals-Ed,628.8617,523.6435,517.6436,587.6538,663.6664,558.7815,668.7669,458.0341
+Industri (energi och processer),Västra Götalands län,Färgelanda,532.6104,466.9805,962.0503,477.4967,532.2054,484.3663,550.798,407.2802
+Industri (energi och processer),Västra Götalands län,Ale,20893.21,18520.98,18208.19,17377.27,17976.31,19868.04,22772.75,23495.14
+Industri (energi och processer),Västra Götalands län,Lerum,2223.955,1939.963,3120.836,3239.322,3377.282,3073.742,2450.976,2923.533
+Industri (energi och processer),Västra Götalands län,Vårgårda,5112.201,4290.412,3740.412,3709.773,4017.102,3917.092,4542.807,4009.176
+Industri (energi och processer),Västra Götalands län,Bollebygd,637.1784,544.7697,558.0595,619.2032,683.0479,571.9644,705.1403,736.8359
+Industri (energi och processer),Västra Götalands län,Grästorp,304.5287,283.6608,262.4573,267.2687,283.8852,257.1045,303.1641,260.0392
+Industri (energi och processer),Västra Götalands län,Essunga,2020.58,2078.465,1943.31,1663.212,1864.448,1778.231,1770.133,2157.814
+Industri (energi och processer),Västra Götalands län,Karlsborg,574.3605,505.3306,470.3097,511.9978,558.8994,471.4362,577.6613,445.4234
+Industri (energi och processer),Västra Götalands län,Gullspång,1033.403,1020.923,691.2346,713.7202,775.1372,751.8185,787.4081,726.3324
+Industri (energi och processer),Västra Götalands län,Tranemo,66161.31,67813.11,67451.48,66379.91,66325.91,66406.07,61267.5,67764.03
+Industri (energi och processer),Västra Götalands län,Bengtsfors,40264.65,37148.88,37365.29,35654.91,34835.18,31120.55,33982.68,36720.98
+Industri (energi och processer),Västra Götalands län,Mellerud,545.4343,501.6224,454.8075,472.7179,502.4698,434.9338,535.8824,453.6051
+Industri (energi och processer),Västra Götalands län,Lilla Edet,49089.17,49139.69,36704.87,22513.48,23025.47,24294.0,25571.09,25415.04
+Industri (energi och processer),Västra Götalands län,Mark,14854.27,12977.79,12265.02,10431.86,9090.422,4888.11,5034.263,4206.985
+Industri (energi och processer),Västra Götalands län,Svenljunga,5315.842,3453.764,868.193,934.0249,1063.918,1001.934,1095.811,772.0006
+Industri (energi och processer),Västra Götalands län,Herrljunga,1129.633,930.5183,933.1031,1075.222,1210.837,985.4117,1211.171,826.2522
+Industri (energi och processer),Västra Götalands län,Vara,4858.111,3139.87,3225.698,3895.262,2513.627,2040.363,2543.907,2913.167
+Industri (energi och processer),Västra Götalands län,Götene,61104.46,53077.31,59182.6,56537.59,52358.1,53690.58,63491.96,70519.34
+Industri (energi och processer),Västra Götalands län,Tibro,1724.275,1419.347,1432.924,1647.353,1841.767,1471.914,1840.461,1291.274
+Industri (energi och processer),Västra Götalands län,Töreboda,6045.69,5396.852,5303.753,5351.23,5197.236,4393.22,4615.897,3973.461
+Industri (energi och processer),Västra Götalands län,Göteborg,1185482.0,1056715.0,1146753.0,1075683.0,1100625.0,1093562.0,1140859.0,1086514.0
+Industri (energi och processer),Västra Götalands län,Mölndal,6879.969,6019.562,6219.611,6769.496,7099.096,6201.756,5774.931,5286.169
+Industri (energi och processer),Västra Götalands län,Kungälv,6663.047,5150.631,4498.504,4830.789,4846.601,4879.642,5285.784,4487.331
+Industri (energi och processer),Västra Götalands län,Lysekil,1696110.0,1754196.0,1837780.0,1478213.0,1769330.0,1731828.0,1448272.0,1606460.0
+Industri (energi och processer),Västra Götalands län,Uddevalla,3962.338,3797.264,3783.138,3614.712,3195.742,2646.398,3321.441,2618.223
+Industri (energi och processer),Västra Götalands län,Strömstad,712.7337,622.4671,629.5522,694.7155,752.7445,622.0919,781.9774,611.6668
+Industri (energi och processer),Västra Götalands län,Vänersborg,111089.5,121632.0,104785.9,91845.45,113647.8,133087.9,122885.8,168016.7
+Industri (energi och processer),Västra Götalands län,Trollhättan,24320.66,16200.08,4069.144,3013.393,5595.745,2671.187,4264.278,2496.915
+Industri (energi och processer),Västra Götalands län,Alingsås,2579.669,2219.952,2265.819,2486.86,2703.867,2230.225,2791.042,2168.431
+Industri (energi och processer),Västra Götalands län,Borås,15383.92,18966.44,13653.43,11701.68,9578.341,8232.303,10174.06,7766.86
+Industri (energi och processer),Västra Götalands län,Ulricehamn,5536.264,4758.517,4698.557,5113.577,5446.876,6087.828,7038.646,6664.845
+Industri (energi och processer),Västra Götalands län,Åmål,1572.301,1279.002,1121.993,1283.712,1430.193,1146.695,1441.487,1020.898
+Industri (energi och processer),Västra Götalands län,Mariestad,17982.36,15575.45,13904.35,15061.4,15813.42,14469.24,12880.08,13133.7
+Industri (energi och processer),Västra Götalands län,Lidköping,11873.6,10081.47,9775.885,10171.81,10174.09,9302.041,6872.403,4217.541
+Industri (energi och processer),Västra Götalands län,Skara,8709.507,7527.876,6811.509,7356.961,4784.856,2182.283,1949.257,1587.014
+Industri (energi och processer),Västra Götalands län,Skövde,394887.8,404912.7,378778.7,360263.3,364228.0,385294.0,405091.8,438447.9
+Industri (energi och processer),Västra Götalands län,Hjo,2195.778,1926.236,1936.335,2108.858,2136.574,2573.465,2636.837,2092.86
+Industri (energi och processer),Västra Götalands län,Tidaholm,932.2339,816.9347,786.8081,859.627,935.2692,779.0654,963.1687,747.3774
+Industri (energi och processer),Västra Götalands län,Falköping,4818.657,4551.579,4464.882,4758.884,5182.128,4542.555,5625.148,4669.33
+Industri (energi och processer),Värmlands län,Kil,752.1031,588.7827,596.9936,688.5864,783.839,661.3426,834.3395,579.5751
+Industri (energi och processer),Värmlands län,Eda,4617.574,2722.414,3261.711,2978.727,863.7659,971.3762,1008.199,1140.803
+Industri (energi och processer),Värmlands län,Torsby,1655.508,1769.452,2191.821,2053.48,1878.55,1732.664,1093.462,765.2026
+Industri (energi och processer),Värmlands län,Storfors,310.3459,243.657,241.0704,276.8841,314.5999,263.538,331.1868,231.8474
+Industri (energi och processer),Värmlands län,Hammarö,102215.6,71770.26,65839.87,56244.57,47281.09,55368.73,55535.75,57601.88
+Industri (energi och processer),Värmlands län,Munkfors,516.0169,391.7421,398.397,485.2274,561.0947,442.5771,562.8801,349.5757
+Industri (energi och processer),Värmlands län,Forshaga,1780.791,1458.156,1621.327,981.0587,1450.23,1574.399,1772.607,1736.555
+Industri (energi och processer),Värmlands län,Grums,36373.55,28198.29,22632.68,24761.06,25060.62,20577.63,17343.02,17958.27
+Industri (energi och processer),Värmlands län,Årjäng,2571.078,1662.128,1966.189,2216.082,1940.901,1385.92,1402.631,1017.104
+Industri (energi och processer),Värmlands län,Sunne,17814.13,12475.65,13705.42,13762.9,14702.03,16868.39,17413.88,15782.79
+Industri (energi och processer),Värmlands län,Karlstad,11102.14,8387.722,8474.048,7900.29,6056.247,5216.573,6437.395,4786.211
+Industri (energi och processer),Värmlands län,Kristinehamn,41865.63,32914.78,28335.55,24677.81,25446.21,25626.72,21952.57,24521.94
+Industri (energi och processer),Värmlands län,Filipstad,11458.9,10920.15,10629.12,10957.94,10595.98,9711.444,8501.851,9491.561
+Industri (energi och processer),Värmlands län,Hagfors,44347.46,49393.28,58616.89,39140.35,36914.2,37875.89,34757.44,41585.87
+Industri (energi och processer),Värmlands län,Arvika,6749.334,8543.549,6369.816,6826.593,2846.503,3032.242,2708.614,5071.871
+Industri (energi och processer),Värmlands län,Säffle,2485.993,10810.42,7526.736,5577.636,5571.761,5508.69,7469.4,10579.16
+Industri (energi och processer),Örebro län,Lekeberg,444.5602,363.7905,392.1518,470.9859,501.9892,581.777,564.4214,411.0493
+Industri (energi och processer),Örebro län,Laxå,1293.223,1118.485,980.9606,1012.182,1135.235,1233.788,1226.123,1127.564
+Industri (energi och processer),Örebro län,Hallsberg,8014.922,3799.38,3804.732,7398.071,6967.918,4061.862,2721.002,2124.769
+Industri (energi och processer),Örebro län,Degerfors,30063.58,31015.41,32538.6,29613.61,38846.55,35713.51,36182.74,35946.42
+Industri (energi och processer),Örebro län,Hällefors,4599.613,4048.992,3498.051,2571.587,12888.66,18572.18,17473.15,19125.58
+Industri (energi och processer),Örebro län,Ljusnarsberg,14838.42,13706.26,13783.21,16694.86,17461.54,19354.32,16320.59,13836.11
+Industri (energi och processer),Örebro län,Örebro,13990.48,14437.6,14869.41,15971.29,14853.68,15225.79,14237.26,12892.42
+Industri (energi och processer),Örebro län,Kumla,9524.459,8617.984,9393.459,10720.31,10416.59,10750.47,11289.44,10285.02
+Industri (energi och processer),Örebro län,Askersund,24208.89,25398.86,20830.88,23441.27,21140.84,15695.37,23269.66,26658.69
+Industri (energi och processer),Örebro län,Karlskoga,4342.251,4276.874,4195.782,4240.457,4718.999,4627.246,4675.888,3874.406
+Industri (energi och processer),Örebro län,Nora,3664.986,2947.84,3166.811,3144.18,2810.55,3230.17,2638.828,2285.893
+Industri (energi och processer),Örebro län,Lindesberg,31066.6,27494.83,14834.53,18634.02,17013.13,17769.89,22363.0,25694.08
+Industri (energi och processer),Västmanlands län,Skinnskatteberg,297.6785,278.3245,278.1958,279.6109,314.72,293.7026,338.2141,272.1174
+Industri (energi och processer),Västmanlands län,Surahammar,13957.83,10643.68,5528.167,8681.812,8213.805,6993.651,5527.399,4655.554
+Industri (energi och processer),Västmanlands län,Kungsör,745.1575,662.9948,686.5504,720.7244,798.2009,683.8854,843.9456,678.9237
+Industri (energi och processer),Västmanlands län,Hallstahammar,2980.828,2937.105,2939.627,3159.218,3251.471,3113.55,3570.34,3301.95
+Industri (energi och processer),Västmanlands län,Norberg,1794.263,1085.957,963.6338,761.5834,838.7918,716.5443,849.1457,672.1356
+Industri (energi och processer),Västmanlands län,Västerås,8606.529,7881.993,8565.127,8398.614,8364.534,7714.643,8388.831,7322.789
+Industri (energi och processer),Västmanlands län,Sala,1323.865,1227.203,1290.356,1287.948,1423.635,1293.448,1553.701,1314.644
+Industri (energi och processer),Västmanlands län,Fagersta,10471.37,9684.954,9472.571,9820.935,9122.735,9002.153,9620.945,10050.03
+Industri (energi och processer),Västmanlands län,Köping,234332.9,244966.6,218692.3,226632.5,236562.4,233998.4,252965.6,243161.1
+Industri (energi och processer),Västmanlands län,Arboga,1138.524,1015.522,1047.123,1100.309,1225.348,1052.508,1295.386,1026.017
+Industri (energi och processer),Dalarnas län,Vansbro,1112.931,916.2168,987.4981,1100.211,1193.458,945.5549,1182.128,1123.646
+Industri (energi och processer),Dalarnas län,Malung-Sälen,776.3716,701.6661,738.733,717.2541,786.7277,747.7452,964.373,824.7836
+Industri (energi och processer),Dalarnas län,Gagnef,2208.693,2097.495,1858.606,1720.245,1299.932,815.7327,1010.056,706.8368
+Industri (energi och processer),Dalarnas län,Leksand,2956.177,2830.388,1846.501,1691.45,2482.643,1131.166,1238.44,926.673
+Industri (energi och processer),Dalarnas län,Rättvik,169647.9,158361.1,153156.9,143065.3,130572.6,148468.1,167055.2,162974.3
+Industri (energi och processer),Dalarnas län,Orsa,322.4232,308.5699,328.6337,295.5305,313.5379,279.5459,341.2116,278.6616
+Industri (energi och processer),Dalarnas län,Älvdalen,426.8858,385.6163,408.8793,567.9044,444.1,431.4674,523.1916,353.0807
+Industri (energi och processer),Dalarnas län,Smedjebacken,51712.41,56328.86,49181.3,45436.68,39828.36,40691.15,43745.56,46549.93
+Industri (energi och processer),Dalarnas län,Mora,2180.282,1847.292,1969.892,2091.858,2324.87,1883.334,2363.236,1667.007
+Industri (energi och processer),Dalarnas län,Falun,2942.633,2614.152,2871.318,2764.145,2991.154,2466.673,3178.013,2421.082
+Industri (energi och processer),Dalarnas län,Borlänge,335587.6,304197.3,277008.7,313459.4,307584.2,279080.1,267630.0,265761.9
+Industri (energi och processer),Dalarnas län,Säter,867.8625,757.8872,798.0319,819.6347,901.7806,730.5015,928.5483,671.2898
+Industri (energi och processer),Dalarnas län,Hedemora,7818.187,7205.734,6057.723,5543.709,5196.715,3736.686,6089.59,9843.407
+Industri (energi och processer),Dalarnas län,Avesta,119864.0,133266.7,117422.7,113272.7,110576.2,131888.9,138294.5,148029.4
+Industri (energi och processer),Dalarnas län,Ludvika,13502.82,14321.86,12591.5,15526.5,17220.66,23352.15,21140.67,22643.08
+Industri (energi och processer),Gävleborgs län,Ockelbo,601.0102,481.3286,541.2455,572.1034,676.0075,649.4368,686.3766,472.9985
+Industri (energi och processer),Gävleborgs län,Hofors,96010.34,94057.28,104230.3,76170.22,84358.23,79959.24,74765.22,88218.83
+Industri (energi och processer),Gävleborgs län,Ovanåker,1698.772,1391.096,1444.157,1614.354,1760.594,1623.302,2225.646,1651.624
+Industri (energi och processer),Gävleborgs län,Nordanstig,832.6872,695.2001,750.0845,801.6445,868.2505,1108.34,1748.146,1654.99
+Industri (energi och processer),Gävleborgs län,Ljusdal,1703.181,1464.328,1736.663,1558.091,1895.575,2446.33,2017.101,1509.148
+Industri (energi och processer),Gävleborgs län,Gävle,208800.1,96133.59,48493.55,29874.47,29517.75,23455.94,25914.8,23986.28
+Industri (energi och processer),Gävleborgs län,Sandviken,138363.1,114524.6,102944.8,102935.0,100746.4,91452.02,95518.59,95685.32
+Industri (energi och processer),Gävleborgs län,Söderhamn,39616.09,48999.2,51429.61,44974.91,40726.03,44099.48,51475.58,38540.65
+Industri (energi och processer),Gävleborgs län,Bollnäs,4073.617,2334.415,2629.104,1986.452,2281.738,1896.765,2288.654,1697.435
+Industri (energi och processer),Gävleborgs län,Hudiksvall,62850.1,74366.25,97771.84,73753.47,12622.95,20203.01,29450.12,26601.88
+Industri (energi och processer),Västernorrlands län,Ånge,31381.1,28982.17,24484.63,24495.96,35698.64,30206.17,23718.02,26678.03
+Industri (energi och processer),Västernorrlands län,Timrå,84393.18,66742.9,21493.52,23297.12,15366.99,19423.6,33895.18,42467.91
+Industri (energi och processer),Västernorrlands län,Härnösand,1262.117,804.4495,727.541,804.9819,881.1638,887.7009,947.9631,752.3322
+Industri (energi och processer),Västernorrlands län,Sundsvall,251936.0,261774.0,303061.6,306918.7,272474.1,255605.4,275191.1,284442.2
+Industri (energi och processer),Västernorrlands län,Kramfors,30465.33,24631.79,21711.85,17467.68,14312.15,13205.7,19261.84,20997.05
+Industri (energi och processer),Västernorrlands län,Sollefteå,933.2269,791.1738,827.6386,1693.986,1002.991,1114.483,1747.727,766.1083
+Industri (energi och processer),Västernorrlands län,Örnsköldsvik,76590.35,81952.46,127252.0,79185.92,69747.59,74789.08,81669.26,89372.77
+Industri (energi och processer),Jämtlands län,Ragunda,1856.534,536.6408,1494.536,619.819,713.949,710.9199,673.1851,1969.215
+Industri (energi och processer),Jämtlands län,Bräcke,822.5077,644.8965,668.395,724.5375,834.3007,848.2745,1224.033,2105.352
+Industri (energi och processer),Jämtlands län,Krokom,927.6782,767.7771,877.3431,807.9404,936.8759,2256.887,2018.057,1781.928
+Industri (energi och processer),Jämtlands län,Strömsund,1967.571,2109.664,1857.614,2386.934,2731.334,3367.64,2762.365,2064.209
+Industri (energi och processer),Jämtlands län,Åre,1040.697,875.9728,994.8605,929.6191,1090.427,1571.964,1273.3,905.8471
+Industri (energi och processer),Jämtlands län,Berg,2978.083,2718.77,3088.114,925.816,641.0106,1158.993,2417.644,2607.166
+Industri (energi och processer),Jämtlands län,Härjedalen,1393.498,1230.256,1451.352,1161.22,1511.168,2727.199,1797.205,1176.08
+Industri (energi och processer),Jämtlands län,Östersund,8471.357,4796.144,4278.879,5067.596,3860.769,3983.527,4537.227,3433.203
+Industri (energi och processer),Västerbottens län,Nordmaling,2762.605,1749.98,1216.285,669.3811,810.6992,668.2633,1180.349,2248.977
+Industri (energi och processer),Västerbottens län,Bjurholm,141.4445,137.782,139.6037,139.3001,174.6371,186.1387,174.4855,146.8024
+Industri (energi och processer),Västerbottens län,Vindeln,644.0324,550.8625,569.2374,627.4626,764.4636,718.3071,865.2499,953.3787
+Industri (energi och processer),Västerbottens län,Robertsfors,767.4172,653.7312,666.3663,766.277,912.9907,764.5896,879.666,641.0546
+Industri (energi och processer),Västerbottens län,Norsjö,680.8661,584.7043,546.6902,590.1706,715.8177,671.3623,702.3446,482.057
+Industri (energi och processer),Västerbottens län,Malå,541.9839,462.4651,489.6529,522.2083,642.5664,663.7487,640.0189,429.2373
+Industri (energi och processer),Västerbottens län,Storuman,443.2099,415.8955,438.6269,422.5274,560.6719,690.4395,565.0544,422.8441
+Industri (energi och processer),Västerbottens län,Sorsele,287.8591,302.7612,356.0141,247.9396,350.8476,604.2541,389.1574,271.1309
+Industri (energi och processer),Västerbottens län,Dorotea,375.4893,331.0515,351.9164,356.5872,450.4633,507.3535,454.1774,310.0912
+Industri (energi och processer),Västerbottens län,Vännäs,305.2311,619.6428,644.1584,660.1652,755.7285,727.0329,775.4544,712.1378
+Industri (energi och processer),Västerbottens län,Vilhelmina,497.9223,513.0056,593.2409,445.2625,653.557,1154.853,716.4228,510.9172
+Industri (energi och processer),Västerbottens län,Åsele,280.4399,278.0676,308.0042,249.8402,343.0274,546.5207,373.1267,268.6892
+Industri (energi och processer),Västerbottens län,Umeå,56864.68,41513.31,45301.7,43748.37,47218.57,43518.29,45406.22,47541.7
+Industri (energi och processer),Västerbottens län,Lycksele,4757.514,4912.099,5437.398,5489.536,5122.487,5296.49,7155.788,7896.022
+Industri (energi och processer),Västerbottens län,Skellefteå,255353.0,242426.6,294011.8,293612.9,284304.8,293510.6,292331.3,292272.2
+Industri (energi och processer),Norrbottens län,Arvidsjaur,532.553,522.4743,555.8396,541.5973,658.1486,758.0845,725.4247,729.3607
+Industri (energi och processer),Norrbottens län,Arjeplog,112.0456,142.931,162.0258,115.2997,154.9177,281.9092,159.9781,146.8611
+Industri (energi och processer),Norrbottens län,Jokkmokk,893.7733,451.3548,512.252,1092.066,538.8081,884.2181,570.6172,438.9422
+Industri (energi och processer),Norrbottens län,Överkalix,260.3255,261.3515,269.1841,263.1551,319.6347,362.3749,308.1115,243.8518
+Industri (energi och processer),Norrbottens län,Kalix,15075.68,10773.63,15500.73,12131.66,10743.99,10084.14,7315.22,11287.47
+Industri (energi och processer),Norrbottens län,Övertorneå,377.5095,371.3772,380.4619,387.3087,449.3745,452.1468,429.3546,357.0221
+Industri (energi och processer),Norrbottens län,Pajala,692.5086,676.1855,898.1493,817.7314,1009.095,1379.431,1192.875,919.4353
+Industri (energi och processer),Norrbottens län,Gällivare,138006.8,142713.1,141390.4,117587.6,124687.5,103753.0,112346.9,210619.6
+Industri (energi och processer),Norrbottens län,Älvsbyn,364.8006,392.4294,401.9699,408.5914,469.5709,450.5147,425.7932,417.0213
+Industri (energi och processer),Norrbottens län,Luleå,1541255.0,1405251.0,1117748.0,1326263.0,1277944.0,945632.5,1616938.0,1394078.0
+Industri (energi och processer),Norrbottens län,Piteå,46231.09,46427.4,59490.21,46239.26,44849.51,35638.79,34918.06,39167.58
+Industri (energi och processer),Norrbottens län,Boden,1145.898,1211.734,1269.443,1327.242,1549.538,1465.5,1382.365,1304.996
+Industri (energi och processer),Norrbottens län,Haparanda,498.5873,508.0746,533.4981,553.7843,635.2164,598.5622,583.7065,535.5192
+Industri (energi och processer),Norrbottens län,Kiruna,556279.2,582452.5,563238.5,546069.4,568690.0,536667.0,566390.4,561347.2
 Transporter,Stockholms län,Upplands Väsby,69779.91,68748.13,64846.77,63271.54,61774.19,61855.57,59444.8,59595.57
 Transporter,Stockholms län,Vallentuna,58302.89,57340.72,54222.85,52947.55,51751.98,51942.11,49931.65,61961.08
 Transporter,Stockholms län,Österåker,68099.54,66784.84,63022.33,61775.1,60921.1,61229.92,58704.99,57138.1
@@ -4033,6 +4536,11 @@ Egen uppvärmning av bostäder och lokaler,Blekinge län,Karlskrona,18608.78,154
 Egen uppvärmning av bostäder och lokaler,Blekinge län,Ronneby,11684.05,9810.108,7734.889,6958.391,7261.861,6414.78,6199.104,5473.188
 Egen uppvärmning av bostäder och lokaler,Blekinge län,Karlshamn,13183.8,10828.1,8633.483,7769.731,7969.966,7092.053,6702.315,5967.692
 Egen uppvärmning av bostäder och lokaler,Blekinge län,Sölvesborg,8895.942,7320.204,5813.317,5219.548,5376.787,4777.456,4511.84,4005.069
+Industri (energi och processer),Blekinge län,Olofström,2782.322,10459.35,10767.49,9794.693,6468.403,6295.6,8541.625,7368.575
+Industri (energi och processer),Blekinge län,Karlskrona,6074.293,4884.975,5239.4,5349.605,5507.365,5220.421,5472.662,4264.785
+Industri (energi och processer),Blekinge län,Ronneby,11967.11,9404.165,8631.349,8785.678,7645.451,6963.911,6822.645,6811.05
+Industri (energi och processer),Blekinge län,Karlshamn,66764.62,66980.83,66954.36,57923.64,31899.67,35055.95,25586.53,19688.0
+Industri (energi och processer),Blekinge län,Sölvesborg,7448.46,5857.498,6101.892,5969.705,5835.642,6415.09,5275.717,6255.274
 Transporter,Blekinge län,Olofström,21101.75,20751.89,19616.2,19143.54,18678.17,18773.5,17987.13,18413.01
 Transporter,Blekinge län,Karlskrona,92825.71,90905.42,84354.3,82745.3,81710.11,81976.85,78264.28,79324.14
 Transporter,Blekinge län,Ronneby,92780.67,94214.24,87059.03,82031.36,83247.94,89149.7,83434.34,85010.28
@@ -4089,6 +4597,19 @@ Egen uppvärmning av bostäder och lokaler,Östergötlands län,Söderköping,40
 Egen uppvärmning av bostäder och lokaler,Östergötlands län,Motala,8059.922,5941.968,5573.43,4960.244,4368.761,4175.739,3778.768,3726.166
 Egen uppvärmning av bostäder och lokaler,Östergötlands län,Vadstena,2374.784,1852.06,1730.165,1492.848,1355.822,1287.038,1220.769,1178.858
 Egen uppvärmning av bostäder och lokaler,Östergötlands län,Mjölby,4341.118,3444.1,3219.697,2772.782,2537.827,2401.597,2328.588,2240.826
+Industri (energi och processer),Östergötlands län,Ödeshög,2807.145,2565.385,2159.243,2314.712,2516.18,2296.81,2289.14,2041.686
+Industri (energi och processer),Östergötlands län,Ydre,473.062,419.9118,412.2269,476.4552,614.4796,599.1329,738.5057,541.3941
+Industri (energi och processer),Östergötlands län,Kinda,10193.02,10461.84,10554.35,10645.31,10375.19,9808.652,9997.703,10469.32
+Industri (energi och processer),Östergötlands län,Boxholm,30994.11,31232.09,28000.35,47998.85,27293.01,26826.35,29607.82,29355.41
+Industri (energi och processer),Östergötlands län,Åtvidaberg,1026.972,949.9571,920.5013,1061.926,1208.173,1006.394,1162.77,869.6543
+Industri (energi och processer),Östergötlands län,Finspång,26155.24,23260.04,25399.84,27951.87,24488.21,30688.54,33081.58,30631.75
+Industri (energi och processer),Östergötlands län,Valdemarsvik,3432.885,2511.593,2719.286,3179.588,2538.498,2700.247,2989.234,2672.875
+Industri (energi och processer),Östergötlands län,Linköping,43443.14,39331.79,34932.6,35522.41,33259.52,28599.49,20920.18,30874.95
+Industri (energi och processer),Östergötlands län,Norrköping,109012.9,96749.53,82131.04,69594.31,40176.32,43758.09,43459.22,42000.89
+Industri (energi och processer),Östergötlands län,Söderköping,942.3851,884.4697,889.3571,1025.052,1174.207,991.8742,1121.074,854.7988
+Industri (energi och processer),Östergötlands län,Motala,4361.095,3153.098,4388.178,4509.284,4907.568,3443.066,3896.082,2930.929
+Industri (energi och processer),Östergötlands län,Vadstena,841.9608,738.8906,741.6452,871.7018,996.5587,811.3154,956.9721,679.2952
+Industri (energi och processer),Östergötlands län,Mjölby,3719.686,3700.084,3548.848,3908.439,4510.105,4135.999,4817.72,4466.812
 Transporter,Östergötlands län,Ödeshög,63166.56,61605.94,58067.36,56450.0,54901.79,55101.61,52306.48,48856.91
 Transporter,Östergötlands län,Ydre,11909.76,11740.07,11096.0,10767.53,10446.54,10498.75,10183.52,9547.038
 Transporter,Östergötlands län,Kinda,31092.08,30992.28,29349.65,28494.61,27657.25,27656.76,26848.84,27146.61
@@ -4191,6 +4712,18 @@ Egen uppvärmning av bostäder och lokaler,Örebro län,Askersund,3126.452,2358.
 Egen uppvärmning av bostäder och lokaler,Örebro län,Karlskoga,3836.126,2612.862,2491.77,2299.454,1917.874,1866.203,1564.642,1597.752
 Egen uppvärmning av bostäder och lokaler,Örebro län,Nora,2118.553,1532.486,1478.079,1322.222,1124.383,1093.182,984.1473,983.9609
 Egen uppvärmning av bostäder och lokaler,Örebro län,Lindesberg,5031.627,3707.804,3593.505,3252.259,2772.616,2688.756,2487.19,2482.257
+Industri (energi och processer),Örebro län,Lekeberg,444.5602,363.7905,392.1518,470.9859,501.9892,581.777,564.4214,411.0493
+Industri (energi och processer),Örebro län,Laxå,1293.223,1118.485,980.9606,1012.182,1135.235,1233.788,1226.123,1127.564
+Industri (energi och processer),Örebro län,Hallsberg,8014.922,3799.38,3804.732,7398.071,6967.918,4061.862,2721.002,2124.769
+Industri (energi och processer),Örebro län,Degerfors,30063.58,31015.41,32538.6,29613.61,38846.55,35713.51,36182.74,35946.42
+Industri (energi och processer),Örebro län,Hällefors,4599.613,4048.992,3498.051,2571.587,12888.66,18572.18,17473.15,19125.58
+Industri (energi och processer),Örebro län,Ljusnarsberg,14838.42,13706.26,13783.21,16694.86,17461.54,19354.32,16320.59,13836.11
+Industri (energi och processer),Örebro län,Örebro,13990.48,14437.6,14869.41,15971.29,14853.68,15225.79,14237.26,12892.42
+Industri (energi och processer),Örebro län,Kumla,9524.459,8617.984,9393.459,10720.31,10416.59,10750.47,11289.44,10285.02
+Industri (energi och processer),Örebro län,Askersund,24208.89,25398.86,20830.88,23441.27,21140.84,15695.37,23269.66,26658.69
+Industri (energi och processer),Örebro län,Karlskoga,4342.251,4276.874,4195.782,4240.457,4718.999,4627.246,4675.888,3874.406
+Industri (energi och processer),Örebro län,Nora,3664.986,2947.84,3166.811,3144.18,2810.55,3230.17,2638.828,2285.893
+Industri (energi och processer),Örebro län,Lindesberg,31066.6,27494.83,14834.53,18634.02,17013.13,17769.89,22363.0,25694.08
 Transporter,Örebro län,Lekeberg,24416.09,23855.3,22573.53,22029.8,21474.19,21597.65,20670.78,20955.47
 Transporter,Örebro län,Laxå,34344.68,33788.83,31976.43,31190.26,30295.43,30282.02,28799.46,26834.43
 Transporter,Örebro län,Hallsberg,45370.77,44695.5,42618.01,41503.79,40296.13,40302.12,38657.34,37983.14
@@ -4289,6 +4822,19 @@ Egen uppvärmning av bostäder och lokaler,Jönköpings län,Sävsjö,3485.842,2
 Egen uppvärmning av bostäder och lokaler,Jönköpings län,Vetlanda,7962.798,6007.89,5664.74,5081.994,4495.949,4285.58,4007.709,3940.646
 Egen uppvärmning av bostäder och lokaler,Jönköpings län,Eksjö,5138.359,3835.437,3596.683,3187.229,2825.26,2695.093,2473.607,2429.396
 Egen uppvärmning av bostäder och lokaler,Jönköpings län,Tranås,2280.036,1706.574,1607.304,1446.683,1280.763,1217.954,1145.223,1129.345
+Industri (energi och processer),Jönköpings län,Aneby,692.5624,569.1971,514.5677,597.9649,667.8698,588.036,714.1323,529.0069
+Industri (energi och processer),Jönköpings län,Gnosjö,5525.105,5655.176,5611.046,5835.167,8186.806,7758.239,9504.915,8507.278
+Industri (energi och processer),Jönköpings län,Mullsjö,877.0507,715.1134,671.3804,782.2401,875.4347,752.181,920.4792,698.0391
+Industri (energi och processer),Jönköpings län,Habo,6200.381,7850.343,7535.719,6679.925,7061.621,6279.811,6621.082,6695.267
+Industri (energi och processer),Jönköpings län,Gislaved,7501.942,5939.341,5886.295,7028.561,7771.87,6609.162,8177.884,6218.583
+Industri (energi och processer),Jönköpings län,Vaggeryd,18295.05,18142.73,19782.33,20010.61,19437.58,19883.99,17818.48,11142.64
+Industri (energi och processer),Jönköpings län,Jönköping,17143.14,16581.18,16517.93,10809.28,12824.6,9891.717,10934.29,9615.972
+Industri (energi och processer),Jönköpings län,Nässjö,3503.932,3110.672,3871.459,4360.58,4696.615,4508.137,5271.119,4032.88
+Industri (energi och processer),Jönköpings län,Värnamo,12322.01,16088.21,15140.95,16076.53,14226.73,12959.22,12081.91,10750.43
+Industri (energi och processer),Jönköpings län,Sävsjö,3325.005,2192.251,2182.865,3830.219,4365.299,4030.091,4192.955,3234.072
+Industri (energi och processer),Jönköpings län,Vetlanda,30908.74,30560.11,28460.84,29072.88,34620.83,36221.48,30752.65,29931.39
+Industri (energi och processer),Jönköpings län,Eksjö,1716.175,1400.728,1523.135,1670.635,1787.151,1641.426,2436.127,2035.995
+Industri (energi och processer),Jönköpings län,Tranås,3587.399,2656.051,2853.826,3053.733,3227.94,2746.958,3414.634,2748.422
 Transporter,Jönköpings län,Aneby,13683.79,13345.51,12628.71,12330.76,12010.99,12112.27,11630.4,13743.87
 Transporter,Jönköpings län,Gnosjö,18976.71,18519.16,17517.35,17110.55,16736.94,16817.6,16069.3,17627.3
 Transporter,Jönköpings län,Mullsjö,15904.19,15499.13,14595.89,14194.09,13790.72,13854.03,13136.67,13899.4
@@ -4433,6 +4979,39 @@ Egen uppvärmning av bostäder och lokaler,Skåne län,Kristianstad,23070.23,189
 Egen uppvärmning av bostäder och lokaler,Skåne län,Simrishamn,10989.47,9757.21,7424.087,6586.483,7216.936,6267.113,6251.356,5354.154
 Egen uppvärmning av bostäder och lokaler,Skåne län,Ängelholm,10500.42,8596.599,6977.053,6351.099,6404.497,5732.314,5465.84,4929.105
 Egen uppvärmning av bostäder och lokaler,Skåne län,Hässleholm,29819.63,25356.06,19812.05,17721.46,18708.08,16470.68,15949.63,13955.51
+Industri (energi och processer),Skåne län,Svalöv,6988.264,6289.19,5847.215,6233.117,6670.751,6267.71,7178.085,6309.365
+Industri (energi och processer),Skåne län,Staffanstorp,1630.073,1229.012,1337.443,1457.571,1530.867,1345.523,1576.807,1273.205
+Industri (energi och processer),Skåne län,Burlöv,23345.78,30275.25,29740.98,24784.55,24420.29,21754.32,25693.51,23353.76
+Industri (energi och processer),Skåne län,Vellinge,1598.021,1222.774,1344.419,1597.057,1488.434,1376.817,1578.264,1355.666
+Industri (energi och processer),Skåne län,Östra Göinge,1611.043,1232.458,1256.727,2429.286,2393.163,1330.657,1603.55,1150.728
+Industri (energi och processer),Skåne län,Örkelljunga,3475.079,3288.312,3223.832,3217.738,3569.099,3249.383,3499.12,2072.813
+Industri (energi och processer),Skåne län,Bjuv,36581.4,36120.73,34670.98,34662.85,46281.97,44568.11,46926.37,36050.13
+Industri (energi och processer),Skåne län,Kävlinge,2020.533,1152.787,4183.291,1714.627,1440.99,1304.654,1502.462,1246.474
+Industri (energi och processer),Skåne län,Lomma,977.9689,729.0557,830.1346,901.6809,934.7822,870.9968,992.3728,841.9072
+Industri (energi och processer),Skåne län,Svedala,4895.729,4274.202,4330.576,4685.617,4743.675,4587.936,4502.191,4526.043
+Industri (energi och processer),Skåne län,Skurup,907.0005,690.2899,736.2803,813.6875,864.2312,761.1401,888.7203,708.2628
+Industri (energi och processer),Skåne län,Sjöbo,1093.224,839.1547,903.3439,983.365,1033.748,924.6578,1075.859,874.9828
+Industri (energi och processer),Skåne län,Hörby,933.8416,707.015,754.0737,834.1964,898.7593,809.7115,922.9357,710.962
+Industri (energi och processer),Skåne län,Höör,789.7042,598.0037,659.4167,720.1253,753.7645,687.6677,788.3245,652.9841
+Industri (energi och processer),Skåne län,Tomelilla,898.9698,12563.28,12597.6,11028.51,10047.54,5983.893,5217.828,3781.126
+Industri (energi och processer),Skåne län,Bromölla,58626.83,54656.2,43972.06,49200.6,37098.82,49824.51,45689.12,45081.72
+Industri (energi och processer),Skåne län,Osby,1957.769,1497.288,1546.83,1768.975,1931.859,1739.27,1936.705,1348.931
+Industri (energi och processer),Skåne län,Perstorp,68769.07,58698.93,43475.6,45093.77,39508.74,37457.21,35759.59,33076.25
+Industri (energi och processer),Skåne län,Klippan,33704.13,29952.64,31319.8,28183.23,29003.57,29128.11,28441.39,28652.36
+Industri (energi och processer),Skåne län,Åstorp,30778.99,23626.86,3539.963,5007.388,7452.881,5933.925,5606.884,4007.033
+Industri (energi och processer),Skåne län,Båstad,933.4028,713.5745,748.3081,819.6993,873.6518,777.4147,899.5323,717.3908
+Industri (energi och processer),Skåne län,Malmö,134351.3,125395.2,124714.3,129069.6,123990.4,126712.6,129803.9,139190.7
+Industri (energi och processer),Skåne län,Lund,14406.97,12107.41,12590.15,19942.32,17249.73,11713.12,14578.98,14558.99
+Industri (energi och processer),Skåne län,Landskrona,82408.49,76634.04,83599.78,86112.46,82353.11,79776.69,83235.8,60632.87
+Industri (energi och processer),Skåne län,Helsingborg,123517.2,113523.6,128380.0,128715.0,98193.06,94864.72,94243.96,92774.22
+Industri (energi och processer),Skåne län,Höganäs,228789.0,219799.7,200673.7,215003.0,209791.0,202548.6,194001.2,202863.2
+Industri (energi och processer),Skåne län,Eslöv,129423.8,127934.4,138498.5,133468.0,117051.3,104140.5,127081.7,98436.96
+Industri (energi och processer),Skåne län,Ystad,6084.899,5068.095,5582.022,6120.165,6656.282,4870.093,3868.497,3300.885
+Industri (energi och processer),Skåne län,Trelleborg,14309.03,6857.446,5863.001,5303.028,3638.071,1988.309,3735.693,3381.853
+Industri (energi och processer),Skåne län,Kristianstad,55346.87,47347.31,49686.17,46052.59,44439.69,45758.23,41356.93,39599.74
+Industri (energi och processer),Skåne län,Simrishamn,2855.298,2623.188,3021.499,3553.619,3954.869,2681.456,2058.085,1621.442
+Industri (energi och processer),Skåne län,Ängelholm,3180.135,2386.225,2536.77,2792.22,2968.993,2603.311,3039.23,2353.679
+Industri (energi och processer),Skåne län,Hässleholm,37311.76,36318.86,34373.77,33545.63,32119.42,30383.88,31905.83,39256.08
 Transporter,Skåne län,Svalöv,25880.6,25305.64,23960.3,23341.43,22795.38,22907.23,21889.66,20535.56
 Transporter,Skåne län,Staffanstorp,64669.15,63155.39,59847.65,58434.81,57127.34,57580.31,55170.86,54897.28
 Transporter,Skåne län,Burlöv,54511.55,53222.6,50369.22,49149.54,48015.16,48363.87,46276.68,46782.3
@@ -4633,6 +5212,7 @@ Utrikes transporter,Skåne län,Ängelholm,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 Utrikes transporter,Skåne län,Hässleholm,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
 El och fjärrvärme,Gotlands län,Gotland,4374.538,1776.052,2055.882,2569.845,1939.555,1469.845,1106.851,1341.825
 Egen uppvärmning av bostäder och lokaler,Gotlands län,Gotland,26692.99,22634.3,18069.02,16415.1,16977.93,15042.85,14774.74,13139.8
+Industri (energi och processer),Gotlands län,Gotland,1658691.0,1744491.0,1859291.0,1712447.0,1677965.0,1878648.0,1793577.0,1713100.0
 Transporter,Gotlands län,Gotland,173154.7,168572.8,137789.9,136857.6,139778.2,135967.3,123755.1,123856.0
 Arbetsmaskiner,Gotlands län,Gotland,40830.71,40478.26,39782.48,38608.37,37921.57,37217.86,36512.24,35272.48
 Produktanvändning (inkl. lösningsmedel),Gotlands län,Gotland,2615.011,2400.724,2594.951,2706.865,2604.08,2279.743,2357.988,2370.303

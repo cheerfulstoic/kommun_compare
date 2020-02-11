@@ -52,8 +52,8 @@ data =
       end.reject do |d|
         d['Huvudsektor'] == 'alla' ||
         d['Kommun'] == 'alla' ||
-        d['Kommun'] == 'Rest' ||
-        d['Huvudsektor'] == 'Industri (energi och processer)'
+        d['Kommun'] == 'Rest'#  ||
+        # d['Huvudsektor'] == 'Industri (energi och processer)'
       end.select do |d|
         d['Undersektor'] == 'alla'
       end.each do |d|
