@@ -1,24 +1,24 @@
 <template>
   <div id="app">
-    <div class="trend-chart">
+    <div>
       <h3>Filtrera</h3>
 
-      <select v-model="Län">
+      <select v-model="selected_län">
         <option value="Alla">Alla Länen</option>
-        <option v-for="län in länen" v-bind:key="län">
+        <option v-for="län in all_länen" v-bind:key="län">
           {{län}}
         </option>
       </select>
 
-      <select v-model="Kommun">
+      <select v-model="selected_kommun">
         <option value="Alla">Alla Kommuner</option>
-        <option v-for="kommun in kommuner" v-bind:key="kommun">
+        <option v-for="kommun in all_kommuner_for(län)" v-bind:key="kommun">
           {{kommun}}
         </option>
       </select>
 
       <div class="huvudsektor-options">
-        <div class="huvudsektor-option" v-for="huvudsektor in huvudsektorer" v-bind:key="huvudsektor">
+        <div class="huvudsektor-option" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
           <label>
             <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
             {{huvudsektor}}
@@ -26,17 +26,18 @@
         </div>
       </div>
 
-      <div>
-        <Trend class="trend-chart" v-bind:data="trend_data('CO2', true)" v-bind:options="trend_options('CO2', true)"/>
-        <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents', true)" v-bind:options="trend_options('CO2-equivalents', true)"/>
-      </div>
-
-      <div>
-        <Trend class="trend-chart" v-bind:data="trend_data('CO2', false)" v-bind:options="trend_options('CO2', false)"/>
-        <Trend class="trend-chart" v-bind:data="trend_data('CO2-equivalents', false)" v-bind:options="trend_options('CO2-equivalents', false)"/>
-      </div>
-
       Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a> och <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
+
+      <br/>
+
+      <DatabaseChart v-for="year_data_set in year_data_sets" v-bind:key="year_data_set.title"
+                  v-bind:year_data_by_kommun="year_data_set.data"
+                  v-bind:years="emissions_database.years"
+                  v-bind:title="year_data_set.title"
+                  v-bind:unit="year_data_set.unit"
+                  v-bind:kommun_to_highlight="kommun" />
+
+      <PercentageChangeTable v-bind:year_data_sets="year_data_sets" />
     </div>
   </div>
 </template>
@@ -44,113 +45,89 @@
 <script>
 import _ from 'lodash';
 
-import Trend from './components/Trend.vue';
+import DatabaseChart from './components/DatabaseChart.vue';
+import PercentageChangeTable from './components/PercentageChangeTable.vue'
 
-import { Database } from './db.js';
-// import without_industry_records from '../data/without_industry.json'
-import co2_data from '../data/CO2.json'
-import co2_equivalents_data from '../data/CO2-equivalents.json'
-import populations from '../data/populations.json'
+import { EmissionsDatabase } from './db.js';
+import emissions_data from '../data/emissions_data.json'
+const initial_emissions_database = new EmissionsDatabase(emissions_data);
 
-const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
-const co2_database = new Database(co2_data, populations);
-const co2_equivalents_database = new Database(co2_equivalents_data, populations);
+import populations_data from '../data/populations.json'
+const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017] // TEMP
+const population_data_by_kommun = _.reduce(populations_data, (result, record) => {
+  result[record.kommun.name] = _.map(years, (year) => { return(record.populations[year]) });
+
+  return(result);
+}, {});
 
 export default {
   name: 'app',
   components: {
-    Trend
+    DatabaseChart,
+    PercentageChangeTable,
   },
   data () {
     return({
-      Ämne: null,
-      Kommun: 'Alla',
-      Län: 'Alla',
-      selected_huvudsektorer: co2_database.sektorer(),
+      selected_kommun: 'Alla',
+      selected_län: 'Alla',
+      selected_huvudsektorer: initial_emissions_database.sektorer,
     })
   },
   watch: {
-    Län () {
-      this.Kommun = 'Alla';
+    selected_län () {
+      this.selected_kommun = 'Alla';
     },
   },
   computed: {
-    kommuner () {
-      return(co2_database.kommuner_for(this.Län));
+    all_länen () {
+      return(initial_emissions_database.länen);
     },
-    länen () {
-      return(co2_database.länen());
+    all_sektorer () {
+      return(initial_emissions_database.sektorer);
     },
-    huvudsektorer () {
-      return(co2_database.sektorer());
+
+    kommun () {
+      return(this.selected_kommun == 'Alla' ? null : this.selected_kommun);
+    },
+    län () {
+      return(this.selected_län == 'Alla' ? null : this.selected_län);
+    },
+
+    emissions_database () {
+      return(initial_emissions_database.filter({
+        Län: this.län,
+        Huvudsektor: this.selected_huvudsektorer,
+      }));
+    },
+
+    year_data_sets () {
+      return([
+        {
+          title: 'CO2-equivalents - Per capita',
+          unit: 'tons/person',
+          data: this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun(population_data_by_kommun)
+        },
+        {
+          title: 'CO2-equivalents',
+          unit: 'tons',
+          data: this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun()
+        },
+        {
+          title: 'CO2 - Per capita',
+          unit: 'tons/person',
+          data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun(population_data_by_kommun)
+        },
+        {
+          title: 'CO2-equivalents',
+          unit: 'tons',
+          data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun()
+        },
+      ])
     },
   },
   methods: {
-    trend_data (Ämne, by_population) {
-      let database;
-      if (Ämne === 'CO2') { database = co2_database }
-      if (Ämne === 'CO2-equivalents') { database = co2_equivalents_database }
-
-      let kommun = this.Kommun == 'Alla' ? null : this.Kommun
-      let län = this.Län == 'Alla' ? null : this.Län
-      let records = database.query({
-        filter: {
-          Län: län,
-          huvudsektorer: this.selected_huvudsektorer,
-        },
-        by_population: by_population,
-      });
-
-      let highlighted_record = records[kommun];
-      if (highlighted_record) {
-        delete records[kommun];
-      }
-
-      // Put kommun in first position so that it is on top
-      records = _.toPairs(records);
-      if (highlighted_record) {
-        records.unshift([kommun, highlighted_record])
-      }
-
-      return({
-        labels: years,
-        datasets: _.map(records, (pair) => {
-          let grouping = pair[0], record = pair[1];
-          return({
-            label: grouping,
-            data: _.map(years, (year) => { return(record[year]) })
-          })
-        })
-      })
-    },
-    trend_options (Ämne, by_population) {
-      return({
-        title: { display: true, text: `${Ämne} - exklusive industrisektorn${by_population ? ' - per capita' : ''}` },
-        legend: { display: false },
-        scales: {
-          yAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: `tons/${by_population ? 'person/' : ''}year`,
-            },
-            ticks: { suggestedMin: 0 },
-          }],
-        },
-        elements: {
-          point: { radius: 0 },
-          line: {
-            fill: false,
-            tension: 0,
-            borderColor: (info) => {
-              return(this.Kommun !== 'Alla' && info.datasetIndex == 0 ? '#f87979' : '#bbb');
-            },
-            borderWidth: (info) => {
-              return(this.Kommun !== 'Alla' && info.datasetIndex == 0 ? 3 : 1);
-            },
-          },
-        },
-        animation: false,
-      })
+    all_kommuner_for (län) {
+      return(initial_emissions_database.kommuner_for(län));
     },
   }
 }
@@ -164,10 +141,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.trend-chart {
-  display: inline-block;
 }
 
 .huvudsektor-options {
