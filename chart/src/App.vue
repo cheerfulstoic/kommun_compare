@@ -37,7 +37,9 @@
                   v-bind:unit="year_data_set.unit"
                   v-bind:kommun_to_highlight="kommun" />
 
-      <PercentageChangeTable v-bind:year_data_sets="year_data_sets" />
+      <PercentageChangeTable
+                  v-bind:year_data_sets="year_data_sets"
+                  v-bind:kommun_to_highlight="kommun" />
     </div>
   </div>
 </template>
@@ -118,7 +120,7 @@ export default {
           data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun(population_data_by_kommun)
         },
         {
-          title: 'CO2-equivalents',
+          title: 'CO2',
           unit: 'tons',
           data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun()
         },

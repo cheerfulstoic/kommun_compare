@@ -10,7 +10,9 @@
           {{year_data_set.title}}
         </th>
       </tr>
-      <tr v-for="kommun in ordered_kommuner" v-bind:key="kommun">
+      <tr v-for="kommun in ordered_kommuner"
+          v-bind:key="kommun"
+          v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
         <th>{{kommun}}</th>
         <td v-for="(year_data_set, index) in year_data_sets"
             v-bind:key="year_data_set.title"
@@ -30,7 +32,7 @@ import _ from 'lodash';
 
 export default {
   name: 'PercentageChangeTable',
-  props: ['year_data_sets'],
+  props: ['year_data_sets', 'kommun_to_highlight'],
   data () {
     return({order_index: 0});
   },
@@ -49,13 +51,15 @@ export default {
   },
   methods: {
     total_percentage_change (year_data) {
+      if (year_data == null) { return(null) }
+
       let first_year_value = year_data[0],
           last_year_value = year_data[year_data.length - 1];
 
       return(this.round_number(100.0 * (last_year_value - first_year_value) / first_year_value));
     },
     round_number(num) {
-      return(Math.round((num + Number.EPSILON) * 100) / 100);
+      return(Math.round((num + Number.EPSILON) * 10) / 10);
     },
   },
 }
@@ -66,6 +70,12 @@ export default {
 
 .currently-ordered {
   background-color: #eee;
+}
+
+tr.highlighted-kommun th,
+tr.highlighted-kommun td {
+  border: 1px solid black;
+  border-width: 1px 0;
 }
 
 </style>

@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     trend_data () {
-      let result = this.year_data_by_kommun;
+      let result = _.cloneDeep(this.year_data_by_kommun);
 
       // Put kommun in first position so that it is on top
       let highlighted_year_data = result[this.kommun_to_highlight];
