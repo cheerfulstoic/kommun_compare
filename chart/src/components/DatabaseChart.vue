@@ -1,5 +1,5 @@
 <template>
-  <div class="data-column">
+  <div class="database-chart">
     <Trend class="trend-chart"
            v-bind:data="trend_data()"
            v-bind:options="trend_options()" />
@@ -14,7 +14,7 @@ import Trend from './Trend.vue';
 
 export default {
   name: 'DatabaseChart',
-  props: ['year_data_by_kommun', 'years', 'title', 'unit', 'kommun_to_highlight'],
+  props: ['year_data_set', 'years', 'kommun_to_highlight'],
   components: {
     Trend
   },
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     trend_data () {
-      let result = _.cloneDeep(this.year_data_by_kommun);
+      let result = _.cloneDeep(this.year_data_set.data);
 
       // Put kommun in first position so that it is on top
       let highlighted_year_data = result[this.kommun_to_highlight];
@@ -31,21 +31,35 @@ export default {
         delete result[this.kommun_to_highlight];
       }
       result = _.toPairs(result);
-      if (highlighted_year_data) {
-        result.unshift([this.kommun_to_highlight, highlighted_year_data])
-      }
-
-      return({
-        labels: this.years,
-        datasets: _.map(result, (pair) => {
-          let grouping = pair[0], year_data = pair[1];
+      let datasets = _.map(result, (pair) => {
+        let grouping = pair[0], year_data = pair[1];
           return({
             label: grouping,
             data: year_data,
             spanGaps: true,
           })
         })
-      })
+
+      if (highlighted_year_data) {
+        datasets.unshift({
+          label: this.kommun_to_highlight,
+          data: highlighted_year_data,
+          borderColor: 'red',
+          borderWidth: 2,
+        })
+      }
+
+      if (this.kommun_to_highlight && this.year_data_set.highlight_data && this.year_data_set.highlight_data[this.kommun_to_highlight]) {
+        datasets.unshift({
+          label: 'TEMP label',
+          data: this.year_data_set.highlight_data[this.kommun_to_highlight],
+          borderColor: 'red',
+          borderWidth: 1.4,
+          borderDash: [10, 10],
+        })
+      }
+
+      return({ labels: this.years, datasets: datasets })
     },
     trend_options () {
       return({
@@ -53,13 +67,13 @@ export default {
         hover: {mode: null},
         parsing: false,
         spanGaps: true,
-        title: { display: true, text: this.title },
+        title: { display: true, text: this.year_data_set.title },
         legend: { display: false },
         scales: {
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: this.unit,
+              labelString: this.year_data_set.unit,
             },
             ticks: {
               suggestedMin: 0,
@@ -86,13 +100,8 @@ export default {
             tension: 0,
             steppedLine: false,
             borderDash: [],
-            borderColor: (info) => {
-              // return(this.Kommun !== 'Alla' && info.datasetIndex == 0 ? '#f87979' : '#bbb');
-              return(this.kommun_to_highlight && info.datasetIndex == 0 ? '#f87979' : '#ccc');
-            },
-            borderWidth: (info) => {
-              return(this.kommun_to_highlight && info.datasetIndex == 0 ? 2 : 0.7);
-            },
+            borderColor: '#ccc',
+            borderWidth: 0.7,
           },
         },
         animation: false,
@@ -104,11 +113,11 @@ export default {
 
 <style>
 
-.data-column {
+.database-chart {
   display: inline-block;
-  border: 1px solid #888;
   margin: 1em;
   padding: 1em;
+  width: 40%;
 }
 
 .trend-chart {

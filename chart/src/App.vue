@@ -31,10 +31,8 @@
       <br/>
 
       <DatabaseChart v-for="year_data_set in year_data_sets" v-bind:key="year_data_set.title"
-                  v-bind:year_data_by_kommun="year_data_set.data"
+                  v-bind:year_data_set="year_data_set"
                   v-bind:years="emissions_database.years"
-                  v-bind:title="year_data_set.title"
-                  v-bind:unit="year_data_set.unit"
                   v-bind:kommun_to_highlight="kommun" />
 
       <PercentageChangeTable
@@ -103,27 +101,35 @@ export default {
     },
 
     year_data_sets () {
+      let percent_change_co2_equivalents =
+        this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun()),
+          percent_change_co2 =
+        this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun());
       return([
         {
-          title: 'CO2-equivalents - Per capita',
+          title: 'UTSLÄPP VÄXTHUSGASER TOTALT - PER CAPITA',
           unit: 'tons/person',
           data: this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun(population_data_by_kommun)
         },
         {
-          title: 'CO2-equivalents',
-          unit: 'tons',
-          data: this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun()
-        },
-        {
-          title: 'CO2 - Per capita',
+          title: 'UTSLÄPP KOLDIOXID TOTALT - PER CAPITA',
           unit: 'tons/person',
           data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun(population_data_by_kommun)
         },
         {
-          title: 'CO2',
-          unit: 'tons',
-          data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun()
+          title: 'FÖRÄNDRINGSTAKT UTSLÄPP VÄXTHUSGASER',
+          unit: 'procent',
+          data: percent_change_co2_equivalents,
+          highlight_data: this.mean_year_data(percent_change_co2_equivalents),
         },
+
+        {
+          title: 'FÖRÄNDRINGSTAKT UTSLÄPP KOLDIOXID',
+          unit: 'procent',
+          data: percent_change_co2,
+          highlight_data: this.mean_year_data(percent_change_co2),
+        },
+
       ])
     },
   },
@@ -131,6 +137,26 @@ export default {
     all_kommuner_for (län) {
       return(initial_emissions_database.kommuner_for(län));
     },
+
+    percent_year_over_year_change_data (year_data_by_kommun) {
+      return _.reduce(year_data_by_kommun, (result, year_data, kommun) => {
+        result[kommun] = [0].concat(_.map(_.range(1, year_data.length), (index) => {
+          return 100 * (year_data[index] - year_data[index - 1]) / year_data[index - 1]
+        }))
+
+        return(result);
+      }, {})
+    },
+
+    mean_year_data(year_data_by_kommun) {
+      return _.reduce(year_data_by_kommun, (result, year_data, kommun) => {
+        let mean = _.mean(year_data);
+
+        result[kommun] = _.map(year_data, () => { return(mean) });
+
+        return(result);
+      }, {})
+    }
   }
 }
 </script>
