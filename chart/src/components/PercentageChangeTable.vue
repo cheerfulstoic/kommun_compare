@@ -1,6 +1,6 @@
 <template>
   <div class="percentage-change-table">
-    <table>
+    <table class="table">
       <tr>
         <th>&nbsp;</th>
         <th v-for="(year_data_set, index) in year_data_sets"

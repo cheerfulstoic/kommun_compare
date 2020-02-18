@@ -3,22 +3,22 @@
     <div>
       <h3>Filtrera</h3>
 
-      <select v-model="selected_län">
+      <select v-model="selected_län" class="select">
         <option value="Alla">Alla Länen</option>
         <option v-for="län in all_länen" v-bind:key="län">
           {{län}}
         </option>
       </select>
 
-      <select v-model="selected_kommun">
+      <select v-model="selected_kommun" class="select">
         <option value="Alla">Alla Kommuner</option>
         <option v-for="kommun in all_kommuner_for(län)" v-bind:key="kommun">
           {{kommun}}
         </option>
       </select>
 
-      <div class="huvudsektor-options">
-        <div class="huvudsektor-option" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
+      <div>
+        <div class="button" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
           <label>
             <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
             {{huvudsektor}}
@@ -26,9 +26,9 @@
         </div>
       </div>
 
-      Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a> och <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
-
-      <br/>
+      <div id="data-notification" class="notification is-info">
+        Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a> och <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
+      </div>
 
       <DatabaseChart v-for="year_data_set in year_data_sets" v-bind:key="year_data_set.title"
                   v-bind:year_data_set="year_data_set"
@@ -171,20 +171,10 @@ export default {
   margin-top: 60px;
 }
 
-.huvudsektor-options {
-  width: 800px;
-
+#data-notification {
+  width: 400px;
+  margin: 1em auto;
 }
 
-.huvudsektor-option {
-  display: inline-block;
-  white-space: nowrap;
-  margin: 0.3em 1em;
-
-  border: 1px solid #333;
-  border-radius: 0.7em;
-  padding: 0.3em;
-  background-color: #EEE;
-}
 
 </style>
