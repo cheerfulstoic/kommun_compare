@@ -30,14 +30,20 @@
         Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a> och <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
       </div>
 
-      <DatabaseChart v-for="year_data_set in year_data_sets" v-bind:key="year_data_set.title"
-                  v-bind:year_data_set="year_data_set"
-                  v-bind:years="emissions_database.years"
-                  v-bind:kommun_to_highlight="kommun" />
+      <div class="columns is-multiline is-gapless">
+        <div class="column is-half"
+             v-for="year_data_set in year_data_sets"
+             v-bind:key="year_data_set.title">
+          <DatabaseChart v-bind:year_data_set="year_data_set"
+                         v-bind:years="emissions_database.years"
+                         v-bind:kommun_to_highlight="kommun" />
+        </div>
+      </div>
 
       <PercentageChangeTable
                   v-bind:year_data_sets="year_data_sets"
-                  v-bind:kommun_to_highlight="kommun" />
+                  v-bind:kommun_to_highlight="kommun"
+                  v-on:focus_kommun="focus_kommun"/>
     </div>
   </div>
 </template>
@@ -101,33 +107,61 @@ export default {
     },
 
     year_data_sets () {
-      let percent_change_co2_equivalents =
-        this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun()),
+      let co_equivalents_year_data =
+            this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun(population_data_by_kommun),
+          co_year_data =
+            this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun(population_data_by_kommun),
+          percent_change_co2_equivalents =
+            this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun()),
           percent_change_co2 =
-        this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun());
+            this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun());
       return([
         {
           title: 'UTSLÄPP VÄXTHUSGASER TOTALT - PER CAPITA',
+          description: "Hur stora är de genomsnittliga årliga utsläppen av växthusgaser de senaste fem\n\nMätperioderna i din kommun? (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita)",
           unit: 'tons/person',
-          data: this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun(population_data_by_kommun)
+          data: co_equivalents_year_data,
+          metrics: _.reduce(co_equivalents_year_data, (result, year_data, kommun) => {
+            result[kommun] = this.total_percentage_change(year_data);
+
+            return(result);
+          }, {})
         },
         {
           title: 'UTSLÄPP KOLDIOXID TOTALT - PER CAPITA',
+          description: 'Hur stora är de genomsnittliga årliga utsläppen av koldioxid de senaste fem mätperioderna i din kommun? (Exklusive industrin, per capita).',
           unit: 'tons/person',
-          data: this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun(population_data_by_kommun)
+          data: co_year_data,
+          metrics: _.reduce(co_year_data, (result, year_data, kommun) => {
+            result[kommun] = this.total_percentage_change(year_data);
+
+            return(result);
+          }, {})
         },
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP VÄXTHUSGASER',
+          description: 'Hur stor är den genomsnittliga årliga procentuella förändringstakten de senaste fem mätperioderna i din kommun? (Samtliga växthusgaser totalt, exklusive industrin, per capita).',
           unit: 'procent',
           data: percent_change_co2_equivalents,
           highlight_data: this.mean_year_data(percent_change_co2_equivalents),
+          metrics: _.reduce(this.mean_year_data(percent_change_co2_equivalents), (result, year_data, kommun) => {
+            result[kommun] = this.round_number(year_data[0]);
+
+            return(result);
+          }, {})
         },
 
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP KOLDIOXID',
+          description: 'Hur stor är den genomsnittliga årliga procentuella förändringstakten de senaste fem mätperioderna i din kommun? (Samtliga växthusgaser totalt, per sektor, per capita).',
           unit: 'procent',
           data: percent_change_co2,
           highlight_data: this.mean_year_data(percent_change_co2),
+          metrics: _.reduce(this.mean_year_data(percent_change_co2), (result, year_data, kommun) => {
+            result[kommun] = this.round_number(year_data[0]);
+
+            return(result);
+          }, {})
         },
 
       ])
@@ -156,7 +190,24 @@ export default {
 
         return(result);
       }, {})
-    }
+    },
+
+    total_percentage_change (year_data) {
+      if (year_data == null) { return(null) }
+
+      let first_year_value = year_data[0],
+          last_year_value = year_data[year_data.length - 1];
+
+      return(this.round_number(100.0 * (last_year_value - first_year_value) / first_year_value));
+    },
+
+    round_number(num) {
+      return(Math.round((num + Number.EPSILON) * 10) / 10);
+    },
+
+    focus_kommun (kommun) {
+      this.selected_kommun = kommun;
+    },
   }
 }
 </script>

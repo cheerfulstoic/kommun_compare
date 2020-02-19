@@ -1,8 +1,22 @@
 <template>
   <div class="database-chart">
-    <Trend class="trend-chart"
-           v-bind:data="trend_data()"
-           v-bind:options="trend_options()" />
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title">
+          {{year_data_set.title}}
+        </p>
+      </header>
+      <div class="card-content">
+        <p v-for="part in parts(year_data_set.description)" v-bind:key="part">
+          {{part}}
+        </p>
+      </div>
+      <div class="card-image">
+        <Trend class="trend-chart"
+               v-bind:data="trend_data()"
+               v-bind:options="trend_options()" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -67,7 +81,6 @@ export default {
         hover: {mode: null},
         parsing: false,
         spanGaps: true,
-        title: { display: true, text: this.year_data_set.title },
         legend: { display: false },
         scales: {
           yAxes: [{
@@ -107,25 +120,28 @@ export default {
         animation: false,
       })
     },
+    parts (s) {
+      return s.split(/[\n\r]+/);
+    },
   }
 }
 </script>
 
 <style>
 
+.card-header {
+  text-align: center;
+}
+
 .database-chart {
   display: inline-block;
   margin: 1em;
   padding: 1em;
-  width: 40%;
+  width: 500px;
 }
 
 .trend-chart {
   display: inline-block;
-}
-
-canvas {
-  border-radius: 0.5em;
 }
 
 </style>

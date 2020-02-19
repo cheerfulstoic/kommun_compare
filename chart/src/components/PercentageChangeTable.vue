@@ -13,12 +13,15 @@
       <tr v-for="kommun in ordered_kommuner"
           v-bind:key="kommun"
           v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
-        <th>{{kommun}}</th>
+        <th>
+          {{kommun}}
+          <a v-on:click="$emit('focus_kommun', kommun)">🔎</a>
+        </th>
         <td v-for="(year_data_set, index) in year_data_sets"
             v-bind:key="year_data_set.title"
             v-bind:class="{'currently-ordered': index == order_index}"
             v-on:click="order_index = index">
-          {{total_percentage_change(year_data_set.data[kommun])}}%
+          {{year_data_set.metrics[kommun]}}%
         </td>
       </tr>
     </table>
@@ -42,24 +45,11 @@ export default {
 
       if (this.order_index != null) {
         kommuner = _.sortBy(kommuner, (kommun) => {
-          return(this.total_percentage_change(this.year_data_sets[this.order_index].data[kommun]))
+          return(this.year_data_sets[this.order_index].metrics[kommun]);
         })
       }
 
       return(kommuner);
-    },
-  },
-  methods: {
-    total_percentage_change (year_data) {
-      if (year_data == null) { return(null) }
-
-      let first_year_value = year_data[0],
-          last_year_value = year_data[year_data.length - 1];
-
-      return(this.round_number(100.0 * (last_year_value - first_year_value) / first_year_value));
-    },
-    round_number(num) {
-      return(Math.round((num + Number.EPSILON) * 10) / 10);
     },
   },
 }
@@ -74,8 +64,7 @@ export default {
 
 tr.highlighted-kommun th,
 tr.highlighted-kommun td {
-  border: 1px solid black;
-  border-width: 1px 0;
+  background-color: #BFDEFC;
 }
 
 </style>
