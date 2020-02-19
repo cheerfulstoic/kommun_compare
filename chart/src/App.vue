@@ -1,28 +1,30 @@
 <template>
   <div id="app">
     <div>
-      <h3>Filtrera</h3>
+      <div id="filters">
+        <h3>Filtrera</h3>
 
-      <select v-model="selected_län" class="select">
-        <option value="Alla">Alla Länen</option>
-        <option v-for="län in all_länen" v-bind:key="län">
-          {{län}}
-        </option>
-      </select>
+        <select v-model="selected_län" class="select">
+          <option value="Alla">Alla Länen</option>
+          <option v-for="län in all_länen" v-bind:key="län">
+            {{län}}
+          </option>
+        </select>
 
-      <select v-model="selected_kommun" class="select">
-        <option value="Alla">Alla Kommuner</option>
-        <option v-for="kommun in all_kommuner_for(län)" v-bind:key="kommun">
-          {{kommun}}
-        </option>
-      </select>
+        <select v-model="selected_kommun" class="select">
+          <option value="Alla">Alla Kommuner</option>
+          <option v-for="kommun in all_kommuner_for(län)" v-bind:key="kommun">
+            {{kommun}}
+          </option>
+        </select>
 
-      <div>
-        <div class="button" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
-          <label>
-            <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
-            {{huvudsektor}}
-          </label>
+        <div>
+          <div class="button" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
+            <label>
+              <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
+              {{huvudsektor}}
+            </label>
+          </div>
         </div>
       </div>
 
@@ -220,6 +222,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#filters {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 5;
 }
 
 #data-notification {

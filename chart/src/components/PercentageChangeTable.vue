@@ -1,7 +1,7 @@
 <template>
   <div class="percentage-change-table">
     <table class="table">
-      <tr>
+      <tr class="title-row">
         <th>&nbsp;</th>
         <th v-for="(year_data_set, index) in year_data_sets"
           v-bind:key="year_data_set.title"
@@ -59,6 +59,14 @@ export default {
 
 .currently-ordered {
   background-color: #eee;
+}
+
+tr.title-row {
+  position: sticky;
+  top: 130px;
+}
+tr.title-row {
+  background-color: white;
 }
 
 tr.highlighted-kommun th,
