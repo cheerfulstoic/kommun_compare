@@ -13,14 +13,13 @@
       <tr v-for="kommun in ordered_kommuner"
           v-bind:key="kommun"
           v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
-        <th>
+        <th v-on:click="$emit('focus_kommun', kommun)">
           {{kommun}}
-          <a v-on:click="$emit('focus_kommun', kommun)">🔎</a>
         </th>
         <td v-for="(year_data_set, index) in year_data_sets"
             v-bind:key="year_data_set.title"
             v-bind:class="{'currently-ordered': index == order_index}"
-            v-on:click="order_index = index">
+            v-on:click="$emit('focus_kommun', kommun)">
           {{year_data_set.metrics[kommun]}}%
         </td>
       </tr>
