@@ -14,7 +14,7 @@
           v-bind:key="kommun"
           v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
         <th v-on:click="$emit('focus_kommun', kommun)">
-          {{kommun}}
+          {{kommun}} 🔎
         </th>
         <td v-for="(year_data_set, index) in year_data_sets"
             v-bind:key="year_data_set.title"
