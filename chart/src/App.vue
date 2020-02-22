@@ -18,17 +18,17 @@
           </option>
         </select>
 
-        <div>
-          <div class="button sektor-button" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
-            <label>
-              <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
-              {{huvudsektor}}
-            </label>
+        <div class="sektor-buttons">
+          <a class="button" v-on:click="select_all">Select All</a>
+          <!-- TODO: Make buttons clump together -->
+          <span class="button-group" v-for="(huvudsektor, index) in all_sektorer" v-bind:key="huvudsektor">
+            <span class="button">
+              <input type="checkbox" v-bind:id="'sektor-button-' + index" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
+            </span>
+            <label v-bind:for="'sektor-button-' + index" class="button">{{huvudsektor}}</label>
 
-            <a v-on:click="focus_huvudsektor(huvudsektor)">🔎</a>
-            &nbsp;
-            <a v-on:click="unfocus_huvudsektor(huvudsektor)">❌</a>
-          </div>
+            <a class="button" v-on:click="focus_huvudsektor(huvudsektor)">🔎</a>
+          </span>
         </div>
       </div>
 
@@ -218,13 +218,11 @@ export default {
     },
 
     focus_huvudsektor (selected_huvudsektorer) {
-      this.selected_huvudsektorer = ([selected_huvudsektorer]);
+      this.selected_huvudsektorer = [selected_huvudsektorer];
     },
 
-    unfocus_huvudsektor (selected_huvudsektorer) {
-      this.selected_huvudsektorer = (_.filter(initial_emissions_database.sektorer, (huvudsektor) => {
-          return(huvudsektor !== selected_huvudsektorer);
-        }))
+    select_all () {
+      this.selected_huvudsektorer = initial_emissions_database.sektorer;
     },
   }
 }
@@ -252,7 +250,7 @@ export default {
   margin: 1em auto;
 }
 
-.button.sektor-button {
+.sektor-buttons .button {
   font-size: 0.8em;
   margin: 0.2em;
 }
