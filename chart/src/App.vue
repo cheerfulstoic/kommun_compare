@@ -21,7 +21,7 @@
         <div class="sektor-buttons">
           <a class="button" v-on:click="select_all">Select All</a>
           <!-- TODO: Make buttons clump together -->
-          <span class="button-group" v-for="(huvudsektor, index) in all_sektorer" v-bind:key="huvudsektor">
+          <span class="buttons has-addons is-centered" v-for="(huvudsektor, index) in all_sektorer" v-bind:key="huvudsektor">
             <span class="button">
               <input type="checkbox" v-bind:id="'sektor-button-' + index" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
             </span>
@@ -250,9 +250,14 @@ export default {
   margin: 1em auto;
 }
 
+.sektor-buttons .buttons {
+  display: inline-block;
+  margin: 0.2em;
+}
+
 .sektor-buttons .button {
   font-size: 0.8em;
-  margin: 0.2em;
+  display: inline-block;
 }
 
 
