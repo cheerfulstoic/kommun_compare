@@ -118,11 +118,11 @@ export default {
 
 tr.title-row {
   position: sticky;
-  top: 85px;
+  top: 165px;
 }
 tr.subtitle-row {
   position: sticky;
-  top: 115px;
+  top: 195px;
 }
 tr.title-row,
 tr.subtitle-row {
