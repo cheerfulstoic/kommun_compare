@@ -19,11 +19,15 @@
         </select>
 
         <div>
-          <div class="button" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
+          <div class="button sektor-button" v-for="huvudsektor in all_sektorer" v-bind:key="huvudsektor">
             <label>
               <input type="checkbox" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
               {{huvudsektor}}
             </label>
+
+            <a v-on:click="focus_huvudsektor(huvudsektor)">🔎</a>
+            &nbsp;
+            <a v-on:click="unfocus_huvudsektor(huvudsektor)">❌</a>
           </div>
         </div>
       </div>
@@ -176,7 +180,9 @@ export default {
 
     percent_year_over_year_change_data (year_data_by_kommun) {
       return _.reduce(year_data_by_kommun, (result, year_data, kommun) => {
-        result[kommun] = [0].concat(_.map(_.range(1, year_data.length), (index) => {
+        result[kommun] = [0].concat(_.map(_.range(1, year_data.length + 1), (index) => {
+          // TODO:
+          // What should we do if the previous year is zero but the current year isn't?
           return 100 * (year_data[index] - year_data[index - 1]) / year_data[index - 1]
         }))
 
@@ -200,7 +206,7 @@ export default {
       let first_year_value = year_data[0],
           last_year_value = year_data[year_data.length - 1];
 
-      return(this.round_number(100.0 * (last_year_value - first_year_value) / first_year_value));
+      return(this.round_number(100 * (last_year_value - first_year_value) / first_year_value));
     },
 
     round_number(num) {
@@ -209,6 +215,16 @@ export default {
 
     focus_kommun (kommun) {
       this.selected_kommun = kommun;
+    },
+
+    focus_huvudsektor (selected_huvudsektorer) {
+      this.selected_huvudsektorer = ([selected_huvudsektorer]);
+    },
+
+    unfocus_huvudsektor (selected_huvudsektorer) {
+      this.selected_huvudsektorer = (_.filter(initial_emissions_database.sektorer, (huvudsektor) => {
+          return(huvudsektor !== selected_huvudsektorer);
+        }))
     },
   }
 }
@@ -234,6 +250,11 @@ export default {
 #data-notification {
   width: 400px;
   margin: 1em auto;
+}
+
+.button.sektor-button {
+  font-size: 0.8em;
+  margin: 0.2em;
 }
 
 
