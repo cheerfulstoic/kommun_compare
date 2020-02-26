@@ -123,8 +123,8 @@ export default {
             this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun());
       return([
         {
-          title: 'UTSLÄPP VÄXTHUSGASER TOTALT - PER CAPITA',
-          description: "Hur stora är de genomsnittliga årliga utsläppen av växthusgaser de senaste fem\n\nMätperioderna i din kommun? (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita)",
+          title: 'UTSLÄPP VÄXTHUSGASER TOTALT',
+          description: "Genomsnittliga årliga utsläpp av växthusgaser de senaste fem mätperioderna. (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita). ",
           unit: 'tons/person',
           data: co_equivalents_year_data,
           metrics: _.reduce(co_equivalents_year_data, (result, year_data, kommun) => {
@@ -134,8 +134,8 @@ export default {
           }, {})
         },
         {
-          title: 'UTSLÄPP KOLDIOXID TOTALT - PER CAPITA',
-          description: 'Hur stora är de genomsnittliga årliga utsläppen av koldioxid de senaste fem mätperioderna i din kommun? (Exklusive industrin, per capita).',
+          title: 'UTSLÄPP KOLDIOXID TOTALT',
+          description: 'Genomsnittliga årliga utsläpp av koldioxid de senaste fem mätperioderna. (Exklusive industrin, per capita). ',
           unit: 'tons/person',
           data: co_year_data,
           metrics: _.reduce(co_year_data, (result, year_data, kommun) => {
@@ -146,7 +146,7 @@ export default {
         },
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP VÄXTHUSGASER',
-          description: 'Hur stor är den genomsnittliga årliga procentuella förändringstakten de senaste fem mätperioderna i din kommun? (Samtliga växthusgaser totalt, exklusive industrin, per capita).',
+          description: 'Genomsnittlig årlig procentuell förändringstakt de senaste fem mätperioderna. (Samtliga växthusgaser totalt, per capita). ',
           unit: 'procent',
           data: percent_change_co2_equivalents,
           highlight_data: this.mean_year_data(percent_change_co2_equivalents),
@@ -159,7 +159,7 @@ export default {
 
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP KOLDIOXID',
-          description: 'Hur stor är den genomsnittliga årliga procentuella förändringstakten de senaste fem mätperioderna i din kommun? (Samtliga växthusgaser totalt, per sektor, per capita).',
+          description: 'Genomsnittlig årlig procentuell förändringstakt de senaste fem mätperioderna i din kommun. (Koldioxid totalt, per sektor, per capita).',
           unit: 'procent',
           data: percent_change_co2,
           highlight_data: this.mean_year_data(percent_change_co2),
