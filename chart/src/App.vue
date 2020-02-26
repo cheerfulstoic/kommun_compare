@@ -180,7 +180,7 @@ export default {
 
     percent_year_over_year_change_data (year_data_by_kommun) {
       return _.reduce(year_data_by_kommun, (result, year_data, kommun) => {
-        result[kommun] = [0].concat(_.map(_.range(1, year_data.length + 1), (index) => {
+        result[kommun] = [0].concat(_.map(_.range(1, year_data.length), (index) => {
           // TODO:
           // What should we do if the previous year is zero but the current year isn't?
           return 100 * (year_data[index] - year_data[index - 1]) / year_data[index - 1]
