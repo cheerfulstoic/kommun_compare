@@ -1,3 +1,4 @@
+
 <template>
   <div class="percentage-change-table">
     <table class="table">
@@ -9,12 +10,13 @@
           v-bind:class="{'currently-ordered': index == order_index}"
           v-on:click="toggle_order(index)">
           {{year_data_set.title}}
+				<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
           <span v-if="order_index === index">
-            <span v-if="order_direction === 'ascending'">👇 </span>
-            <span v-if="order_direction === 'descending'">☝️  </span>
+            <span v-if="order_direction === 'ascending'"><i class="fa fa-sort-asc"></i></span>
+            <span v-if="order_direction === 'descending'"><i class="fa fa-sort-desc"></i>  </span>
           </span>
           <span v-if="order_index !== index">
-            🤷‍♂️
+            <i class="fa fa-fw fa-sort"></i>
           </span>
         </th>
       </tr>
