@@ -10,13 +10,16 @@
           v-bind:class="{'currently-ordered': index == order_index}"
           v-on:click="toggle_order(index)">
           {{year_data_set.title}}
-				<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
           <span v-if="order_index === index">
-            <span v-if="order_direction === 'ascending'"><i class="fa fa-sort-asc"></i></span>
-            <span v-if="order_direction === 'descending'"><i class="fa fa-sort-desc"></i>  </span>
+            <span v-if="order_direction === 'ascending'">
+              <font-awesome-icon icon="sort-down"></font-awesome-icon>
+            </span>
+            <span v-if="order_direction === 'descending'">
+              <font-awesome-icon icon="sort-up"></font-awesome-icon>
+            </span>
           </span>
           <span v-if="order_index !== index">
-            <i class="fa fa-fw fa-sort"></i>
+            <font-awesome-icon icon="sort"></font-awesome-icon>
           </span>
         </th>
       </tr>

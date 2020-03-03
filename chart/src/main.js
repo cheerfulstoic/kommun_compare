@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './plugins/fontawesome'
 import App from './App.vue'
 
 import sassStyles from 'bulma/bulma.sass'
