@@ -2,7 +2,9 @@ require 'roo-xls'
 require 'csv'
 require 'json'
 
-data = 
+years = (2010..2017)
+
+records = 
   Dir.glob('./data/*.xls').flat_map do |filename|
     puts filename
     _, base_name = filename.match(/\/([^\/]+)\.xls$/).to_a
@@ -39,14 +41,25 @@ data =
         row.unshift(subject)
 
         d = header_row.zip(row).to_h
+
         d['Kommun'].gsub!(/([a-z])([A-Z])/, '\1 \2')
         d['Kommun'].gsub!('-', ' ')
         d['Kommun'] = 'Malung-Sälen' if d['Kommun'] == 'Malung'
         d['Kommun'] = 'Upplands-Bro' if d['Kommun'] == 'Upplands Bro'
         d['Kommun'] = 'Dals-Ed' if d['Kommun'] == 'Dals Ed'
-        (1990..2009).each do |year|
-          d.delete(year.to_s)
+
+        year_data = {}
+        d.keys.each do |key|
+          if key.match?(/\A\d+\Z/)
+            value = d.delete(key)
+
+            if years.include?(key.to_i)
+              year_data[key.to_i] = value
+            end
+          end
         end
+
+        d['year_data'] = years.map {|year| year_data.fetch(year, 0) }
 
         d
       end.reject do |d|
@@ -61,32 +74,22 @@ data =
         d.delete('Undersektor')
       end
     else
-    []
+      []
     end
   end
 
-subjects = data.map {|d| d['Ämne'] }.uniq
+File.open("./output/emissions_data.json", 'w') do |f|
+  f << {
+    years: years.to_a,
+    records: records,
+  }.to_json
+end
 
-puts "subjects: #{subjects.inspect}"
+keys = records.flat_map(&:keys).uniq
+CSV.open("./output/emissions_data.csv", 'wb') do |csv|
+  csv << keys
 
-subjects.each do |subject|
-  subject_data = data.select do |d|
-    d['Ämne'] == subject
-  end
-
-  subject_data.each do |d|
-    d.delete('Ämne')
-  end
-
-  File.open("./output/#{subject}.json", 'w') { |f| f << subject_data.to_json }
-
-  keys = subject_data.flat_map(&:keys).uniq
-
-  CSV.open("./output/#{subject}.csv", 'wb') do |csv|
-    csv << keys
-
-    subject_data.each do |record|
-      csv << keys.map(&record)
-    end
+  records.each do |record|
+    csv << keys.map(&record)
   end
 end
