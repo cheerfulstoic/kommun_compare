@@ -121,7 +121,20 @@ export default {
             this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2-equivalents'}).year_data_by_kommun()),
           percent_change_co2 =
             this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun());
-      return([
+
+      let total_points_fn =
+            (percentage, min_value, max_value) => {
+              let x = ((percentage - min_value) / (max_value - min_value))
+
+              return(this.round_number(3 * (1 - Math.pow(x, 1/3) * Math.sign(x))));
+            },
+          percent_change_points_fn =
+            (percentage, min_value, max_value) => {
+              let x = ((percentage - min_value) / (max_value - min_value))
+
+              return(this.round_number(3 * (1 - Math.pow(x, 1/3) * Math.sign(x)) - 1));
+            };
+      let result = [
         {
           title: 'UTSLÄPP VÄXTHUSGASER TOTALT',
           description: "Genomsnittliga årliga utsläpp av växthusgaser de senaste fem mätperioderna. (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita). ",
@@ -131,7 +144,8 @@ export default {
             result[kommun] = this.total_percentage_change(year_data);
 
             return(result);
-          }, {})
+          }, {}),
+          points_fn: total_points_fn,
         },
         {
           title: 'UTSLÄPP KOLDIOXID TOTALT',
@@ -142,7 +156,8 @@ export default {
             result[kommun] = this.total_percentage_change(year_data);
 
             return(result);
-          }, {})
+          }, {}),
+          points_fn: total_points_fn,
         },
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP VÄXTHUSGASER',
@@ -154,7 +169,8 @@ export default {
             result[kommun] = this.round_number(year_data[0]);
 
             return(result);
-          }, {})
+          }, {}),
+          points_fn: percent_change_points_fn,
         },
 
         {
@@ -167,10 +183,22 @@ export default {
             result[kommun] = this.round_number(year_data[0]);
 
             return(result);
-          }, {})
+          }, {}),
+          points_fn: percent_change_points_fn,
         },
+      ]
 
-      ])
+      _.each(result, (year_data_set) => {
+        let max = _(year_data_set.metrics).values().max(),
+            min = _(year_data_set.metrics).values().min();
+
+
+        year_data_set.points = _.mapValues(year_data_set.metrics, (percentage) => {
+          return year_data_set.points_fn(percentage, min, max);
+        });
+      })
+
+      return(result);
     },
   },
   methods: {
@@ -210,7 +238,8 @@ export default {
     },
 
     round_number(num) {
-      return(Math.round((num + Number.EPSILON) * 10) / 10);
+      // return(Math.round((num + Number.EPSILON) * 10) / 10);
+      return(Math.round((num + Number.EPSILON) * 100) / 100);
     },
 
     focus_kommun (kommun) {
