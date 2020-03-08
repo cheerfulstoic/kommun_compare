@@ -154,14 +154,10 @@ export default {
       return _.join(_.map(data, (row) => { return _.join(row, ',') }), "\n")
     },
     csv_filename () {
-      if ( this.kommun_to_highlight != null ) {
-        return this.kommun_to_highlight
+      if ( this.lan_to_highlight != null ) {
+        return this.lan_to_highlight;
       } else {
-        if ( this.lan_to_highlight != null ) {
-          return this.lan_to_highlight;
-        } else {
-          return 'Alla kommuner'
-        }
+        return 'Alla länen'
       }
     },
     csv_file_data_url () {
