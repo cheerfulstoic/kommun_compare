@@ -65,10 +65,6 @@
         <th>{{total_points(kommun)}}</th>
       </tr>
     </table>
-
-    <pre>
-      {{csv()}}
-    </pre>
   </div>
 </template>
 
