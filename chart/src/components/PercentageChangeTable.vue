@@ -1,6 +1,10 @@
 
 <template>
   <div class="percentage-change-table">
+    <a class="btn btn-primary mx-2"
+       v-bind:href="csv_file_data_url()"
+       v-bind:download="csv_filename() + '.csv'">Save CSV</a>
+
     <table class="table">
       <tr class="title-row">
         <th>&nbsp;</th>
@@ -22,7 +26,7 @@
             <font-awesome-icon icon="sort"></font-awesome-icon>
           </span>
         </th>
-        <th>Total Points</th>
+        <th>Total poäng</th>
       </tr>
       <tr class="subtitle-row">
         <th>&nbsp;</th>
@@ -61,6 +65,10 @@
         <th>{{total_points(kommun)}}</th>
       </tr>
     </table>
+
+    <pre>
+      {{csv()}}
+    </pre>
   </div>
 </template>
 
@@ -71,7 +79,7 @@ import _ from 'lodash';
 
 export default {
   name: 'PercentageChangeTable',
-  props: ['year_data_sets', 'kommun_to_highlight'],
+  props: ['year_data_sets', 'kommun_to_highlight', 'lan_to_highlight'],
   data () {
     return({
       order_index: 0,
@@ -116,6 +124,54 @@ export default {
         return year_data_set.points[kommun]
       }));
     },
+    csv () {
+      let data = [];
+
+      let header1 = [], header2 = [];
+      _.each(this.year_data_sets, (year_data_set) => {
+        header1.push(year_data_set.title);
+        header1.push('')
+      })
+      header1.push(`Total poäng`)
+      data.push(header1);
+
+      _.each(this.year_data_sets, () => {
+        header2.push('Procentändring');
+        header2.push('Score')
+      })
+      header2.push('')
+      data.push(header2);
+
+      _.each(this.ordered_kommuner, (kommun) => {
+        let row = [], total_points = 0;
+
+        _.each(this.year_data_sets, (year_data_set) => {
+          row.push(year_data_set.metrics[kommun]);
+          row.push(year_data_set.points[kommun]);
+          total_points += year_data_set.points[kommun];
+        })
+        row.push(this.round_number(total_points));
+
+        data.push(row)
+      })
+
+      return _.join(_.map(data, (row) => { return _.join(row, ',') }), "\n")
+    },
+    csv_filename () {
+      if ( this.kommun_to_highlight != null ) {
+        return this.kommun_to_highlight
+      } else {
+        if ( this.lan_to_highlight != null ) {
+          return this.lan_to_highlight;
+        } else {
+          return 'Alla kommuner'
+        }
+      }
+    },
+    csv_file_data_url () {
+      let file = new Blob([this.csv()], {type: 'text/csv'});
+      return(URL.createObjectURL(file))
+    }
   },
 }
 

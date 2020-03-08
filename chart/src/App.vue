@@ -49,6 +49,7 @@
       <PercentageChangeTable
                   v-bind:year_data_sets="year_data_sets"
                   v-bind:kommun_to_highlight="kommun"
+                  v-bind:lan_to_highlight="län"
                   v-on:focus_kommun="focus_kommun"/>
     </div>
   </div>
