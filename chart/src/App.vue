@@ -127,13 +127,16 @@ export default {
             (percentage, min_value, max_value) => {
               let x = ((percentage - min_value) / (max_value - min_value))
 
-              return(this.round_number(3 * (1 - Math.pow(x, 1/3) * Math.sign(x))));
+              return(this.round_number(3 - 3 * x)); // Linear scale 0..3 points for this category
+            },
+          math_s_curve_fn =
+            (x) => {
+              return 1 - Math.pow(Math.abs(x), 1/3) * Math.sign(x)
             },
           percent_change_points_fn =
             (percentage, min_value, max_value) => {
-              let x = ((percentage - min_value) / (max_value - min_value))
-
-              return(this.round_number(3 * (1 - Math.pow(x, 1/3) * Math.sign(x)) - 1));
+              let x = ((math_s_curve_fn(percentage) - math_s_curve_fn(min_value)) / (math_s_curve_fn(max_value) - math_s_curve_fn(min_value)))
+              return(this.round_number(2 - 2 * x)); // S-curve scale 0..2 points for this category
             };
       let result = [
         {
