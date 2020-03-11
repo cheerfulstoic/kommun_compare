@@ -123,9 +123,10 @@ export default {
           percent_change_co2 =
             this.percent_year_over_year_change_data(this.emissions_database.filter({Ämne: 'CO2'}).year_data_by_kommun());
 
-      let total_points_fn =
-            (percentage, min_value, max_value) => {
-              let x = ((percentage - min_value) / (max_value - min_value))
+      let emission_points_fn =
+            (emission, min_value, max_value) => {
+              if(emission < min_value || emission > max_value) return(null);
+              let x = ((emission - min_value) / (max_value - min_value));
 
               return(this.round_number(3 - 3 * x)); // Linear scale 0..3 points for this category
             },
@@ -136,41 +137,45 @@ export default {
           percent_change_points_fn =
             (percentage, min_value, max_value) => {
               let x = ((math_s_curve_fn(percentage) - math_s_curve_fn(min_value)) / (math_s_curve_fn(max_value) - math_s_curve_fn(min_value)))
-              return(this.round_number(2 - 2 * x)); // S-curve scale 0..2 points for this category
+              return(this.round_number(2 - 3 * x)); // S-curve scale -1..2 points for this category
             };
       let result = [
         {
           title: 'UTSLÄPP VÄXTHUSGASER TOTALT',
-          description: "Genomsnittliga årliga utsläpp av växthusgaser de senaste fem mätperioderna. (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita). ",
+          description: "Genomsnittliga årliga utsläpp av växthusgaser. (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita). ",
           unit: 'tons/person',
           data: co_equivalents_year_data,
           metrics: _.reduce(co_equivalents_year_data, (result, year_data, kommun) => {
-            result[kommun] = this.total_percentage_change(year_data);
+            //result[kommun] = this.total_percentage_change(year_data);
+            result[kommun] = this.yearly_average(year_data);
 
             return(result);
           }, {}),
-          points_fn: total_points_fn,
+          points_fn: emission_points_fn,
         },
         {
           title: 'UTSLÄPP KOLDIOXID TOTALT',
-          description: 'Genomsnittliga årliga utsläpp av koldioxid de senaste fem mätperioderna. (Exklusive industrin, per capita). ',
+          description: 'Genomsnittliga årliga utsläpp av koldioxid. (Exklusive industrin, per capita). ',
           unit: 'tons/person',
           data: co_year_data,
           metrics: _.reduce(co_year_data, (result, year_data, kommun) => {
-            result[kommun] = this.total_percentage_change(year_data);
+            //result[kommun] = this.total_percentage_change(year_data);
+            result[kommun] = this.yearly_average(year_data);
 
             return(result);
           }, {}),
-          points_fn: total_points_fn,
+          points_fn: emission_points_fn,
         },
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP VÄXTHUSGASER',
-          description: 'Genomsnittlig årlig procentuell förändringstakt de senaste fem mätperioderna. (Samtliga växthusgaser totalt, per capita). ',
+          description: 'Genomsnittlig årlig procentuell förändringstakt. (Samtliga växthusgaser totalt, per capita). ',
           unit: 'procent',
           data: percent_change_co2_equivalents,
           highlight_data: this.mean_year_data(percent_change_co2_equivalents),
           metrics: _.reduce(this.mean_year_data(percent_change_co2_equivalents), (result, year_data, kommun) => {
-            result[kommun] = this.round_number(year_data[0]);
+            let rel_change = (year_data[year_data.length-1] - year_data[0])/100,
+                yoy_change = 1-Math.pow(Math.abs(1-rel_change), 1/(year_data.length-1));
+            result[kommun] = this.round_number(100*yoy_change);
 
             return(result);
           }, {}),
@@ -179,12 +184,14 @@ export default {
 
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP KOLDIOXID',
-          description: 'Genomsnittlig årlig procentuell förändringstakt de senaste fem mätperioderna i din kommun. (Koldioxid totalt, per sektor, per capita).',
+          description: 'Genomsnittlig årlig procentuell förändringstakt i din kommun. (Koldioxid totalt, per sektor, per capita).',
           unit: 'procent',
           data: percent_change_co2,
           highlight_data: this.mean_year_data(percent_change_co2),
           metrics: _.reduce(this.mean_year_data(percent_change_co2), (result, year_data, kommun) => {
-            result[kommun] = this.round_number(year_data[0]);
+            let rel_change = (year_data[year_data.length-1] - year_data[0])/100,
+                yoy_change = 1-Math.pow(Math.abs(1-rel_change), 1/(year_data.length-1));
+            result[kommun] = this.round_number(100*yoy_change);
 
             return(result);
           }, {}),
@@ -215,7 +222,7 @@ export default {
         result[kommun] = [0].concat(_.map(_.range(1, year_data.length), (index) => {
           // TODO:
           // What should we do if the previous year is zero but the current year isn't?
-          return 100 * (year_data[index] - year_data[index - 1]) / year_data[index - 1]
+          return 100*(year_data[index] - year_data[0]) / (year_data[0]+.01)
         }))
 
         return(result);
@@ -224,12 +231,25 @@ export default {
 
     mean_year_data(year_data_by_kommun) {
       return _.reduce(year_data_by_kommun, (result, year_data, kommun) => {
-        let mean = _.mean(year_data);
-
-        result[kommun] = _.map(year_data, () => { return(mean) });
+        //result[kommun] = _.map(year_data, () => { return(mean) });
+        result[kommun] = _.map(_.range(0, year_data.length), (index) => { 
+          return(year_data[year_data.length-1])*(index/(year_data.length-1))
+        });
 
         return(result);
       }, {})
+    },
+
+    yearly_average (year_data) {
+      if (year_data == null) { return(null) }
+
+      let sum = year_data.reduce((sum, val) => sum + val, 0),
+          num = year_data.length,
+          avg = sum/num;
+
+      if (avg > 25) { return(25 + avg/10000) } // adding the average makes them sort correctly
+
+      return(this.round_number(avg));
     },
 
     total_percentage_change (year_data) {
