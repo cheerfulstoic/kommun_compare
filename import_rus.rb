@@ -2,7 +2,7 @@ require 'roo-xls'
 require 'csv'
 require 'json'
 
-years = (2010..2017)
+years = (2013..2017)
 
 records = 
   Dir.glob('./data/*.xls').flat_map do |filename|

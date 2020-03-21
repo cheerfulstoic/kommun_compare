@@ -66,7 +66,7 @@ import emissions_data from '../data/emissions_data.json'
 const initial_emissions_database = new EmissionsDatabase(emissions_data);
 
 import populations_data from '../data/populations.json'
-const years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017] // TEMP
+const years = [2013, 2014, 2015, 2016, 2017] // TEMP
 const population_data_by_kommun = _.reduce(populations_data, (result, record) => {
   result[record.kommun.name] = _.map(years, (year) => { return(record.populations[year]) });
 
@@ -137,7 +137,7 @@ export default {
           percent_change_points_fn =
             (percentage, min_value, max_value) => {
               let x = ((math_s_curve_fn(percentage) - math_s_curve_fn(min_value)) / (math_s_curve_fn(max_value) - math_s_curve_fn(min_value)))
-              return(this.round_number(3 - 4 * x)); // S-curve scale -1..3 points for this category
+              return(this.round_number(3 - 5 * x)); // S-curve scale -2..3 points for this category
             };
       let result = [
         {
@@ -173,8 +173,8 @@ export default {
           data: percent_change_co2_equivalents,
           highlight_data: this.mean_year_data(percent_change_co2_equivalents),
           metrics: _.reduce(this.mean_year_data(percent_change_co2_equivalents), (result, year_data, kommun) => {
-            let rel_change = (year_data[year_data.length-1] - year_data[0])/100,
-                yoy_change = 1-Math.pow(Math.abs(1-rel_change), 1/(year_data.length-1));
+            let rel_change = (year_data[year_data.length-1])/100,
+                yoy_change = Math.pow(1+rel_change, 1/(year_data.length-1))-1;
             result[kommun] = this.round_number(100*yoy_change);
 
             return(result);
@@ -189,8 +189,8 @@ export default {
           data: percent_change_co2,
           highlight_data: this.mean_year_data(percent_change_co2),
           metrics: _.reduce(this.mean_year_data(percent_change_co2), (result, year_data, kommun) => {
-            let rel_change = (year_data[year_data.length-1] - year_data[0])/100,
-                yoy_change = 1-Math.pow(Math.abs(1-rel_change), 1/(year_data.length-1));
+            let rel_change = (year_data[year_data.length-1])/100,
+                yoy_change = Math.pow(1+rel_change, 1/(year_data.length-1))-1;
             result[kommun] = this.round_number(100*yoy_change);
 
             return(result);
@@ -222,7 +222,7 @@ export default {
         result[kommun] = [0].concat(_.map(_.range(1, year_data.length), (index) => {
           // TODO:
           // What should we do if the previous year is zero but the current year isn't?
-          return 100*(year_data[index] - year_data[0]) / (year_data[0]+.01)
+          return 100*(year_data[index] - year_data[0]) / (year_data[0]+.00001)
         }))
 
         return(result);
