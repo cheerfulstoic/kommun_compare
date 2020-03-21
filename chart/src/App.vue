@@ -128,7 +128,7 @@ export default {
               if(emission < min_value || emission > max_value) return(null);
               let x = ((emission - min_value) / (max_value - min_value));
 
-              return(this.round_number(3 - 3 * x)); // Linear scale 0..3 points for this category
+              return(this.round_number(2 - 2 * x)); // Linear scale 0..2 points for this category
             },
           math_s_curve_fn =
             (x) => {
@@ -137,13 +137,13 @@ export default {
           percent_change_points_fn =
             (percentage, min_value, max_value) => {
               let x = ((math_s_curve_fn(percentage) - math_s_curve_fn(min_value)) / (math_s_curve_fn(max_value) - math_s_curve_fn(min_value)))
-              return(this.round_number(2 - 3 * x)); // S-curve scale -1..2 points for this category
+              return(this.round_number(3 - 4 * x)); // S-curve scale -1..3 points for this category
             };
       let result = [
         {
           title: 'UTSLÄPP VÄXTHUSGASER TOTALT',
-          description: "Genomsnittliga årliga utsläpp av växthusgaser. (Samtliga växthusgaser totalt, exklusive industrin, omräknat till CO2e, per capita). ",
-          unit: 'tons/person',
+          description: "Årliga utsläpp av växthusgaser. (Samtliga växthusgaser totalt, per capita). ",
+          unit: 'ton/invånare',
           data: co_equivalents_year_data,
           metrics: _.reduce(co_equivalents_year_data, (result, year_data, kommun) => {
             //result[kommun] = this.total_percentage_change(year_data);
@@ -155,8 +155,8 @@ export default {
         },
         {
           title: 'UTSLÄPP KOLDIOXID TOTALT',
-          description: 'Genomsnittliga årliga utsläpp av koldioxid. (Exklusive industrin, per capita). ',
-          unit: 'tons/person',
+          description: 'Årligt utsläpp av koldioxid jämfört med startåret. (Koldioxid totalt, per capita). ',
+          unit: 'ton/invånare',
           data: co_year_data,
           metrics: _.reduce(co_year_data, (result, year_data, kommun) => {
             //result[kommun] = this.total_percentage_change(year_data);
@@ -168,7 +168,7 @@ export default {
         },
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP VÄXTHUSGASER',
-          description: 'Genomsnittlig årlig procentuell förändringstakt. (Samtliga växthusgaser totalt, per capita). ',
+          description: 'Årligt utsläpp av växthusgaser jämfört med startåret. (Samtliga växthusgaser totalt, per capita). ',
           unit: 'procent',
           data: percent_change_co2_equivalents,
           highlight_data: this.mean_year_data(percent_change_co2_equivalents),
@@ -184,7 +184,7 @@ export default {
 
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP KOLDIOXID',
-          description: 'Genomsnittlig årlig procentuell förändringstakt i din kommun. (Koldioxid totalt, per sektor, per capita).',
+          description: 'Årlig procentuell förändringstakt under mätperioden. (Koldioxid totalt, per capita).',
           unit: 'procent',
           data: percent_change_co2,
           highlight_data: this.mean_year_data(percent_change_co2),
