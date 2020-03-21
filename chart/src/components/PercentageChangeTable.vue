@@ -39,7 +39,7 @@
           <th v-bind:key="year_data_set.title + 'bar'"
               v-bind:class="{'currently-ordered': index == order_index}"
               v-on:click="toggle_order(index)">
-            Score
+            Poäng
           </th>
         </template>
         <template v-for="(year_data_set, index) in year_data_sets.slice(2)">
@@ -51,7 +51,7 @@
           <th v-bind:key="year_data_set.title + 'bar'"
               v-bind:class="{'currently-ordered': index == order_index}"
               v-on:click="toggle_order(index)">
-            Score
+            Poäng
           </th>
         </template>
       </tr>
@@ -155,9 +155,13 @@ export default {
       header1.push(`Totalpoäng`)
       data.push(header1);
 
-      _.each(this.year_data_sets, () => {
+      _.each(this.year_data_sets.slice(0,2), () => {
+        header2.push('Utsläpp/invånare');
+        header2.push('Poäng')
+      })
+      _.each(this.year_data_sets.slice(2), () => {
         header2.push('Procentändring');
-        header2.push('Score')
+        header2.push('Poäng')
       })
       header2.push('')
       data.push(header2);
