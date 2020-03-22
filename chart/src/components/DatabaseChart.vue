@@ -127,8 +127,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 .card-header {
   text-align: center;
 }
@@ -143,5 +142,4 @@ export default {
 .trend-chart {
   display: inline-block;
 }
-
 </style>
