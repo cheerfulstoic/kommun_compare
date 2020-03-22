@@ -148,6 +148,7 @@ export default {
       let data = [];
 
       let header1 = [], header2 = [];
+      header1.push('');
       _.each(this.year_data_sets, (year_data_set) => {
         header1.push(year_data_set.title);
         header1.push('')
@@ -155,6 +156,7 @@ export default {
       header1.push(`Totalpoäng`)
       data.push(header1);
 
+      header2.push('');
       _.each(this.year_data_sets.slice(0,2), () => {
         header2.push('Utsläpp/invånare');
         header2.push('Poäng')
@@ -169,6 +171,7 @@ export default {
       _.each(this.ordered_kommuner, (kommun) => {
         let row = [], total_points = 0;
 
+        row.push(kommun);
         _.each(this.year_data_sets, (year_data_set) => {
           row.push(year_data_set.metrics[kommun]);
           row.push(year_data_set.points[kommun]);
