@@ -1,100 +1,83 @@
 
 <template>
   <div class="percentage-change-table">
-    <a class="btn btn-primary mx-2"
-       v-bind:href="csv_file_data_url()"
+    <a v-bind:href="csv_file_data_url()"
        v-bind:download="csv_filename() + '.csv'">Save CSV</a>
 
     <table class="table">
-      <tr class="title-row">
-        <th>&nbsp;</th>
-        <th v-for="(year_data_set, index) in year_data_sets"
-          colspan="2"
-          v-bind:key="year_data_set.title"
-          v-bind:class="{'currently-ordered': index == order_index}"
-          v-on:click="toggle_order(index)">
-          {{year_data_set.title}}
-          <span v-if="order_index === index">
-            <span v-if="order_direction === 'ascending'">
-              <font-awesome-icon icon="sort-down"></font-awesome-icon>
+      <thead>
+        <tr class="title-row">
+          <th>&nbsp;</th>
+          <th v-for="(year_data_set, index) in year_data_sets"
+            colspan="2"
+            v-bind:key="year_data_set.title"
+            class="{'currently-ordered': index == order_index}"
+            v-on:click="toggle_order(index)">
+            {{year_data_set.title}}
+            <span class="sort-icon" v-if="order_index === index">
+              <span v-if="order_direction === 'ascending'">
+                <font-awesome-icon icon="sort-down"></font-awesome-icon>
+              </span>
+              <span v-if="order_direction === 'descending'">
+                <font-awesome-icon icon="sort-up"></font-awesome-icon>
+              </span>
             </span>
-            <span v-if="order_direction === 'descending'">
-              <font-awesome-icon icon="sort-up"></font-awesome-icon>
+            <span class="sort-icon" v-if="order_index !== index">
+              <font-awesome-icon icon="sort"></font-awesome-icon>
             </span>
-          </span>
-          <span v-if="order_index !== index">
-            <font-awesome-icon icon="sort"></font-awesome-icon>
-          </span>
-        </th>
-        <th>Totalpoäng</th>
-      </tr>
-      <tr class="subtitle-row">
-        <th>&nbsp;</th>
-        <template v-for="(year_data_set, index) in year_data_sets.slice(0,2)">
-          <th v-bind:key="year_data_set.title + 'foo'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="toggle_order(index)">
-            Utsläpp/invånare
           </th>
-          <th v-bind:key="year_data_set.title + 'bar'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="toggle_order(index)">
-            Poäng
+          <th>Totalpoäng</th>
+        </tr>
+        <tr class="subtitle-row">
+          <th></th>
+          <th>Utsläpp/invånare</th>
+          <th>Poäng</th>
+          <th>Utsläpp/invånare</th>
+          <th>Poäng</th>
+          <th>Ändring/år</th>
+          <th>Poäng</th>
+          <th>Ändring/år</th>
+          <th>Poäng</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="kommun in ordered_kommuner"
+            v-bind:key="kommun"
+            v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
+          <th v-on:click="$emit('focus_kommun', kommun)">
+            {{kommun}}
           </th>
-        </template>
-        <template v-for="(year_data_set, index) in year_data_sets.slice(2)">
-          <th v-bind:key="year_data_set.title + 'foo'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="toggle_order(index)">
-            Ändring/år
-          </th>
-          <th v-bind:key="year_data_set.title + 'bar'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="toggle_order(index)">
-            Poäng
-          </th>
-        </template>
-      </tr>
-      <tr v-for="kommun in ordered_kommuner"
-          v-bind:key="kommun"
-          v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
-        <th v-on:click="$emit('focus_kommun', kommun)">
-          {{kommun}} 🔎
-        </th>
-        <template v-for="(year_data_set, index) in year_data_sets.slice(0,2)">
-          <td v-bind:key="year_data_set.title + 'foo'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="$emit('focus_kommun', kommun)">
-            {{(year_data_set.metrics[kommun]>25)?">25":year_data_set.metrics[kommun]}}
-          </td>
-          <td v-bind:key="year_data_set.title + 'bar'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="$emit('focus_kommun', kommun)">
-            {{year_data_set.points[kommun]}}
-          </td>
-        </template>
-        <template v-for="(year_data_set, index) in year_data_sets.slice(2)">
-          <td v-bind:key="year_data_set.title + 'foo'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="$emit('focus_kommun', kommun)">
-            {{year_data_set.metrics[kommun]}}%
-          </td>
-          <td v-bind:key="year_data_set.title + 'bar'"
-              v-bind:class="{'currently-ordered': index == order_index}"
-              v-on:click="$emit('focus_kommun', kommun)">
-            {{year_data_set.points[kommun]}}
-          </td>
-        </template>
+          <template v-for="year_data_set in year_data_sets.slice(0,2)">
+            <td v-bind:key="year_data_set.title + 'foo'"
+                v-on:click="$emit('focus_kommun', kommun)">
+              {{(year_data_set.metrics[kommun]>25)?">25":year_data_set.metrics[kommun]}}
+            </td>
+            <td v-bind:key="year_data_set.title + 'bar'"
+                v-on:click="$emit('focus_kommun', kommun)">
+              {{year_data_set.points[kommun]}}
+            </td>
+          </template>
+          <template v-for="year_data_set in year_data_sets.slice(2)">
+            <td v-bind:key="year_data_set.title + 'foo'"
+                v-on:click="$emit('focus_kommun', kommun)">
+              {{year_data_set.metrics[kommun]}}%
+            </td>
+            <td v-bind:key="year_data_set.title + 'bar'"
+                v-on:click="$emit('focus_kommun', kommun)">
+              {{year_data_set.points[kommun]}}
+            </td>
+          </template>
 
-        <th>{{total_points(kommun)}}</th>
-      </tr>
+          <th>{{total_points(kommun)}}</th>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
 
 
 <script>
-
 import _ from 'lodash';
 
 export default {
@@ -200,29 +183,40 @@ export default {
 
 </script>
 
-<style>
-
-.currently-ordered {
-  background-color: #eee;
+<style scoped>
+.percentage-change-table {
+  padding: 40px;
 }
 
-tr.title-row {
-  position: sticky;
-  top: 165px;
+.table {
+  width: 100%;
 }
-tr.subtitle-row {
+
+.table thead {
   position: sticky;
-  top: 195px;
-}
-tr.title-row,
-tr.subtitle-row {
+  top: 0;
   background-color: white;
   white-space: nowrap;
 }
 
-tr.highlighted-kommun th,
-tr.highlighted-kommun td {
-  background-color: #BFDEFC;
+.sort-icon {
+  float: right;
+}
+
+td:nth-child(4n + 2),
+td:nth-child(4n + 3) {
+  background-color: #f7f7f7;
+}
+
+tbody tr:hover th,
+tbody tr:hover td {
+  background-color: hsl(210, 91%, 97%);
+  cursor: pointer;
+}
+
+tbody tr.highlighted-kommun th,
+tbody tr.highlighted-kommun td {
+  background-color: #bfdefc;
 }
 
 </style>

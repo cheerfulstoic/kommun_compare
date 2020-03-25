@@ -1,62 +1,112 @@
 <template>
   <div id="app">
-    <div>
-      <div id="filters">
-        <h3>Filtrera</h3>
+    <div class="columns main-section">
+      <div class="column is-one-quarter">
+        <div id="filters">
+          <h3>Filtrera</h3>
+  
+          <div class="field">
+            <label class="label" for="lan">Län</label>
+            <div class="select">
+              <select id="lan" v-model="selected_län">
+                <option value="Alla">Välj län</option>
+                <option v-for="län in all_länen" v-bind:key="län">
+                  {{län}}
+                </option>
+              </select>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label" for="kommun">Kommun</label>
+            <div class="select">
+              <select id="kommun" v-model="selected_kommun">
+                <option value="Alla">Välj kommun</option>
+                <option v-for="kommun in all_kommuner_for(län)" v-bind:key="kommun">
+                  {{kommun}}
+                </option>
+              </select>
+            </div>
+          </div>
+  
+          <label class="label">Nyckeltal</label>
 
-        <select v-model="selected_län" class="select">
-          <option value="Alla">Alla Länen</option>
-          <option v-for="län in all_länen" v-bind:key="län">
-            {{län}}
-          </option>
-        </select>
+          <div class="field toggle-buttons">
+            <div class="buttons has-addons">
+              <button class="button is-selected">Förändringstakt</button>
+              <button class="button">Totalutsläpp</button>
+            </div>
+          </div>
 
-        <select v-model="selected_kommun" class="select">
-          <option value="Alla">Alla Kommuner</option>
-          <option v-for="kommun in all_kommuner_for(län)" v-bind:key="kommun">
-            {{kommun}}
-          </option>
-        </select>
+          <div class="field toggle-buttons">
+            <div class="buttons has-addons">
+              <button class="button is-selected">Växthusgaser</button>
+              <button class="button">Koldioxid</button>
+            </div>
+          </div>
 
-        <div class="sektor-buttons">
-          <a class="button" v-on:click="select_all">Select All</a>
-          <!-- TODO: Make buttons clump together -->
-          <span class="buttons has-addons is-centered" v-for="(huvudsektor, index) in all_sektorer" v-bind:key="huvudsektor">
-            <span class="button">
+          <label class="label">Sektorer</label>
+
+          <div class="sektor-all-toggles">
+            <button type="button" class="button" v-on:click="select_all">Select all</button>
+            <button type="button" class="button" v-on:click="deselect_all">Deselect all</button>
+          </div>
+
+          <div class="sektor-buttons"> 
+            <div v-for="(huvudsektor, index) in all_sektorer" v-bind:key="huvudsektor">
               <input type="checkbox" v-bind:id="'sektor-button-' + index" v-bind:value="huvudsektor" v-model="selected_huvudsektorer">
-            </span>
-            <label v-bind:for="'sektor-button-' + index" class="button">{{huvudsektor}}</label>
+              <label v-bind:for="'sektor-button-' + index" class="button">
+                {{huvudsektor}}
+              </label>
+            </div>
+          </div>
 
-            <a class="button" v-on:click="focus_huvudsektor(huvudsektor)">🔎</a>
-          </span>
+          <div class="data-credits">
+            <p>
+              Data från
+              <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a>
+              och
+              <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
+            </p>
+          </div>
         </div>
       </div>
 
-      <div id="data-notification" class="notification is-info">
-        Data från <a href="http://extra.lansstyrelsen.se/rus/Sv/statistik-och-data/nationell-emissionsdatabas/Pages/default.aspx">RUS</a> och <a href="http://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101C/BefArealTathetKon/?rxid=bd5169ae-f630-42db-8c8e-3ffdbf806a73">SCB</a>
+      <div class="column charts">
+        <DatabaseChart v-for="year_data_set in year_data_sets"
+                        v-bind:key="year_data_set.title"
+                        v-bind:year_data_set="year_data_set"
+                        v-bind:years="emissions_database.years"
+                        v-bind:kommun_to_highlight="kommun" />
       </div>
-
-      <div class="columns is-multiline is-gapless">
-        <div class="column is-half"
-             v-for="year_data_set in year_data_sets"
-             v-bind:key="year_data_set.title">
-          <DatabaseChart v-bind:year_data_set="year_data_set"
-                         v-bind:years="emissions_database.years"
-                         v-bind:kommun_to_highlight="kommun" />
-        </div>
-      </div>
-
-      <PercentageChangeTable
-                  v-bind:year_data_sets="year_data_sets"
-                  v-bind:kommun_to_highlight="kommun"
-                  v-bind:lan_to_highlight="län"
-                  v-on:focus_kommun="focus_kommun"/>
     </div>
+
+    <PercentageChangeTable
+                v-bind:year_data_sets="year_data_sets"
+                v-bind:kommun_to_highlight="kommun"
+                v-bind:lan_to_highlight="län"
+                v-on:focus_kommun="focus_kommun"/>
   </div>
 </template>
 
 <script>
 import _ from 'lodash';
+
+import Chart from 'chart.js';
+// Source: https://stackoverflow.com/a/38493678
+Chart.pluginService.register({
+  beforeDraw: chart => {
+    if (chart.config.options.chartAreaBackground) {
+      const ctx = chart.chart.ctx;
+      const chartArea = chart.chartArea;
+
+      ctx.save();
+      ctx.fillStyle = chart.config.options.chartAreaBackground;
+      ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
+      ctx.restore();
+    }
+  }
+});
 
 import DatabaseChart from './components/DatabaseChart.vue';
 import PercentageChangeTable from './components/PercentageChangeTable.vue'
@@ -270,6 +320,7 @@ export default {
       this.selected_kommun = kommun;
     },
 
+    // TODO remove?
     focus_huvudsektor (selected_huvudsektorer) {
       this.selected_huvudsektorer = [selected_huvudsektorer];
     },
@@ -277,41 +328,146 @@ export default {
     select_all () {
       this.selected_huvudsektorer = initial_emissions_database.sektorer;
     },
+
+    deselect_all () {
+      this.selected_huvudsektorer = [];
+    },
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.main-section {
+  background-color: #f3f5f7;
+  padding: 40px;
 }
 
 #filters {
-  position: sticky;
-  top: 0;
+  height: 100%;
+  padding: 20px;
   background-color: white;
-  z-index: 5;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
 }
 
-#data-notification {
-  width: 400px;
-  margin: 1em auto;
+#filters h3 {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.sektor-buttons .buttons {
-  display: inline-block;
-  margin: 0.2em;
+
+.select,
+.select select {
+  width: 100%;
+}
+
+.field .select select,
+#filters .button {
+  background-color: #f4f4f4;
+  border-color: #ebebeb;
+}
+
+.field .select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #777;
+}
+
+
+.toggle-buttons {
+  background-color: #f4f4f4;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+#filters .buttons .button {
+  background-color: white;
+  width: 50%;
+}
+
+.buttons .button {
+  border-radius: 20px;
+}
+
+#filters .buttons .button.is-selected {
+  background-color: #0080cc;
+  color: white;
+}
+
+
+.sektor-all-toggles {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.sektor-all-toggles .button {
+  width: 50%;
+  text-align: center;
+}
+
+.sektor-all-toggles .button:first-child {
+  margin-right: 10px;
+}
+
+
+.sektor-buttons {
+  flex: 1 0 auto;
 }
 
 .sektor-buttons .button {
+  display: block;
+  text-align: left;
   font-size: 0.8em;
-  display: inline-block;
+  margin-bottom: 0.5em;
+  padding-left: 3em;
+  padding-top: 4px;
 }
 
+.sektor-buttons input {
+  display: none;
+}
 
+.sektor-buttons .button::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+}
+
+.sektor-buttons input:checked + .button::before {
+  background-color: #0080cc;
+  border-color: transparent;
+}
+
+.sektor-buttons input:checked + .button::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  width: 11px;
+  height: 11px;
+  /* Checkmark icon from Bootstrap */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
+}
+
+.data-credits {
+  margin-top: 10px;
+}
+
+/* TODO this is temporary. Only one chart should be rendered at a time */
+.charts > div:not(:first-child) {
+  display: none;
+}
 </style>

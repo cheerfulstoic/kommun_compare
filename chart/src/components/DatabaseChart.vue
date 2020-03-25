@@ -1,29 +1,19 @@
 <template>
   <div class="database-chart">
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          {{year_data_set.title}}
-        </p>
-      </header>
-      <div class="card-content">
-        <p v-for="part in parts(year_data_set.description)" v-bind:key="part">
-          {{part}}
-        </p>
-      </div>
-      <div class="card-image">
-        <Trend class="trend-chart"
-               v-bind:data="trend_data()"
-               v-bind:options="trend_options()" />
-      </div>
-    </div>
+    <header>
+      <h2>{{year_data_set.title}}</h2>
+      <p v-for="part in parts(year_data_set.description)" v-bind:key="part">
+        {{part}}
+      </p>
+    </header>
+    <Trend class="trend-chart"
+            v-bind:data="trend_data()"
+            v-bind:options="trend_options()" />
   </div>
 </template>
 
 <script>
-
 import _ from 'lodash';
-
 import Trend from './Trend.vue';
 
 export default {
@@ -41,18 +31,23 @@ export default {
 
       // Put kommun in first position so that it is on top
       let highlighted_year_data = result[this.kommun_to_highlight];
+      
       if (highlighted_year_data) {
         delete result[this.kommun_to_highlight];
       }
+      
       result = _.toPairs(result);
+      
       let datasets = _.map(result, (pair) => {
-        let grouping = pair[0], year_data = pair[1];
-          return({
-            label: grouping,
-            data: year_data,
-            spanGaps: true,
-          })
+        let grouping = pair[0];
+        let year_data = pair[1];
+
+        return({
+          label: grouping,
+          data: year_data,
+          spanGaps: true,
         })
+      })
 
       if (highlighted_year_data) {
         datasets.unshift({
@@ -67,7 +62,7 @@ export default {
         datasets.unshift({
           label: 'TEMP label',
           data: this.year_data_set.highlight_data[this.kommun_to_highlight],
-          borderColor: 'red',
+          borderColor: 'rgb(252, 98, 117)',
           borderWidth: 1.4,
           borderDash: [10, 10],
         })
@@ -77,6 +72,7 @@ export default {
     },
     trend_options () {
       return({
+        maintainAspectRatio: false,
         tooltips: {enabled: false},
         hover: {mode: null},
         parsing: false,
@@ -84,6 +80,7 @@ export default {
         legend: { display: false },
         scales: {
           yAxes: [{
+            gridLines: { color: '#f0f0f0' },
             scaleLabel: {
               display: true,
               labelString: this.year_data_set.unit,
@@ -95,7 +92,7 @@ export default {
             },
           }],
           xAxes: [{
-            gridLines: { color: '#fff' },
+            gridLines: { color: '#f0f0f0' },
             ticks: {
               minRotation: 45,
               maxRotation: 45,
@@ -113,11 +110,12 @@ export default {
             tension: 0,
             steppedLine: false,
             borderDash: [],
-            borderColor: '#ccc',
-            borderWidth: 0.7,
+            borderColor: 'rgba(0, 0, 0, 0.7)',
+            borderWidth: 0.8,
           },
         },
         animation: false,
+        chartAreaBackground: 'white',
       })
     },
     parts (s) {
@@ -128,18 +126,29 @@ export default {
 </script>
 
 <style scoped>
-.card-header {
-  text-align: center;
-}
-
 .database-chart {
-  display: inline-block;
-  margin: 1em;
-  padding: 1em;
-  width: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .trend-chart {
-  display: inline-block;
+  margin-top: 10px;
+  flex: 1 0 auto;
+}
+
+header {
+  margin: 16px 0 20px 40px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2em;
+}
+</style>
+
+<style>
+.trend-chart canvas {
+  min-height: 70vh;
 }
 </style>
