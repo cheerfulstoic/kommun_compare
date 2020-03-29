@@ -33,15 +33,27 @@
 
           <div class="field toggle-buttons">
             <div class="buttons has-addons">
-              <button class="button is-selected">Förändringstakt</button>
-              <button class="button">Totalutsläpp</button>
+              <button
+                @click="setValueType('change')"
+                :class="{ 'is-selected': selected_valueType === 'change', button: true }"
+                >Förändringstakt</button>
+              <button
+                @click="setValueType('total')"
+                :class="{ 'is-selected': selected_valueType === 'total', button: true }"
+                >Totalutsläpp</button>
             </div>
           </div>
 
           <div class="field toggle-buttons">
             <div class="buttons has-addons">
-              <button class="button is-selected">Växthusgaser</button>
-              <button class="button">Koldioxid</button>
+              <button
+                @click="setEmissionType('all')"
+                :class="{ 'is-selected': selected_emissionType === 'all', button: true }"
+                >Växthusgaser</button>
+              <button
+                @click="setEmissionType('co2')"
+                :class="{ 'is-selected': selected_emissionType === 'co2', button: true }"
+                >Koldioxid</button>
             </div>
           </div>
 
@@ -73,11 +85,10 @@
       </div>
 
       <div class="column charts">
-        <DatabaseChart v-for="year_data_set in year_data_sets"
-                        v-bind:key="year_data_set.title"
-                        v-bind:year_data_set="year_data_set"
-                        v-bind:years="emissions_database.years"
-                        v-bind:kommun_to_highlight="kommun" />
+        <DatabaseChart
+                    v-bind:year_data_set="year_data_sets[graphType]"
+                    v-bind:years="emissions_database.years"
+                    v-bind:kommun_to_highlight="kommun" />
       </div>
     </div>
 
@@ -85,7 +96,7 @@
                 v-bind:year_data_sets="year_data_sets"
                 v-bind:kommun_to_highlight="kommun"
                 v-bind:lan_to_highlight="län"
-                v-on:focus_kommun="focus_kommun"/>
+                v-on:focus_kommun="focus_kommun" />
   </div>
 </template>
 
@@ -133,6 +144,8 @@ export default {
     return({
       selected_kommun: 'Alla',
       selected_län: 'Alla',
+      selected_valueType: 'change',
+      selected_emissionType: 'all',
       selected_huvudsektorer: initial_emissions_database.sektorer,
     })
   },
@@ -154,6 +167,22 @@ export default {
     },
     län () {
       return(this.selected_län == 'Alla' ? null : this.selected_län);
+    },
+
+    graphType () {
+      if (this.selected_valueType === 'total') {
+        if (this.selected_emissionType === 'all') {
+          return 0;
+        } else {
+          return 1;
+        }
+      } else {
+        if (this.selected_emissionType === 'all') {
+          return 2;
+        } else {
+          return 3;
+        }
+      }
     },
 
     emissions_database () {
@@ -189,6 +218,7 @@ export default {
               let x = ((math_s_curve_fn(percentage) - math_s_curve_fn(min_value)) / (math_s_curve_fn(max_value) - math_s_curve_fn(min_value)))
               return(this.round_number(3 - 5 * x)); // S-curve scale -2..3 points for this category
             };
+
       let result = [
         {
           title: 'UTSLÄPP VÄXTHUSGASER TOTALT',
@@ -196,7 +226,6 @@ export default {
           unit: 'ton/invånare',
           data: co_equivalents_year_data,
           metrics: _.reduce(co_equivalents_year_data, (result, year_data, kommun) => {
-            //result[kommun] = this.total_percentage_change(year_data);
             result[kommun] = this.yearly_average(year_data);
 
             return(result);
@@ -209,7 +238,6 @@ export default {
           unit: 'ton/invånare',
           data: co_year_data,
           metrics: _.reduce(co_year_data, (result, year_data, kommun) => {
-            //result[kommun] = this.total_percentage_change(year_data);
             result[kommun] = this.yearly_average(year_data);
 
             return(result);
@@ -231,7 +259,6 @@ export default {
           }, {}),
           points_fn: percent_change_points_fn,
         },
-
         {
           title: 'FÖRÄNDRINGSTAKT UTSLÄPP KOLDIOXID',
           description: 'Årlig procentuell förändringstakt under mätperioden. (Koldioxid totalt, per capita).',
@@ -247,7 +274,7 @@ export default {
           }, {}),
           points_fn: percent_change_points_fn,
         },
-      ]
+      ];
 
       _.each(result, (year_data_set) => {
         let max = _(year_data_set.metrics).values().max(),
@@ -272,7 +299,7 @@ export default {
         result[kommun] = [0].concat(_.map(_.range(1, year_data.length), (index) => {
           // TODO:
           // What should we do if the previous year is zero but the current year isn't?
-          return 100*(year_data[index] - year_data[0]) / (year_data[0]+.00001)
+          return 100 * (year_data[index] - year_data[0]) / (year_data[0] + .00001);
         }))
 
         return(result);
@@ -297,7 +324,9 @@ export default {
           num = year_data.length,
           avg = sum/num;
 
-      if (avg > 25) { return(25 + avg/10000) } // adding the average makes them sort correctly
+      if (avg > 25) { 
+        return(25 + avg/10000) // adding the average makes them sort correctly
+      }
 
       return(this.round_number(avg));
     },
@@ -320,9 +349,12 @@ export default {
       this.selected_kommun = kommun;
     },
 
-    // TODO remove?
-    focus_huvudsektor (selected_huvudsektorer) {
-      this.selected_huvudsektorer = [selected_huvudsektorer];
+    setValueType (valueType) {
+      this.selected_valueType = valueType;
+    },
+
+    setEmissionType (emissionType) {
+      this.selected_emissionType = emissionType;
     },
 
     select_all () {
