@@ -86,7 +86,7 @@ export default {
               labelString: this.year_data_set.unit,
               padding: {
                 top: 0,
-                bottom: -10,
+                bottom: -4,
               },
             },
             ticks: {
