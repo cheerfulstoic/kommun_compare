@@ -1,7 +1,9 @@
 
 <template>
   <div class="percentage-change-table">
-    <a v-bind:href="csv_file_data_url()"
+    <a 
+       class="button"
+       v-bind:href="csv_file_data_url()"
        v-bind:download="csv_filename() + '.csv'">Save CSV</a>
 
     <table class="table">
@@ -11,7 +13,7 @@
           <th v-for="(year_data_set, index) in year_data_sets"
             colspan="2"
             v-bind:key="year_data_set.title"
-            class="{'currently-ordered': index == order_index}"
+            :class="{'currently-ordered': index == order_index}"
             v-on:click="toggle_order(index)">
             {{year_data_set.title}}
             <span class="sort-icon" v-if="order_index === index">
@@ -193,10 +195,27 @@ export default {
 }
 
 .table thead {
-  position: sticky;
+  white-space: nowrap;
+}
+
+.title-row th, .subtitle-row th {
+  position: sticky; /* position sticky doesn't work on thead or tr */
   top: 0;
   background-color: white;
-  white-space: nowrap;
+  box-shadow: 0 1px #dbdbdb; /* border doesn't work well with position sticky */
+}
+
+.subtitle-row th {
+  top: 40px;
+}
+
+thead th {
+  cursor: pointer;
+}
+
+.table thead th.currently-ordered {
+  background-color: #0080cc;
+  color: white;
 }
 
 .sort-icon {
