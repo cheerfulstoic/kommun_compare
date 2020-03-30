@@ -31,7 +31,7 @@ export default {
       const newChart = new Chart(this.$refs.canvas, {
         type: 'line',
         data: data,
-        options: options
+        options: options,
       });
 
       this._chart = newChart;

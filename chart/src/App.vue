@@ -170,19 +170,15 @@ export default {
     },
 
     graph_type () {
-      if (this.selected_value_type === 'total') {
-        if (this.selected_emission_type === 'all') {
-          return 0;
-        } else {
-          return 1;
-        }
-      } else {
-        if (this.selected_emission_type === 'all') {
-          return 2;
-        } else {
-          return 3;
-        }
-      }
+      const type = `${this.selected_value_type }_${this.selected_emission_type}`;
+      const type_to_index_mapping = {
+        total_all: 0,
+        total_co2: 1,
+        change_all: 2,
+        change_co2: 3,
+      };
+
+      return type_to_index_mapping[type];
     },
 
     emissions_database () {
