@@ -60,8 +60,8 @@
           <label class="label">Sektorer</label>
 
           <div class="sektor-all-toggles">
-            <button type="button" class="button" v-on:click="select_all">Select all</button>
-            <button type="button" class="button" v-on:click="deselect_all">Deselect all</button>
+            <button type="button" class="button" v-on:click="select_all">Välj alla</button>
+            <button type="button" class="button" v-on:click="deselect_all">Avmarkera alla</button>
           </div>
 
           <div class="sektor-buttons"> 

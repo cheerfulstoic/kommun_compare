@@ -4,12 +4,12 @@
     <a 
        class="button"
        v-bind:href="csv_file_data_url()"
-       v-bind:download="csv_filename() + '.csv'">Save CSV</a>
+       v-bind:download="csv_filename() + '.csv'">Spara som CSV</a>
 
     <table class="table">
       <thead>
         <tr class="title-row">
-          <th>&nbsp;</th>
+          <th></th>
           <th v-for="(year_data_set, index) in year_data_sets"
             colspan="2"
             v-bind:key="year_data_set.title"
