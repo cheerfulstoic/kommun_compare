@@ -34,12 +34,12 @@
           <div class="field toggle-buttons">
             <div class="buttons has-addons">
               <button
-                @click="setValueType('change')"
-                :class="{ 'is-selected': selected_valueType === 'change', button: true }"
+                @click="set_value_type('change')"
+                :class="{ 'is-selected': selected_value_type === 'change', button: true }"
                 >Förändringstakt</button>
               <button
-                @click="setValueType('total')"
-                :class="{ 'is-selected': selected_valueType === 'total', button: true }"
+                @click="set_value_type('total')"
+                :class="{ 'is-selected': selected_value_type === 'total', button: true }"
                 >Totalutsläpp</button>
             </div>
           </div>
@@ -47,12 +47,12 @@
           <div class="field toggle-buttons">
             <div class="buttons has-addons">
               <button
-                @click="setEmissionType('all')"
-                :class="{ 'is-selected': selected_emissionType === 'all', button: true }"
+                @click="set_emission_type('all')"
+                :class="{ 'is-selected': selected_emission_type === 'all', button: true }"
                 >Växthusgaser</button>
               <button
-                @click="setEmissionType('co2')"
-                :class="{ 'is-selected': selected_emissionType === 'co2', button: true }"
+                @click="set_emission_type('co2')"
+                :class="{ 'is-selected': selected_emission_type === 'co2', button: true }"
                 >Koldioxid</button>
             </div>
           </div>
@@ -86,7 +86,7 @@
 
       <div class="column charts">
         <DatabaseChart
-                    v-bind:year_data_set="year_data_sets[graphType]"
+                    v-bind:year_data_set="year_data_sets[graph_type]"
                     v-bind:years="emissions_database.years"
                     v-bind:kommun_to_highlight="kommun" />
       </div>
@@ -144,8 +144,8 @@ export default {
     return({
       selected_kommun: 'Alla',
       selected_län: 'Alla',
-      selected_valueType: 'change',
-      selected_emissionType: 'all',
+      selected_value_type: 'change',
+      selected_emission_type: 'all',
       selected_huvudsektorer: initial_emissions_database.sektorer,
     })
   },
@@ -169,15 +169,15 @@ export default {
       return(this.selected_län == 'Alla' ? null : this.selected_län);
     },
 
-    graphType () {
-      if (this.selected_valueType === 'total') {
-        if (this.selected_emissionType === 'all') {
+    graph_type () {
+      if (this.selected_value_type === 'total') {
+        if (this.selected_emission_type === 'all') {
           return 0;
         } else {
           return 1;
         }
       } else {
-        if (this.selected_emissionType === 'all') {
+        if (this.selected_emission_type === 'all') {
           return 2;
         } else {
           return 3;
@@ -349,12 +349,12 @@ export default {
       this.selected_kommun = kommun;
     },
 
-    setValueType (valueType) {
-      this.selected_valueType = valueType;
+    set_value_type (value_type) {
+      this.selected_value_type = value_type;
     },
 
-    setEmissionType (emissionType) {
-      this.selected_emissionType = emissionType;
+    set_emission_type (emission_type) {
+      this.selected_emission_type = emission_type;
     },
 
     select_all () {

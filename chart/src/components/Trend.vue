@@ -10,11 +10,11 @@ import Chart from 'chart.js'
 export default {
   props: ['data', 'options'],
   mounted () {
-    this.renderChart(this.data, this.options);
+    this.render_chart(this.data, this.options);
   },
   watch: {
     data () {
-      this.renderChart(this.data, this.options);
+      this.render_chart(this.data, this.options);
     }
   },
 
@@ -23,7 +23,7 @@ export default {
   _chart: null,
 
   methods: {
-    renderChart (data, options) {
+    render_chart (data, options) {
       if (this._chart) {
         this._chart.destroy();
       }
