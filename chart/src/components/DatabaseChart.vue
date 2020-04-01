@@ -53,8 +53,8 @@ export default {
         datasets.unshift({
           label: this.kommun_to_highlight,
           data: highlighted_year_data,
-          borderColor: '#0080cc',
-          borderWidth: 2,
+          borderColor: '#f91308',
+          borderWidth: 3,
         })
       }
 
@@ -62,8 +62,8 @@ export default {
         datasets.unshift({
           label: 'TEMP label',
           data: this.year_data_set.highlight_data[this.kommun_to_highlight],
-          borderColor: '#0080cc',
-          borderWidth: 1.4,
+          borderColor: '#f91308',
+          borderWidth: 2.5,
           borderDash: [10, 10],
         })
       }
@@ -115,8 +115,8 @@ export default {
             tension: 0.08,
             steppedLine: false,
             borderDash: [],
-            borderColor: 'hsl(0, 0%, 65%)',
-            borderWidth: 0.8,
+            borderColor: 'hsl(0, 0%, 30%)',
+            borderWidth: 0.3,
           },
         },
         animation: false,
