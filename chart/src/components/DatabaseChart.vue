@@ -1,9 +1,13 @@
 <template>
   <div class="database-chart">
     <header>
-      <h2>{{year_data_set.title}}</h2>
-      <p v-for="part in parts(year_data_set.description)" v-bind:key="part">
+      <h2 class="title">{{year_data_set.title}}</h2>
+      <p class="subtitle" v-for="part in parts(year_data_set.description)" v-bind:key="part">
         {{part}}
+      </p>
+      <p>
+        <span><span class="legend-color legend-kommun" aria-label="grå"></span> Kommun</span>
+        <span><span class="legend-color legend-selected" aria-label="röd"></span> Vald kommun</span>
       </p>
     </header>
     <Trend class="trend-chart"
@@ -21,9 +25,6 @@ export default {
   props: ['year_data_set', 'years', 'kommun_to_highlight'],
   components: {
     Trend
-  },
-  data () {
-    return({});
   },
   methods: {
     trend_data () {
@@ -55,16 +56,6 @@ export default {
           data: highlighted_year_data,
           borderColor: '#f91308',
           borderWidth: 3,
-        })
-      }
-
-      if (this.kommun_to_highlight && this.year_data_set.highlight_data && this.year_data_set.highlight_data[this.kommun_to_highlight]) {
-        datasets.unshift({
-          label: 'TEMP label',
-          data: this.year_data_set.highlight_data[this.kommun_to_highlight],
-          borderColor: '#f91308',
-          borderWidth: 2.5,
-          borderDash: [10, 10],
         })
       }
 
@@ -137,23 +128,40 @@ export default {
   flex-direction: column;
 }
 
+.subtitle:not(:last-child) {
+  margin-bottom: 14px;
+}
+
+.legend-color {
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px;
+  margin-right: 6px;
+}
+
+.legend-kommun {
+  background-color: hsl(0, 0%, 30%);
+}
+
+.legend-selected {
+  background-color: #f91308;
+  margin-left: 30px;
+}
+
 .trend-chart {
   margin-top: 10px;
   flex: 1 0 auto;
 }
 
 header {
-  margin: 16px 0 20px 40px;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 2em;
+  margin: 15px 0 5px 43px;
 }
 </style>
 
 <style>
 .trend-chart canvas {
-  min-height: 70vh;
+  min-height: 60vh;
 }
 </style>
