@@ -2,9 +2,14 @@
 <template>
   <div class="percentage-change-table">
     <a 
-       class="button"
+       class="button is-hidden"
        v-bind:href="csv_file_data_url()"
        v-bind:download="csv_filename() + '.csv'">Spara som CSV</a>
+
+    <p class="points-change-explainer">
+      Välj alla sektorer och alla län för att se årets poäng.<br>
+      Välj enskilda län och/eller olika sektorer för att utforska hur detta urval påverkar dina poäng.
+    </p>
 
     <table class="table">
       <thead>
@@ -12,20 +17,16 @@
           <th></th>
           <th v-for="(year_data_set, index) in year_data_sets"
             colspan="2"
+            class="is-sortable"
             v-bind:key="year_data_set.title"
-            :class="{'currently-ordered': index == order_index}"
             v-on:click="toggle_order(index)">
-            {{year_data_set.title}}
-            <span class="sort-icon" v-if="order_index === index">
-              <span v-if="order_direction === 'ascending'">
-                <font-awesome-icon icon="sort-down"></font-awesome-icon>
+            <span class="is-flex">
+              {{year_data_set.title}}
+              <span :class="{ 'is-active': order_index === index, 'sort-icon': true }">
+                <font-awesome-icon v-if="order_index !== index" icon="sort"></font-awesome-icon>
+                <font-awesome-icon v-if="order_index === index && order_direction === 'ascending'" icon="sort-down"></font-awesome-icon>
+                <font-awesome-icon v-if="order_index === index && order_direction === 'descending'" icon="sort-up"></font-awesome-icon>
               </span>
-              <span v-if="order_direction === 'descending'">
-                <font-awesome-icon icon="sort-up"></font-awesome-icon>
-              </span>
-            </span>
-            <span class="sort-icon" v-if="order_index !== index">
-              <font-awesome-icon icon="sort"></font-awesome-icon>
             </span>
           </th>
           <th>Totalpoäng</th>
@@ -46,27 +47,24 @@
       <tbody>
         <tr v-for="kommun in ordered_kommuner"
             v-bind:key="kommun"
-            v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}">
-          <th v-on:click="$emit('focus_kommun', kommun)">
+            v-bind:class="{'highlighted-kommun': kommun === kommun_to_highlight}"
+            v-on:click="$emit('focus_kommun', kommun)">
+          <th>
             {{kommun}}
           </th>
           <template v-for="year_data_set in year_data_sets.slice(0,2)">
-            <td v-bind:key="year_data_set.title + 'foo'"
-                v-on:click="$emit('focus_kommun', kommun)">
-              {{(year_data_set.metrics[kommun]>25)?">25":year_data_set.metrics[kommun]}}
+            <td v-bind:key="year_data_set.title + 'foo'">
+              {{(year_data_set.metrics[kommun]>25)?"> 25":year_data_set.metrics[kommun]}}
             </td>
-            <td v-bind:key="year_data_set.title + 'bar'"
-                v-on:click="$emit('focus_kommun', kommun)">
+            <td v-bind:key="year_data_set.title + 'bar'">
               {{year_data_set.points[kommun]}}
             </td>
           </template>
           <template v-for="year_data_set in year_data_sets.slice(2)">
-            <td v-bind:key="year_data_set.title + 'foo'"
-                v-on:click="$emit('focus_kommun', kommun)">
+            <td v-bind:key="year_data_set.title + 'foo'">
               {{year_data_set.metrics[kommun]}}%
             </td>
-            <td v-bind:key="year_data_set.title + 'bar'"
-                v-on:click="$emit('focus_kommun', kommun)">
+            <td v-bind:key="year_data_set.title + 'bar'">
               {{year_data_set.points[kommun]}}
             </td>
           </template>
@@ -190,6 +188,10 @@ export default {
   padding: 40px;
 }
 
+.points-change-explainer {
+  margin-bottom: 30px;
+}
+
 .table {
   width: 100%;
 }
@@ -209,17 +211,23 @@ export default {
   top: 40px;
 }
 
-thead th {
+.is-sortable {
   cursor: pointer;
 }
 
-.table thead th.currently-ordered {
-  background-color: #0080cc;
-  color: white;
+.is-sortable > .is-flex {
+  justify-content: space-between;
 }
 
 .sort-icon {
-  float: right;
+  padding: 8px 10px;
+  margin: -8px;
+  margin-left: 10px;
+}
+
+.sort-icon.is-active {
+  background: #0080cc;
+  color: white;
 }
 
 td:nth-child(4n + 2),
