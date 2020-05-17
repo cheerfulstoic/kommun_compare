@@ -54,7 +54,7 @@ export default {
         datasets.unshift({
           label: this.kommun_to_highlight,
           data: highlighted_year_data,
-          borderColor: '#f91308',
+          borderColor: '#f45959',
           borderWidth: 3,
         })
       }
@@ -135,6 +135,7 @@ export default {
 .legend-color {
   height: 18px;
   width: 18px;
+  border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
   margin-top: -3px;
@@ -146,7 +147,7 @@ export default {
 }
 
 .legend-selected {
-  background-color: #f91308;
+  background-color: #f45959;
   margin-left: 30px;
 }
 
