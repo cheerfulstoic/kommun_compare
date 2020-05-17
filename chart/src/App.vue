@@ -377,7 +377,9 @@ export default {
 
 <style lang="scss">
 $primary: #0080cc;
-$family-primary: 'Open Sans', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$primary: #f45959;
+$family-primary: 'Work Sans', BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$weight-semibold: 500;
 $border: #ebebeb;
 $button-background-color: #f4f4f4;
 
@@ -390,7 +392,7 @@ $button-background-color: #f4f4f4;
 }
 
 .main-section {
-  background-color: #f3f5f7;
+  background-color: #faf5f5;
   padding: 40px;
 }
 

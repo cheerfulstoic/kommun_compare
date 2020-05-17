@@ -226,7 +226,7 @@ export default {
 }
 
 .sort-icon.is-active {
-  background: #0080cc;
+  background: #f45959;
   color: white;
 }
 
@@ -237,13 +237,13 @@ td:nth-child(4n + 3) {
 
 tbody tr:hover th,
 tbody tr:hover td {
-  background-color: hsl(210, 91%, 97%);
+  background-color: #faf5f5;
   cursor: pointer;
 }
 
 tbody tr.highlighted-kommun th,
 tbody tr.highlighted-kommun td {
-  background-color: #bfdefc;
+  background-color: #fbc5c5;
 }
 
 </style>

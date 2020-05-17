@@ -2,7 +2,7 @@
   <div>
     <div class="image-container">
       <a href="https://www.aktuellhallbarhet.se/"><img src="../assets/aktuell-hallbarhet-logo.png" alt="Aktuell Hållberhet logo"></a>
-      <a href="https://www.klimatsekretariatet.se/"><img src="../assets/klimat-sekretariatet-logo.png" alt="Klimat Sekretariatet logo"></a>
+      <a href="https://www.klimatsekretariatet.se/"><img src="../assets/klimat-sekretariatet-logo-red.png" alt="Klimat Sekretariatet logo"></a>
     </div>
 
     <header class="hero is-medium">
@@ -30,26 +30,39 @@
 </template>
 
 <style scoped>
+@media screen and (min-width: 769px) {
+  .hero.is-medium .hero-body {
+    padding-bottom: 7rem;
+    padding-top: 4rem;
+  }
+}
+
 @media screen and (min-width: 1408px) {
-  .container {
+  .container,
+  .image-container {
     max-width: 1000px;
     margin-left: 13%;
-    border-left: 4px solid #0080cc;
     padding-left: 40px;
   }
 }
 
+.content h1 {
+  font-size: 2.8rem;
+}
+
 .subtitle {
-  line-height: 1.5;
+  line-height: 1.45;
+}
+
+.content h4 {
+  font-size: 1.5rem;
+  margin-top: 6px;
+  margin-bottom: 8px;
 }
 
 .image-container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-right: 70px;
-  margin-top: 50px;
-  margin-bottom: -200px;
+  padding: 30px 1.5rem 20px calc(40px + 1.5rem);
 }
 
 .image-container img {
@@ -58,8 +71,7 @@
 }
 
 .image-container a:not(:first-child) {
-  border-top: 1px solid #ccc;
-  padding-top: 20px;
-  margin-top: 20px;
+  margin-left: 60px;
+  margin-top: 2px;
 }
 </style>
