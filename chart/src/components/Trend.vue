@@ -5,15 +5,15 @@
 </template>
 
 <script>
-import Chart from 'chart.js'
+import Chart from "chart.js";
 
 export default {
-  props: ['data', 'options'],
-  mounted () {
+  props: ["data", "options"],
+  mounted() {
     this.render_chart(this.data, this.options);
   },
   watch: {
-    data () {
+    data() {
       this.render_chart(this.data, this.options);
     }
   },
@@ -23,25 +23,25 @@ export default {
   _chart: null,
 
   methods: {
-    render_chart (data, options) {
+    render_chart(data, options) {
       if (this._chart) {
         this._chart.destroy();
       }
 
       const newChart = new Chart(this.$refs.canvas, {
-        type: 'line',
+        type: "line",
         data: data,
-        options: options,
+        options: options
       });
 
       this._chart = newChart;
-    },
+    }
   },
-  
-  beforeDestroy () {
+
+  beforeDestroy() {
     if (this._chart) {
       this._chart.destroy();
     }
-  },
-}
+  }
+};
 </script>
