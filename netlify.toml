@@ -1,0 +1,6 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+[build]
+  base = "chart/"
+  publish = "chart/dist/"
+  command = "yarn build"
+ 
