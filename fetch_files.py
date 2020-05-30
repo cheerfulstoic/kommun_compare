@@ -16,7 +16,7 @@ for s in dataparse:
                 print(s[0])
                 data.append(s[0])
 
-all_lines = data 
+all_lines = data
 
 for file_name in all_lines:
     fn = prefix + file_name
@@ -25,5 +25,3 @@ for file_name in all_lines:
     fo = os.path.join(outputdir, file_name.strip())
     open(fo, "wb").write(r.content)
     print("File {} has been fetched to {}".format(file_name.strip(), outputdir))
-    
-
