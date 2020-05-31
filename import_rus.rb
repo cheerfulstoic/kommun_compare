@@ -6,12 +6,15 @@ years = (2013..2017)
 
 records = 
   Dir.glob('./data/*.xls').flat_map do |filename|
-    puts filename
     _, base_name = filename.match(/\/([^\/]+)\.xls$/).to_a
     # puts "base_name: #{base_name.inspect}"
 
     _, subject = base_name.match(/_([^_]+)$/).to_a
     # puts "subject: #{subject.inspect}"
+
+    next if base_name.match(/lansrapport_sverige_/)
+
+    puts filename
 
     if %w[CO2 CO2-equivalents].include?(subject)
       doc = Roo::Spreadsheet.open("./data/#{base_name}.xls", extension: :xls)
@@ -76,7 +79,7 @@ records =
     else
       []
     end
-  end
+  end.compact
 
 File.open("./output/emissions_data.json", 'w') do |f|
   f << {
