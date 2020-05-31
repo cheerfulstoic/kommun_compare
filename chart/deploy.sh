@@ -3,7 +3,7 @@
 # abort on errors
 set -e
 
-yarn run build
+npx yarn run build
 
 git add dist
 
