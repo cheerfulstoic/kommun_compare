@@ -44,9 +44,9 @@
         </tr>
         <tr class="subtitle-row">
           <th></th>
-          <th>Utsläpp/invånare</th>
+          <th>Ton CO<sub>2</sub>-ekv./invånare</th>
           <th>Poäng</th>
-          <th>Utsläpp/invånare</th>
+          <th>Ton CO<sub>2</sub>/invånare</th>
           <th>Poäng</th>
           <th>Ändring/år</th>
           <th>Poäng</th>
